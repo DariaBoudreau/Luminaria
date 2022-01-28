@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 5e65db1e814197a4db67988e10d5475f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Cardenio Modern
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 8c848cf95d2274e44a1fce353ef5222d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

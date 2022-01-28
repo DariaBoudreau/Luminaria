@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AspenRight
+  m_Controller: {fileID: 9100000, guid: e7140c0305c43b64d87b6d7d9060d1d9, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: f379e493a9574b144ac6f89a10c398ac, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 23aa1888dda0a3843895a30898ad3a90, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 97132e30f3dc262418e29dd2fe266750, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4f58f437cca1e924daa816cbcea8dcc0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c90d343370aaea5f79eb3fc47db2ea60, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1016cedf8123dcc738ec5bc40967b14a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8db62e1087194c641bef0746d4cdee40, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 785ec146ec80b2047ba20a97496b9644, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d98610feda0c64e4fb3cf932c37c3c3d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a150197d1a514a94b916efc35044c527, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5d322dc46dfa0ec2a9d4f89c7e9b81ea, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0caa8717a0cd5cf4d90bcf3696241808, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f89e04cc7f8a73044a146fdcca2fd742, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e3a87489d4343de4cba05e8e2c24f6eb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 957c9a8dd83487b42ad263a1b6ebe5ef, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8924f8aa3e476624eb4b23409c0f74fa, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7f0c1c3f78b03204b82b6ffe3060e37b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 715f106d9f0c8d340a1f80e5bc92ac12, type: 2}
