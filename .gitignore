@@ -3,6 +3,7 @@
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
 /[Ll]ibrary/
+/[Uu]serSettings/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
@@ -58,3 +59,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Assets/.DS_Store
+.DS_Store
