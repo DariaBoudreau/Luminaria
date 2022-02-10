@@ -22,6 +22,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] Animator animator = null;
     [SerializeField] new Transform transform;
     [SerializeField] CharacterAudio audioPlayer = null;
+    [SerializeField] PlayerInput playerInput;
 
     [Header("Equipment")]
     [SerializeField] Transform handAnchor = null;
@@ -147,6 +148,7 @@ public class CharacterController2D : MonoBehaviour
 
     void GetHorizontalMovement(Keyboard keyboard)
     {
+
         // Horizontal movement
         float moveHorizontal = 0.0f;
 
