@@ -56,9 +56,11 @@ public class CharacterController2D : MonoBehaviour
     private bool isJumping;
     private bool isFalling;
     private bool isGliding;
+    private bool isSliding;
     private bool doubleJump = false;
     private bool faceRight = false;
     private bool hasTransitioned;
+    private bool canJump = true;
 
     private int animatorGroundedBool;
     private int animatorRunningSpeed;
@@ -128,11 +130,23 @@ public class CharacterController2D : MonoBehaviour
 
     void Update()
     {
+        Move();   
+    }
+
+    void Move()
+    {
         var keyboard = Keyboard.current;
 
         if (!CanMove || keyboard == null)
             return;
 
+        GetHorizontalMovement(keyboard);
+        GetVerticalMovement(keyboard);
+        GetChargeInput(keyboard);
+    }
+
+    void GetHorizontalMovement(Keyboard keyboard)
+    {
         // Horizontal movement
         float moveHorizontal = 0.0f;
 
@@ -146,9 +160,12 @@ public class CharacterController2D : MonoBehaviour
             else if (keyboard.rightArrowKey.isPressed || keyboard.dKey.isPressed)
                 moveHorizontal = keyboard.zKey.isPressed ? 3.0f : 1.0f;
 
-        } else if (!isFalling) {
+        }
+        else if (!isFalling)
+        {
             // only allow burning while falling and not moving
-            if (!hasTransitioned) {
+            if (!hasTransitioned)
+            {
                 animator.SetTrigger(animatorBurnTrigger);
                 hasTransitioned = true;
             }
@@ -156,16 +173,20 @@ public class CharacterController2D : MonoBehaviour
         }
 
         movementInput = new Vector2(moveHorizontal, 0);
+    }
 
+    void GetVerticalMovement(Keyboard keyboard)
+    {
         // Jumping input
         if (keyboard.spaceKey.wasPressedThisFrame)
         {
-            if (!isJumping)
+            if (!isJumping && canJump)
                 jumpInput = true;
-            else if (!doubleJump)
+            else if (!doubleJump && canJump)
             {
                 jumpInput = true;
                 doubleJump = true;
+                canJump = false;
             }
         }
 
@@ -173,10 +194,15 @@ public class CharacterController2D : MonoBehaviour
         if (keyboard.spaceKey.isPressed && isFalling)
         {
             isGliding = true;
-        } else {
+        }
+        else
+        {
             isGliding = false;
         }
-
+    }
+    
+    void GetChargeInput(Keyboard keyboard)
+    {
         // Debug Charging
         if (keyboard.cKey.wasPressedThisFrame)
             currentCharge++;
@@ -370,5 +396,13 @@ public class CharacterController2D : MonoBehaviour
     public void SwapSprites(UnityEngine.U2D.Animation.SpriteLibraryAsset spriteLibraryAsset)
     {
         spriteLibrary.spriteLibraryAsset = spriteLibraryAsset;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+        {
+            canJump = true;
+        }
     }
 }

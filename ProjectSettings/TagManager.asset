@@ -10,6 +10,7 @@ TagManager:
   - KeyStone
   - LightOrb
   - HidingSomething
+  - Floor
   layers:
   - Default
   - TransparentFX
