@@ -58,7 +58,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8d57283ae66181c489857f4a5c426f9d, type: 3}
   - {fileID: 8300000, guid: 9e2edd1f7d42ab346996af5e21c42840, type: 3}
   softLanding: {fileID: 8300000, guid: fa0004030b1a4b84fbdf945b0b65fafd, type: 3}
-  hardLanding: {fileID: 8300000, guid: 45a17e4fc025b30418cb6fba93650013, type: 3}
+  hardLanding: {fileID: 8300000, guid: fa0004030b1a4b84fbdf945b0b65fafd, type: 3}
   jump: {fileID: 8300000, guid: fa0004030b1a4b84fbdf945b0b65fafd, type: 3}
   stepsTimeGap: 0.43
 --- !u!1 &1109859081083683337
