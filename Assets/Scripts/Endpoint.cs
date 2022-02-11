@@ -14,7 +14,7 @@ public class Endpoint : MonoBehaviour
     public void Start()
     {
         soundClip = GetComponent<AudioSource>();
-        StartCoroutine(DelayedExitScene());
+        //StartCoroutine(DelayedExitScene());
     }
 
     public void OnTriggerEnter2D(Collider2D other)
