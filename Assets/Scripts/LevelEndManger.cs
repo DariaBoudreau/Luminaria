@@ -15,7 +15,7 @@ public class LevelEndManger : MonoBehaviour
     [SerializeField] private string nextScene;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip sfxPortal;
-
+    bool sfxHasPlayed = false;
     
 
     // Start is called before the first frame update
@@ -48,7 +48,11 @@ public class LevelEndManger : MonoBehaviour
             if (conditionClear)
             {
                 StartCoroutine(SetPortal());
-                audioSource.PlayOneShot(sfxPortal);
+                if (!sfxHasPlayed)
+                {
+                    audioSource.PlayOneShot(sfxPortal);
+                    sfxHasPlayed = true;
+                }
             }
         }
     }
