@@ -6,10 +6,11 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class FloatingPlatform : MonoBehaviour
 {
     [SerializeField] CharacterController2D aspenObject;
-    [SerializeField] int chargeCost = 1;
+    [SerializeField] int chargeCost;
     [SerializeField] float riseModifier = 1.0f;
     [SerializeField] float riseRate = 0.01f;
     [SerializeField] private bool isFloating = false;
+    [SerializeField] private bool startsLit = false;
     [SerializeField] private bool triggerActive;
     [SerializeField] private bool horizontalMove = false;
     private float baseHeight;
@@ -40,7 +41,15 @@ public class FloatingPlatform : MonoBehaviour
     {
         light = GetComponentInChildren<Light2D>(true);
         maxIntensity = light.intensity;
-        light.intensity = 0f;
+        if(startsLit == false)
+        {
+            light.intensity = 0f;
+        }
+        else
+        {
+            light.intensity = 2.06f;
+        }
+
 
         baseHeight = transform.localPosition.y;
         baseHorizon = transform.localPosition.x;
@@ -48,13 +57,26 @@ public class FloatingPlatform : MonoBehaviour
 
     void Update()
     {
-        if (triggerActive && aspenObject.isBurning) {
-            if (aspenObject.currentCharge != 0) {
-                if (!isFloating) {
+        if (triggerActive && aspenObject.isBurning)
+        {
+            if (aspenObject.currentCharge >= chargeCost)
+            {
+                if (!isFloating) 
+                {
                     floating = StartCoroutine(Float());
-                    aspenObject.currentCharge -= chargeCost;
+                    if (startsLit == false)
+                    {
+                         aspenObject.currentCharge -= chargeCost;
+                    }
+                    else
+                    {
+                        aspenObject.currentCharge += -chargeCost;
+                    }
+ 
                 }
-            } else {
+            } 
+            else 
+            {
                 // NOT ENOUGH CHARGE
             }
         }
@@ -63,9 +85,15 @@ public class FloatingPlatform : MonoBehaviour
     private IEnumerator Float()
     {
         isFloating = true;
-        light.intensity = maxIntensity;
-
-        if (!horizontalMove)
+        if (startsLit == false)
+        {
+            light.intensity = maxIntensity;
+        }
+        else
+        {
+            light.intensity = 0f;
+        }
+        if (startsLit && !horizontalMove)
         {
             for (float ft = 0; ft < 2 * Math.PI; ft += riseRate)
             {
@@ -78,7 +106,20 @@ public class FloatingPlatform : MonoBehaviour
                 yield return null;
             }
         }
-        else
+        else if (!horizontalMove)
+        {
+            for (float ft = 0; ft < 2 * Math.PI; ft += riseRate)
+            {
+                float y = (float)(1 - Math.Cos(ft));
+                transform.localPosition = new Vector3(baseHorizon, baseHeight + (riseModifier * y), transform.localPosition.z);
+
+                if (ft > Math.PI)   // we've reached the apex, it's all downhill from here
+                    light.intensity = y * maxIntensity / 2;
+
+                yield return null;
+            }
+        }
+        else if (horizontalMove == true)
         {
             for (float ft = 0; ft < 2 * Math.PI; ft += riseRate)
             {
