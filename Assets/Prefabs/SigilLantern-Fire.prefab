@@ -209,6 +209,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689f7dfe5aef94dadbae7a7ad43f8237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 860493022139749827}
+  lanternMusic:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!61 &860493022139749824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -266,7 +274,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 56823e01e0bf1fa478d4d4e398506490, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
