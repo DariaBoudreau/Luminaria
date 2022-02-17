@@ -179,7 +179,7 @@ MonoBehaviour:
   - Beware child...
   - She will be coming after you.
   - As long you have that staff you are in danger!
-  textSpeed: 0.1
+  textSpeed: 0.15
 --- !u!114 &568038468
 MonoBehaviour:
   m_ObjectHideFlags: 0
