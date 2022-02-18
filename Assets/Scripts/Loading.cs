@@ -34,7 +34,7 @@ public class Loading : MonoBehaviour
         {
             yield return null;
             timeCount += Time.deltaTime;
-            if (asyncScene.progress >= .9f)
+            if (asyncScene.progress >= .9f && timeCount >= 6.0f)
             {
                 asyncScene.allowSceneActivation = true;
             }
