@@ -24,7 +24,10 @@ public class LanternLighting : MonoBehaviour
             if (light.enabled == false) {
                 light.enabled = true;
                 StartCoroutine(FadeIn());
-                audioSource.PlayOneShot(lanternMusic[UnityEngine.Random.Range(0, lanternMusic.Length)]);
+                if (lanternMusic.Length > 0)
+                {
+                    audioSource.PlayOneShot(lanternMusic[UnityEngine.Random.Range(0, lanternMusic.Length)]);
+                }
             }
         }
     }

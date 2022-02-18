@@ -764,8 +764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerActive: 0
   Aspen: {fileID: 0}
-  ChargeCost: 0
-  nextScene: LoadingScreen2
+  checkpointLight: {fileID: 6794452194673375973}
 --- !u!1 &6794452193558482426
 GameObject:
   m_ObjectHideFlags: 0

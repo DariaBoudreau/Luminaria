@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuButton : MonoBehaviour
 {
@@ -26,6 +27,12 @@ public class PauseMenuButton : MonoBehaviour
     {
         Time.timeScale = 1;
         PauseMenu.menuPanel.SetActive(false);
+    }
+
+    public void ReloadLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void OpenKeys()

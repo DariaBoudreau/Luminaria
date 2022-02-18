@@ -11,6 +11,7 @@ TagManager:
   - LightOrb
   - HidingSomething
   - Floor
+  - GameMaster
   layers:
   - Default
   - TransparentFX
