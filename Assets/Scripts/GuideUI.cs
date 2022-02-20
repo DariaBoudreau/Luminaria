@@ -11,6 +11,25 @@ public class GuideUI : MonoBehaviour
     private SpriteRenderer[] spriteRenderers;
     private TMP_Text text;
 
+    [Tooltip("Use this to set the dialogue IF it is not already set in child")]
+    [SerializeField]
+    private string[] lines;
+
+    [Tooltip("If true, dialogue will change when left mouse/shift is pressed, if false will be time based")]
+    [SerializeField]
+    private bool shouldChangeOnButtonPress = true;
+
+    [Tooltip("Set speed of multiline text")]
+    [SerializeField]
+    private float textSpeed;
+
+    // In a time based dialogue box, the amount of time after the last character has printed before switching to the next line
+    private float waitSpeed = 1f;
+
+    private int index;
+    private bool aspenIsNear = false;
+    private bool textNullOrEmptyAtStart = false;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -26,27 +45,61 @@ public class GuideUI : MonoBehaviour
         Color c_text = text.color;
         c_text.a = 0;
         text.color = c_text;
+
+        textNullOrEmptyAtStart = string.IsNullOrEmpty(text.text);
     }
 
     // Update is called once per frame
     private void Update()
     {
+        if (aspenIsNear && textNullOrEmptyAtStart)
+        {
+                if (shouldChangeOnButtonPress)
+                {
+                    if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.LeftShift))
+                    {
+                        if (text.text == lines[index])
+                        {
+                            NextLine();
+                        }
+                        else
+                        {
+                            StopAllCoroutines();
+                            text.text = lines[index];
+                        }
+                    }
+                }
+        }
+    }
 
+    void StartDialogue()
+    {
+        index = 0;
+        StartCoroutine(TypeLine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Aspen")
+        if (collision.gameObject.CompareTag("Aspen"))
         {
             fading = StartCoroutine(FadeIn());
+            aspenIsNear = true;
+            //If the text to display is not preset in the TMP text then we will set it from the lines field in the inspector
+            if (textNullOrEmptyAtStart)
+            {
+                text.text = string.Empty;
+                text.alignment = TextAlignmentOptions.Left;
+                StartDialogue();
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Aspen")
+        if (collision.gameObject.CompareTag("Aspen"))
         {
             fading = StartCoroutine(FadeOut());
+            aspenIsNear = false;
         }
     }
 
@@ -97,5 +150,40 @@ public class GuideUI : MonoBehaviour
 
         if (destroyOnFadeOut)
             Destroy(gameObject);
+    }
+
+    IEnumerator TypeLine()
+    {
+        foreach (char c in lines[index].ToCharArray())
+        {
+            text.text += c;
+            yield return new WaitForSeconds(textSpeed);
+        }
+        if (!shouldChangeOnButtonPress)
+        {
+            StartCoroutine(TriggerNextLineBasedOnTime());
+        }
+    }
+
+    void NextLine()
+    {
+        if (index < lines.Length - 1)
+        {
+            index++;
+            text.text = string.Empty;
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            index = 0;
+            text.text = string.Empty;
+            StartCoroutine(TypeLine());
+        }
+    }
+
+    IEnumerator TriggerNextLineBasedOnTime()
+    {
+        yield return new WaitForSeconds(waitSpeed);
+        NextLine();
     }
 }
