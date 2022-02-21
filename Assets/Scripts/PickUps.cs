@@ -34,6 +34,7 @@ public class PickUps : MonoBehaviour
     private double pulsePeriod;
     private float pulseTime;
     private Coroutine pulsing;
+    public bool isCollected = false;
 
     void Start()
     {
@@ -108,7 +109,7 @@ public class PickUps : MonoBehaviour
 
             yield return new WaitForSeconds(0.02f);
         }
-
+        isCollected = true;
         Destroy(gameObject);
     }
 }
