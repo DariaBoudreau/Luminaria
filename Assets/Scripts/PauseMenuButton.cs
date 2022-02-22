@@ -35,6 +35,11 @@ public class PauseMenuButton : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void OpenKeys()
     {
         if (PauseMenu.menuPanel.activeInHierarchy)
