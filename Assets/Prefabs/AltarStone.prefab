@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4083364990523508606}
   - component: {fileID: 4083364990523508605}
   - component: {fileID: -2663911156414956832}
-  - component: {fileID: 4083364990523508604}
   - component: {fileID: 5154447107927582491}
   - component: {fileID: -4491771098849853258}
+  - component: {fileID: 1549942545173387355}
   m_Layer: 0
   m_Name: AltarStone
   m_TagString: KeyStone
@@ -120,28 +120,6 @@ MonoBehaviour:
   audioSource: {fileID: -4491771098849853258}
   stonePickup: {fileID: 8300000, guid: 5f1313873114b324fb472d0bcd38845d, type: 3}
   orbPickup: {fileID: 8300000, guid: 3f6a857674cf4f445a2a74900306d1e4, type: 3}
---- !u!114 &4083364990523508604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4083364990523508603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e8fe58b42a75d248ba6fce3dac1c8d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aspenObject: {fileID: 0}
-  chargeValue: 0
-  baseIntensity: 0.47
-  pulseRate: 0.03
-  rotateRate: 1
-  scaleAmp: 0.05
-  glowAmp: 0.5
-  rotate: 0
-  scale: 0
-  glow: 1
 --- !u!95 &5154447107927582491
 Animator:
   serializedVersion: 3
@@ -257,6 +235,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1549942545173387355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4083364990523508603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad6435315ba82a4eb4a652e817e7592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aspenObject: {fileID: 0}
+  chargeValue: 0
+  stonehud: {fileID: 0}
+  baseIntensity: 0.47
+  pulseRate: 0.03
+  rotateRate: 1
+  scaleAmp: 0.05
+  glowAmp: 0.5
+  rotate: 0
+  scale: 0
+  glow: 0
+  isCollected: 0
+  stoneIndex: 0
 --- !u!1 &7774720209733742161
 GameObject:
   m_ObjectHideFlags: 0
