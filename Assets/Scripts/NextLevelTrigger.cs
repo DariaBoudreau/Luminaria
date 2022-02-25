@@ -30,7 +30,7 @@ public class NextLevelTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource.GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,7 +51,7 @@ public class NextLevelTrigger : MonoBehaviour
 
     private IEnumerator DelayedExitScene()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(waitTime);
         SceneManager.LoadScene(nextScene);
     }
 }

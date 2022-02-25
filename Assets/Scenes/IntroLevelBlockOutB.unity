@@ -308,7 +308,7 @@ MonoBehaviour:
   nextScene: FireflyHutInterior
   audioSource: {fileID: 0}
   sfxPortal: {fileID: 0}
-  waitTime: 2
+  waitTime: 0.25
 --- !u!58 &78376371
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -553,7 +553,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlainLantern
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 243717771843545482, guid: b4790754877674ee6b478333ec16df31, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b4790754877674ee6b478333ec16df31, type: 3}
 --- !u!1 &118494387
 GameObject:
@@ -1786,7 +1787,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlainLantern (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 243717771843545482, guid: b4790754877674ee6b478333ec16df31, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b4790754877674ee6b478333ec16df31, type: 3}
 --- !u!1 &558554292
 GameObject:
@@ -2830,7 +2832,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlainLantern (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 243717771843545482, guid: b4790754877674ee6b478333ec16df31, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b4790754877674ee6b478333ec16df31, type: 3}
 --- !u!1 &804514825
 GameObject:
@@ -5902,7 +5905,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlainLantern (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 243717771843545482, guid: b4790754877674ee6b478333ec16df31, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b4790754877674ee6b478333ec16df31, type: 3}
 --- !u!1001 &1868787966
 PrefabInstance:
@@ -6435,7 +6439,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlainLantern (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 243717771843545482, guid: b4790754877674ee6b478333ec16df31, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b4790754877674ee6b478333ec16df31, type: 3}
 --- !u!1 &2109578832
 GameObject:
