@@ -17,7 +17,14 @@ public class NextLevelTrigger : MonoBehaviour
 
     [Tooltip("Optional audio clip.")]
     [SerializeField] AudioClip sfxPortal;
+
+    [Tooltip("The time to wait before going to the desired scene.")]
+    [SerializeField]
+    float waitTime = 2;
+
     bool sfxHasPlayed = false;
+
+
 
 
     // Start is called before the first frame update
