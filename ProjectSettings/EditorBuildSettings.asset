@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FireflyHutInterior.unity
     guid: 67416c642945e4bb586e84cb02319351
+  - enabled: 1
+    path: Assets/Scenes/IntroLevelBlockOutB.unity
+    guid: 7562c8eb0a6ee1d4f865b18575dc13d8
   m_configObjects: {}
