@@ -216,6 +216,8 @@ GameObject:
   m_Component:
   - component: {fileID: 78376368}
   - component: {fileID: 78376369}
+  - component: {fileID: 78376371}
+  - component: {fileID: 78376370}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -290,6 +292,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &78376370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78376367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28c729bbdd5f72a498c8543a2869a94b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMustPressKey: 0
+  nextScene: FireflyHutInterior
+  audioSource: {fileID: 0}
+  sfxPortal: {fileID: 0}
+--- !u!58 &78376371
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78376367}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.00000047683716}
+  serializedVersion: 2
+  m_Radius: 0.50000006
 --- !u!1 &100472747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,7 +1097,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 105.36415
+      value: 109.56262
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
