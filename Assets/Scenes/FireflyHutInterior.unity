@@ -215,8 +215,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 31250686}
+  - component: {fileID: 31250687}
   m_Layer: 0
-  m_Name: UI-Part
+  m_Name: DialogueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,9 +241,42 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.29, y: -0.52}
+  m_AnchoredPosition: {x: 8.16, y: 0.37}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &31250687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31250685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62fdcf09847d8264990d12c64fcda616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 946257088}
+  lines:
+  - Hm?? I've not had visitors in some time...
+  - Ah, don't fear, child, I don't bite.
+  - Not a big talker, are ya? You lost?
+  - Well...Where are my manners?
+  - Guess I should introduce myself.
+  - "I\u2019m the Elder Firefly, the guardian of the forest."
+  - I've been tasked with protecting the light...
+  - "...But in my old age... I\u2019ve been getting weak..."
+  - "But you, young one\u2026"
+  - You seem worthy of taking my place.
+  - Us fireflies and moths, we go way back...
+  - But that's a story for another day.
+  - Here, take my staff.
+  - ' It will give you the power to brighten up this world.'
+  - But, beware, there are dark forces in these woods...
+  - ...Creatures that will try to destroy the staff...
+  - "...And drown the world in darkness.\_"
+  - You must not let that happen...
+  textSpeed: 0.08
 --- !u!1 &100472747
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &149128649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -827,7 +861,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358129, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_DefaultBlend.m_Time
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358132, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -847,7 +881,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 115.28256
+      value: 115.2905
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -3482,7 +3516,7 @@ GameObject:
   - component: {fileID: 856008467}
   - component: {fileID: 856008468}
   m_Layer: 0
-  m_Name: UI-Box
+  m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3496,8 +3530,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856008466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5182, y: -2.56, z: 0}
-  m_LocalScale: {x: 1.2506273, y: 1.5655379, z: 0.82827646}
+  m_LocalPosition: {x: -0.64, y: -3.81, z: 0}
+  m_LocalScale: {x: 1.5486517, y: 1.9386055, z: 1.0256547}
   m_Children: []
   m_Father: {fileID: 31250686}
   m_RootOrder: 1
@@ -3522,7 +3556,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3544,7 +3578,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 39
   m_Sprite: {fileID: 21300000, guid: 45a075650304242aebaa6ee2937b1f5a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2719384, g: 0.5248837, b: 0.5943396, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3964,15 +3998,15 @@ RectTransform:
   m_GameObject: {fileID: 946257086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.87, y: 0.87, z: 0.87}
+  m_LocalScale: {x: 0.8178, y: 0.8178, z: 0.8178}
   m_Children: []
   m_Father: {fileID: 31250686}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.68, y: 2.98}
-  m_SizeDelta: {x: 11.4619, y: 4.8441}
+  m_AnchoredPosition: {x: -0.28, y: 3.89}
+  m_SizeDelta: {x: 16.9297, y: 5.9025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &946257088
 MonoBehaviour:
@@ -3994,7 +4028,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: test
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc8a34f17139dd94b9896d925852d4d5, type: 2}
   m_sharedMaterial: {fileID: 7091187423177809905, guid: cc8a34f17139dd94b9896d925852d4d5,
@@ -6070,7 +6104,7 @@ GameObject:
   - component: {fileID: 1729871793}
   - component: {fileID: 1729871792}
   m_Layer: 0
-  m_Name: Intro
+  m_Name: FireflyDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
