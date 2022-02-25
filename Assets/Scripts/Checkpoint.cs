@@ -23,8 +23,15 @@ public class Checkpoint : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Aspen")) {
-            triggerActive = true;
+        triggerActive = true;
+        if (other.gameObject.CompareTag("Aspen") && triggerActive == true) 
+        {
+                if (!checkpointLight.activeInHierarchy)
+                {
+                    checkpointLight.SetActive(true);
+                    gameMaster.lastCheckpointPosition = transform.position;
+                    soundClip.Play();
+                }
         }
     }
 
@@ -37,14 +44,6 @@ public class Checkpoint : MonoBehaviour
 
     private void Update()
     {
-        if (triggerActive && Aspen.isBurning)
-        {
-            if (!checkpointLight.activeInHierarchy) 
-            {
-                checkpointLight.SetActive(true);
-                gameMaster.lastCheckpointPosition = transform.position;
-                soundClip.Play();
-            }
-        }
+
     }
 }
