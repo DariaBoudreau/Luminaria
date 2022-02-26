@@ -215,7 +215,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 31250686}
-  - component: {fileID: 31250687}
   m_Layer: 0
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -244,38 +243,6 @@ RectTransform:
   m_AnchoredPosition: {x: 8.16, y: 0.37}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &31250687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31250685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62fdcf09847d8264990d12c64fcda616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 946257088}
-  lines:
-  - Ah, don't fear, child, I don't bite.
-  - Not a big talker, are ya? You lost?
-  - Well...Where are my manners?
-  - Guess I should introduce myself.
-  - "I\u2019m the Elder Firefly, the guardian of the forest."
-  - I've been tasked with protecting the light...
-  - "...But in my old age... I\u2019ve been getting weak..."
-  - "But you, young one\u2026"
-  - You seem worthy of taking my place.
-  - Us fireflies and moths, we go way back...
-  - But that's a story for another day.
-  - Here, take my staff.
-  - ' It will give you the power to brighten up this world.'
-  - But, beware, there are dark forces in these woods...
-  - ...Creatures that will try to destroy the staff...
-  - "...And drown the world in darkness.\_"
-  - You must not let that happen...
-  textSpeed: 0.08
 --- !u!1 &100472747
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,11 +696,10 @@ MonoBehaviour:
   ThingToGuide: {fileID: 1487986102}
   destroyOnFadeOut: 1
   lines:
-  - This is what I say first.
-  - Then I say this.
-  - And then this.
+  - Hm?? I've not had visitors in some time...
   shouldChangeOnButtonPress: 0
-  textSpeed: 0.1
+  shouldLoop: 0
+  textSpeed: 0.08
 --- !u!1 &304030258
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +930,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 115.29321
+      value: 115.28204
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -1975,7 +1941,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: test
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc8a34f17139dd94b9896d925852d4d5, type: 2}
   m_sharedMaterial: {fileID: 7091187423177809905, guid: cc8a34f17139dd94b9896d925852d4d5,
@@ -4329,7 +4295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: test
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc8a34f17139dd94b9896d925852d4d5, type: 2}
   m_sharedMaterial: {fileID: 7091187423177809905, guid: cc8a34f17139dd94b9896d925852d4d5,
@@ -5889,7 +5855,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1487986103}
-  - component: {fileID: 1487986104}
   m_Layer: 0
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -5918,22 +5883,6 @@ RectTransform:
   m_AnchoredPosition: {x: 18.84, y: 0.93}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1487986104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1487986102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62fdcf09847d8264990d12c64fcda616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 449338829}
-  lines:
-  - Hm?? I've not had visitors in some time...
-  textSpeed: 0.08
 --- !u!1 &1565079310
 GameObject:
   m_ObjectHideFlags: 0
@@ -6527,11 +6476,26 @@ MonoBehaviour:
   ThingToGuide: {fileID: 31250685}
   destroyOnFadeOut: 0
   lines:
-  - This is what I say first.
-  - Then I say this.
-  - And then this.
-  shouldChangeOnButtonPress: 0
-  textSpeed: 0.1
+  - Ah, don't fear, child, I don't bite.
+  - Not a big talker, are ya? You lost?
+  - Well...Where are my manners?
+  - Guess I should introduce myself.
+  - "I\u2019m the Elder Firefly, the guardian of the forest."
+  - I've been tasked with protecting the light...
+  - "...But in my old age... I\u2019ve been getting weak..."
+  - "But you, young one\u2026"
+  - You seem worthy of taking my place.
+  - Us fireflies and moths, we go way back...
+  - But that's a story for another day.
+  - Here, take my staff.
+  - ' It will give you the power to brighten up this world.'
+  - But, beware, there are dark forces in these woods...
+  - ...Creatures that will try to destroy the staff...
+  - "...And drown the world in darkness.\_"
+  - You must not let that happen...
+  shouldChangeOnButtonPress: 1
+  shouldLoop: 0
+  textSpeed: 0.08
 --- !u!1 &1734541399
 GameObject:
   m_ObjectHideFlags: 0

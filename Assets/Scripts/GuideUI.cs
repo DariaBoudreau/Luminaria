@@ -11,13 +11,18 @@ public class GuideUI : MonoBehaviour
     private SpriteRenderer[] spriteRenderers;
     private TMP_Text text;
 
-    [Tooltip("Use this to set the dialogue IF it is not already set in child")]
+    [Header("Typewriter Settings")]
+    [Tooltip("Use this to set the dialogue IF it is NOT already set in child")]
     [SerializeField]
     private string[] lines;
 
     [Tooltip("If true, dialogue will change when left mouse/shift is pressed, if false will be time based")]
     [SerializeField]
     private bool shouldChangeOnButtonPress = true;
+
+    [Tooltip("Only affects if it should change on button press, if true, text loops if player keeps clicking")]
+    [SerializeField]
+    private bool shouldLoop = false;
 
     [Tooltip("Set speed of multiline text")]
     [SerializeField]
@@ -88,7 +93,7 @@ public class GuideUI : MonoBehaviour
             if (textNullOrEmptyAtStart)
             {
                 text.text = string.Empty;
-                text.alignment = TextAlignmentOptions.Left;
+                text.alignment = TextAlignmentOptions.TopLeft;
                 StartDialogue();
             }
         }
@@ -175,9 +180,15 @@ public class GuideUI : MonoBehaviour
         }
         else
         {
-            index = 0;
-            text.text = string.Empty;
-            StartCoroutine(TypeLine());
+            if (shouldLoop && shouldChangeOnButtonPress || !shouldChangeOnButtonPress)
+            {
+                index = 0;
+            }
+            if (shouldLoop && shouldChangeOnButtonPress)
+            {
+                text.text = string.Empty;
+                StartCoroutine(TypeLine());
+            }
         }
     }
 
