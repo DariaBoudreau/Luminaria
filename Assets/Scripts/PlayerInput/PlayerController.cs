@@ -7,68 +7,40 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Sub Behaviours")]
+    public PlayerMovement playerMovement;
+
     [Header("Input Settings")]
     public PlayerInput playerInput;
     public float movementSmoothingSpeed = 1f;
     private Vector3 rawInputMovement;
     private Vector3 smoothInputMovement;
 
-    [Header("Behavior Instances")]
-    public PlayerMovement playerMovement;
-
     public void OnMovement(InputAction.CallbackContext value)
     {
         Vector2 inputMovement = value.ReadValue<Vector2>();
-        rawInputMovement = new Vector2(inputMovement.x, 0);
+        rawInputMovement = new Vector3(inputMovement.x, 0, inputMovement.y);
+        Debug.Log(rawInputMovement);
     }
 
-    public void OnJump(InputAction.CallbackContext value)
-    {
-        if (value.started)
-        {
-            playerMovement.jumpInput = true;
-        }
-    }
-
-    public void OnShine(InputAction.CallbackContext value)
-    {
-        if (value.started)
-        {
-
-        }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         CalculateMovementInputSmoothing();
         UpdatePlayerMovement();
     }
 
-    void UpdatePlayerMovement()
-    {
-        playerMovement.UpdateDirection(smoothInputMovement);
-    }
+    //Input's Axes values are raw
+
 
     void CalculateMovementInputSmoothing()
     {
         smoothInputMovement = Vector3.Lerp(smoothInputMovement, rawInputMovement, Time.deltaTime * movementSmoothingSpeed);
     }
 
-    // Get Data
-    public InputActionAsset GetActionAsset()
+    void UpdatePlayerMovement()
     {
-        return playerInput.actions;
+        playerMovement.UpdateMovementData(smoothInputMovement);
     }
 
-    public PlayerInput GetPlayerInput()
-    {
-        return playerInput;
-    }
+
 }
