@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement Settings")]
     public float movementSpeed;
     public float maxSpeed;
+    public float speedModifier;
     public float deccel = .1f;
     public float turnSpeed = 0.1f;
     public float horizontalInput;
@@ -23,18 +24,27 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        // Get rigidbody
         playerRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    public void UpdateMovementData(Vector3 newMovementDirection, float newHorizontalInput)
+    public void UpdateMovementData(Vector3 newMovementDirection, float newHorizontalInput, float moveSpeedModifier)
     {
+        // Every frame update these values for moving
         movementDirection = newMovementDirection;
         horizontalInput = newHorizontalInput;
+        speedModifier = moveSpeedModifier;
     }
 
     public void UpdateJump()
     {
+        // Making it jump
         playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpPower);
+    }
+
+    public void UpdateGravity(float gravitymod)
+    {
+        playerRigidbody.gravityScale = gravitymod;
     }
 
     void FixedUpdate()
@@ -44,11 +54,14 @@ public class PlayerMovement : MonoBehaviour
 
     void MoveThePlayer()
     {
-        Vector2 currentVelocity = playerRigidbody.velocity;
-        float movementdir = movementDirection.x * movementSpeed * Time.fixedDeltaTime;
+        //Vector2 currentVelocity = playerRigidbody.velocity;
+        // Movement value = the direction times speed times the modifier times deltatime 
+        float movement = movementDirection.x * movementSpeed * speedModifier * Time.fixedDeltaTime;
 
-        playerRigidbody.velocity = new Vector2(movementdir, playerRigidbody.velocity.y);
+        // Apply new velocity
+        playerRigidbody.velocity = new Vector2(movement, playerRigidbody.velocity.y);
 
+        // Flip player when changing direction
         if (!facingRight && horizontalInput > 0f)
         {
             FlipPlayer();
@@ -62,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FlipPlayer()
     {
+        // Flip the player
         facingRight = !facingRight;
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
