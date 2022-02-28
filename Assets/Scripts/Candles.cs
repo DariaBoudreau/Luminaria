@@ -33,10 +33,12 @@ public class Candles : MonoBehaviour
         {
             if (aspenObject.currentCharge >= chargeCost)
             {
+                
                LightCandle();
             }
             else if (isLit)
             {
+                
                 ExtinguishCandle();
             }
         }
@@ -64,6 +66,8 @@ public class Candles : MonoBehaviour
         aspenObject.currentCharge -= chargeCost;
         light.intensity = maxIntensity;
         transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = true;
+        Debug.Log("lit");
+        //aspenObject.isBurning = false;
     }
 
     private void ExtinguishCandle()
@@ -72,5 +76,7 @@ public class Candles : MonoBehaviour
         aspenObject.currentCharge += chargeCost;
         light.intensity = 0f;
         transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = false;
+        //aspenObject.isBurning = false;
+        Debug.Log("unlit");
     }
 }
