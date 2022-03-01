@@ -7,17 +7,16 @@ public class FloatingPlatform2 : MonoBehaviour
 {
     [SerializeField] CharacterController2D aspenObject;
     [SerializeField] int chargeCost;
-    [SerializeField] float riseModifier = 1.0f;
     [SerializeField] float riseRate = 1f;
-    [SerializeField] private bool isFloating = false;
     [SerializeField] private bool isLit = false;
     [SerializeField] private bool triggerActive;
-    [SerializeField] private bool horizontalMove = false;
-    private float baseHeight;
-    private float baseHorizon;
+    [SerializeField] private Transform pos1;
+    [SerializeField] private Transform pos2;
+    
     private Coroutine floating;
     new private Light2D light;
     private float maxIntensity;
+    private bool waitingDelay = false;
 
 
     void OnTriggerStay2D(Collider2D other)
@@ -40,6 +39,7 @@ public class FloatingPlatform2 : MonoBehaviour
 
     void Start()
     {
+        //transform.position = pos1.position;
         light = GetComponentInChildren<Light2D>(true);
         maxIntensity = light.intensity;
         if (isLit == false)
@@ -51,20 +51,17 @@ public class FloatingPlatform2 : MonoBehaviour
             light.intensity = 2.06f;
         }
 
-
-        baseHeight = transform.localPosition.y;
-        baseHorizon = transform.localPosition.x;
     }
 
     void Update()
     {
         if (triggerActive && aspenObject.isBurning)
         {
-            if (aspenObject.currentCharge >= chargeCost && !isFloating)
+            if (aspenObject.currentCharge >= chargeCost && !waitingDelay)
             {
                 Float();
             }
-            else if (isLit == true && !isFloating)
+            else if (isLit == true && !waitingDelay)
             {
                 Float();
             }
@@ -72,38 +69,29 @@ public class FloatingPlatform2 : MonoBehaviour
     }
     private void Float()
     {
-        Vector3 currentPos = this.GetComponent<Transform>().position;
         isLit = !isLit;
-        isFloating = true;
+        waitingDelay = true;
+        float step = riseRate * Time.deltaTime; 
 
-        if (isLit == true)
+        if (isLit)
         {
             light.intensity = maxIntensity;
+            aspenObject.currentCharge -= chargeCost;
+            this.transform.position = Vector3.MoveTowards(pos2.position, pos1.position, step);
+            StartCoroutine(Delay(0.5f));
         }
-        else
+        else if (isLit == false)
         {
             light.intensity = 0f;
-        }
-        if (isLit == true && !horizontalMove)
-        {
-            aspenObject.currentCharge -= chargeCost;
-            this.transform.position = currentPos + (Vector3.up * riseModifier);
-        }
-        else if (isLit == false && !horizontalMove)
-        {
             aspenObject.currentCharge += chargeCost;
-            this.transform.position = currentPos - (Vector3.up * riseModifier);
+            this.transform.position = Vector3.MoveTowards(pos1.position, pos2.position, step);
+            StartCoroutine(Delay(0.5f));
         }
-        else if (isLit == true && horizontalMove)
-        {
-            aspenObject.currentCharge -= chargeCost;
-            this.transform.position = currentPos + (Vector3.left * riseModifier);
-        }
-        else if (isLit == false && horizontalMove)
-        {
-            aspenObject.currentCharge += chargeCost;
-            this.transform.position = currentPos - (Vector3.left * riseModifier);
-        }
-        isFloating = false;
+    }
+
+     IEnumerator Delay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        waitingDelay = false;
     }
 }

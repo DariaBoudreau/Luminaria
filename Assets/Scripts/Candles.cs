@@ -11,6 +11,7 @@ public class Candles : MonoBehaviour
     [SerializeField] private bool triggerActive;
     new private Light2D light;
     private float maxIntensity;
+    private bool waitingDelay = true;
     void Start()
     {
         isLit = false;
@@ -29,18 +30,19 @@ public class Candles : MonoBehaviour
     }
     void Update()
     {
-        if (triggerActive && aspenObject.isBurning)
+        if (triggerActive && aspenObject.isBurning && waitingDelay)
         {
-            if (aspenObject.currentCharge >= chargeCost)
-            {
-                
-               LightCandle();
-            }
-            else if (isLit)
+            if (isLit)
             {
                 
                 ExtinguishCandle();
             }
+            else if (aspenObject.currentCharge >= chargeCost && !isLit)
+            {
+                
+               LightCandle();
+            }
+            
         }
     }
 
@@ -62,21 +64,27 @@ public class Candles : MonoBehaviour
 
     private void LightCandle()
     {
+        waitingDelay = false;
         isLit = true;
         aspenObject.currentCharge -= chargeCost;
         light.intensity = maxIntensity;
         transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = true;
-        Debug.Log("lit");
-        //aspenObject.isBurning = false;
+        StartCoroutine(Delay(1));
     }
 
     private void ExtinguishCandle()
     {
+        waitingDelay = false;
         isLit = false;
         aspenObject.currentCharge += chargeCost;
         light.intensity = 0f;
         transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = false;
-        //aspenObject.isBurning = false;
-        Debug.Log("unlit");
+        StartCoroutine(Delay(1));
+    }
+
+    IEnumerator Delay(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        waitingDelay = true;
     }
 }
