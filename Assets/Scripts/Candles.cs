@@ -9,7 +9,7 @@ public class Candles : MonoBehaviour
     [SerializeField] int chargeCost;
     [SerializeField] public bool isLit = false;
     [SerializeField] private bool triggerActive;
-    new private Light2D light;
+    new public Light2D light;
     private float maxIntensity;
     private bool waitingDelay = true;
     void Start()
@@ -30,20 +30,20 @@ public class Candles : MonoBehaviour
     }
     void Update()
     {
-        if (triggerActive && aspenObject.isBurning && waitingDelay)
-        {
-            if (isLit)
+            if (triggerActive && aspenObject.isBurning && waitingDelay)
             {
-                
-                ExtinguishCandle();
+                if (isLit)
+                {
+
+                    ExtinguishCandle();
+                }
+                else if (aspenObject.currentCharge >= chargeCost && !isLit)
+                {
+
+                    LightCandle();
+                }
+
             }
-            else if (aspenObject.currentCharge >= chargeCost && !isLit)
-            {
-                
-               LightCandle();
-            }
-            
-        }
     }
 
     void OnTriggerStay2D(Collider2D other)

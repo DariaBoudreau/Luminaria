@@ -7,14 +7,14 @@ public class FloatingPlatform2 : MonoBehaviour
 {
     [SerializeField] CharacterController2D aspenObject;
     [SerializeField] int chargeCost;
-    [SerializeField] float riseRate = 1f;
-    [SerializeField] private bool isLit = false;
+    [SerializeField] public float riseRate = 1f;
+    [SerializeField] public bool isLit = false;
     [SerializeField] private bool triggerActive;
-    [SerializeField] private Transform pos1;
-    [SerializeField] private Transform pos2;
+    [SerializeField] public Transform pos1;
+    [SerializeField] public Transform pos2;
     
     private Coroutine floating;
-    new private Light2D light;
+    new public Light2D light;
     private float maxIntensity;
     private bool waitingDelay = false;
 
