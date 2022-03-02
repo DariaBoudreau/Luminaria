@@ -75,9 +75,6 @@ public class StoneHUD : MonoBehaviour
         stoneTwoCollected = true;
         TurnOnFrames();
         UpdateStones();
-
-        //stone2_image.enabled = true;
-        //stone2_circle.enabled = false;
     }
 
     public void TurnOnStoneThree()
@@ -85,9 +82,6 @@ public class StoneHUD : MonoBehaviour
         stoneThreeCollected = true;
         TurnOnFrames();
         UpdateStones();
-        
-        //stone3_image.enabled = true;
-        //stone3_circle.enabled = false;
     }
 
     public void TurnOnStoneFour()
@@ -95,9 +89,6 @@ public class StoneHUD : MonoBehaviour
         stoneFourCollected = true;
         TurnOnFrames();
         UpdateStones();
-
-        //stone4_image.enabled = true;
-        //stone4_circle.enabled = false;
     }
 
     void TurnOnFrames()
