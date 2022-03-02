@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpPower = 100f;
     public bool facingRight = true;
 
+    public float jumpGravity = .5f;
+    public float glidingModifier = 3f; 
+
     private Vector3 movementDirection;
 
     private void Start()
@@ -42,9 +45,17 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpPower);
     }
 
-    public void UpdateGravity(float gravitymod)
+    public void UpdateGravity(float gravitymod, bool glidingbool)
     {
-        playerRigidbody.gravityScale = gravitymod;
+        float gravityApplied = gravitymod;
+
+        if (playerRigidbody.velocity.y > 0f && glidingbool)
+        {
+            // If the player is jumping up, make gravity less intense
+            gravityApplied *= jumpGravity;
+        }
+
+        playerRigidbody.gravityScale = gravityApplied;
     }
 
     void FixedUpdate()

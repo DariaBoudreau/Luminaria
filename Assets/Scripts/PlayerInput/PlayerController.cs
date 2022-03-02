@@ -15,15 +15,24 @@ public class PlayerController : MonoBehaviour
     public float movementSmoothingSpeed = 1f;
     public float runSpeed = 3f;
     private float moveSpeedModifier = 1f;
-    private float normalGravity = 1f;
+    public float normalGravity = 1f;
     public float glidingModifier = 3f;
     private float horizontalMovement;
     private Vector3 rawInputMovement;
     private Vector3 smoothInputMovement;
 
+    [Header("Testing Indicators")]
+    private SpriteRenderer sr;
+
     bool isGrounded = false;
     bool canDoubleJump = true;
+    bool isGliding = false;
 
+
+    private void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
 
     public void OnMovement(InputAction.CallbackContext value)
     {
@@ -55,18 +64,28 @@ public class PlayerController : MonoBehaviour
                 canDoubleJump = false;
             } else
             {
-                if (value.performed)
+                if (value.performed && !isGliding)
                 {
-                    playerMovement.UpdateGravity(glidingModifier);
+                    isGliding = true;
+                    playerMovement.UpdateGravity(glidingModifier, isGliding);
+                    sr.color = new Color(0, 1, 0, 1);
+                } else
+                {
+                    if (value.performed)
+                    {
+                        //isGliding = true;
+                        playerMovement.UpdateGravity(glidingModifier, isGliding);
+                    }
                 }
             }
         }
 
         // TODO add gravity changes with gliding
-        
         if (value.canceled)
         {
-            playerMovement.UpdateGravity(normalGravity);
+            isGliding = false;
+            playerMovement.UpdateGravity(normalGravity, isGliding);
+            sr.color = new Color(1, 1, 1, 1);
         }
     }
 
@@ -110,6 +129,7 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
             canDoubleJump = true;
+            isGliding = false;
         }
     }
 }
