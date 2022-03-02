@@ -21,9 +21,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 rawInputMovement;
     private Vector3 smoothInputMovement;
 
+    public Vector2 lastInput;
+    //public Vector2 last
+
     [Header("Testing Indicators")]
     private SpriteRenderer sr;
 
+    public bool isInAir = false;
     bool isGrounded = false;
     bool canDoubleJump = true;
     bool isGliding = false;
@@ -36,8 +40,17 @@ public class PlayerController : MonoBehaviour
 
     public void OnMovement(InputAction.CallbackContext value)
     {
-        // The input movement saved to a vector
         Vector2 inputMovement = value.ReadValue<Vector2>();
+        horizontalMovement = value.ReadValue<Vector2>().x;
+
+        // The most recent input movement is saved to a vector2 
+        if (isInAir && inputMovement.x == 0) {
+            inputMovement = lastInput;
+        }
+        else
+        {
+            lastInput = inputMovement;
+        }
 
         // Facing right or left for flipplayer
         horizontalMovement = value.ReadValue<Vector2>().x;
@@ -54,6 +67,7 @@ public class PlayerController : MonoBehaviour
         // TODO add double jump
         if (value.performed && isGrounded)
         {
+            isInAir = true;
             playerMovement.UpdateJump();
             isGrounded = false;
         } else
@@ -127,9 +141,11 @@ public class PlayerController : MonoBehaviour
         // Grounding for jumping
         if (collision.gameObject.tag == "Floor")
         {
+            isInAir = false;
             isGrounded = true;
             canDoubleJump = true;
             isGliding = false;
+            lastInput = Vector2.zero;
         }
     }
 }
