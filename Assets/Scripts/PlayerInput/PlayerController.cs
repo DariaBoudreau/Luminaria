@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Sub Behaviours")]
     public PlayerMovement playerMovement;
+    public PlayerAnimation playerAnimation;
 
     [Header("Input Settings")]
     public PlayerInput playerInput;
@@ -57,6 +58,8 @@ public class PlayerController : MonoBehaviour
 
         // Putting the movement and saving it to rawmovement
         rawInputMovement = new Vector3(inputMovement.x, 0, inputMovement.y);
+
+        playerAnimation.UpdateRunAnimation(inputMovement, runSpeed);
 
         Debug.Log(rawInputMovement);
     }
