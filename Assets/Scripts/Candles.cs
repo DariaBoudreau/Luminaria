@@ -45,6 +45,16 @@ public class Candles : MonoBehaviour
 
             }
     }
+    
+    void OnEnable()
+    {
+        Recall.Recalled += ExtinguishCandle;
+    }
+
+        void OnDisable()
+    {
+        Recall.Recalled -= ExtinguishCandle;
+    }
 
     void OnTriggerStay2D(Collider2D other)
     {

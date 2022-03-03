@@ -1076,13 +1076,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspenObject: {fileID: 229375482}
-  candles:
-  - {fileID: 199865911}
-  - {fileID: 1167299957}
-  - {fileID: 1734361887}
-  platforms:
-  - {fileID: 130077596}
-  - {fileID: 1862751772}
 --- !u!114 &167709780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7131,16 +7124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspenObject: {fileID: 229375482}
-  candles:
-  - {fileID: 1235276363}
-  - {fileID: 1464033863}
-  - {fileID: 2039142691}
-  - {fileID: 199865911}
-  - {fileID: 1167299957}
-  - {fileID: 1734361887}
-  platforms:
-  - {fileID: 130077596}
-  - {fileID: 1862751772}
 --- !u!4 &1219854989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6524128806638113803, guid: 4c34360417c55664ab853d52c1d3e83b,

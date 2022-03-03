@@ -18,25 +18,6 @@ public class FloatingPlatform2 : MonoBehaviour
     private float maxIntensity;
     private bool waitingDelay = false;
 
-
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Aspen"))
-        {
-            triggerActive = true;
-            other.transform.parent = this.gameObject.transform;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Aspen"))
-        {
-            triggerActive = false;
-            other.transform.parent = GameObject.Find("MOTH").transform;
-        }
-    }
-
     void Start()
     {
         //transform.position = pos1.position;
@@ -65,6 +46,33 @@ public class FloatingPlatform2 : MonoBehaviour
             {
                 Float();
             }
+        }
+    }
+    void OnEnable()
+    {
+        Recall.Recalled += Float;
+    }
+
+    void OnDisable()
+    {
+        Recall.Recalled -= Float;
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Aspen"))
+        {
+            triggerActive = true;
+            other.transform.parent = this.gameObject.transform;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Aspen"))
+        {
+            triggerActive = false;
+            other.transform.parent = GameObject.Find("MOTH").transform;
         }
     }
     private void Float()
