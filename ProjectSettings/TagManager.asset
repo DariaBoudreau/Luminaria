@@ -12,6 +12,7 @@ TagManager:
   - HidingSomething
   - Floor
   - GameMaster
+  - Candle
   layers:
   - Default
   - TransparentFX

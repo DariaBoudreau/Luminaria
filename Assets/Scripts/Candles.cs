@@ -49,9 +49,10 @@ public class Candles : MonoBehaviour
     void OnEnable()
     {
         Recall.Recalled += Reset;
+        SpiderSac.Lighted += LightCandle;
     }
 
-        void OnDisable()
+    void OnDisable()
     {
         Recall.Recalled -= Reset;
     }
