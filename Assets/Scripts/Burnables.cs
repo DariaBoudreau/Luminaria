@@ -4,10 +4,12 @@ using System.Collections;
 
 public class Burnables : MonoBehaviour
 {
-    [SerializeField] CharacterController2D Aspen;
+    [SerializeField] CharacterController2D aspenObject;
     [SerializeField] bool triggerActive = false;
     [SerializeField] int chargeCost = 1;
     [SerializeField] int psRenderLayer = 26;
+    [SerializeField] bool givesBack = false;
+    [SerializeField] PickUps orb;
     [Header("Hidden by it")]
     [SerializeField] GameObject thingToHide;
     [SerializeField] string nameOfIt;
@@ -17,7 +19,7 @@ public class Burnables : MonoBehaviour
     private Collider2D barrier;
     private AudioSource soundClip;
     private GameObject fire;
-
+    
     void Start()
     {
         ps = GetComponentInChildren<ParticleSystem>(true);
@@ -55,9 +57,12 @@ public class Burnables : MonoBehaviour
 
     void Update()
     {
-        if (triggerActive && Aspen.isBurning) {
-            if (Aspen.currentCharge != 0) {
-                if (!hasBurned) {
+        if (triggerActive && aspenObject.isBurning)
+        {
+            if (aspenObject.currentCharge >= chargeCost)
+            {
+                if (!hasBurned) 
+                {
                     hasBurned = true;
                     soundClip.Play();
                     StartCoroutine(IsBurning());
@@ -65,9 +70,11 @@ public class Burnables : MonoBehaviour
                     fire.SetActive(true);
                     ps.Play();
                     lt.gameObject.SetActive(true);
-                    Aspen.currentCharge -= chargeCost;
+                    aspenObject.currentCharge -= chargeCost;
                 }
-            } else {
+            } 
+            else
+            {
                 // NOT ENOUGH CHARGE
             }
         }
@@ -99,6 +106,11 @@ public class Burnables : MonoBehaviour
         else
         {
             thingToHide.GetComponent<Collider2D>().enabled = true;
+        }
+        if(givesBack == true)
+        {
+            Instantiate(orb, transform.position - (Vector3.up*4), transform.rotation);
+            orb.aspenObject = this.aspenObject;
         }
     }
 }

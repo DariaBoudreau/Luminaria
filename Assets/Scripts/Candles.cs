@@ -7,25 +7,25 @@ public class Candles : MonoBehaviour
 {
     [SerializeField] CharacterController2D aspenObject;
     [SerializeField] int chargeCost;
-    [SerializeField] public bool isLit = false;
+    [SerializeField] public bool isLit;
+    [SerializeField] public bool startsLit;
     [SerializeField] private bool triggerActive;
     new public Light2D light;
     private float maxIntensity;
     private bool waitingDelay = true;
     void Start()
     {
-        isLit = false;
-        triggerActive = false;
         light = GetComponentInChildren<Light2D>(true);
-        transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = false;
         maxIntensity = light.intensity;
-        if (isLit)
+        if (startsLit)
         {
             light.intensity = maxIntensity;
+            transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
             light.intensity = 0f;
+            transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = false;
         }
     }
     void Update()
@@ -48,12 +48,12 @@ public class Candles : MonoBehaviour
     
     void OnEnable()
     {
-        Recall.Recalled += ExtinguishCandle;
+        Recall.Recalled += Reset;
     }
 
         void OnDisable()
     {
-        Recall.Recalled -= ExtinguishCandle;
+        Recall.Recalled -= Reset;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -90,6 +90,22 @@ public class Candles : MonoBehaviour
         light.intensity = 0f;
         transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = false;
         StartCoroutine(Delay(1));
+    }
+
+    private void Reset()
+    {
+        if(startsLit)
+        {
+            isLit = true;
+            light.intensity = maxIntensity;
+            transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else
+        {
+            isLit = false;
+            light.intensity = 0f;
+            transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 
     IEnumerator Delay(int seconds)
