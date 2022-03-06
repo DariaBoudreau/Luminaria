@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CharacterFollower : MonoBehaviour
 {
-
     [SerializeField]
     Transform objectToFollow;
+
+    [SerializeField]
+    float moveSpeed = 50;
 
     float xOffset = 3;
 
@@ -27,16 +29,22 @@ public class CharacterFollower : MonoBehaviour
     {
         if (previousPosition != objectToFollow.position)
         {
-            StartCoroutine(ApproachCo(previousPosition.x, previousPosition.y));
+            StartCoroutine(ApproachCo(previousPosition.x, previousPosition.y, objectToFollow.position.x));
             previousPosition = objectToFollow.position;
         }
     }
 
-    IEnumerator ApproachCo(float xPos, float yPos)
+    IEnumerator ApproachCo(float xPos, float yPos, float xPosFollowObject)
     {
         yield return new WaitForSeconds(.25f);
+
+        if (xPos > xPosFollowObject && xOffset < 0 || xPos < xPosFollowObject && xOffset > 0)
+        {
+            xOffset *= (-1);
+        }
+
+        xPos += xOffset;
         Vector3 desiredPosition = new Vector3(xPos, yPos, transform.position.z);
-        float lerpSpeed = 0.5f;
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, lerpSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, desiredPosition, Time.deltaTime * moveSpeed);
     }
 }

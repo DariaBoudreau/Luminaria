@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class ChargeOrbs : MonoBehaviour
 {
@@ -10,10 +11,13 @@ public class ChargeOrbs : MonoBehaviour
     int chargeLevel = 0;
     int maxCharge;
 
-    GameObject[] children = new GameObject[3];
+    [Header("MUST be = to the # of children. No need to drag in children here.")]
+    [SerializeField]
+    GameObject[] children;
 
     private void Start()
     {
+        transform.position = Aspen.transform.position;
         maxCharge = Aspen.maxCharge;
         int index = 0;
         foreach (Transform child in transform)
@@ -34,6 +38,7 @@ public class ChargeOrbs : MonoBehaviour
         for (int i = 0; i < maxCharge; i++)
         {
             children[i].GetComponent<SpriteRenderer>().enabled = i < charge ? true : false;
+            children[i].GetComponentInChildren<Light2D>().enabled = i < charge ? true : false;
         }
     }
 }
