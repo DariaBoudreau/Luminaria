@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Component References")]
-    Rigidbody2D playerRigidbody;
+    [System.NonSerialized] public Rigidbody2D playerRigidbody;
 
     [Header("Movement Settings")]
     public float movementSpeed;
@@ -19,11 +19,13 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalInput;
     public float jumpPower = 100f;
     public bool facingRight = false;
+    public bool shouldPersistVelocity;
 
     public float jumpGravity = .5f;
     public float glidingModifier = 3f; 
 
     private Vector3 movementDirection;
+    [System.NonSerialized] private Vector2 previousVelocity;
 
     private void Start()
     {
@@ -61,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         MoveThePlayer();
+        previousVelocity = playerRigidbody.velocity;
     }
 
     void MoveThePlayer()
@@ -69,8 +72,17 @@ public class PlayerMovement : MonoBehaviour
         // Movement value = the direction times speed times the modifier times deltatime 
         float movement = movementDirection.x * movementSpeed * speedModifier * Time.fixedDeltaTime;
 
-        // Apply new velocity
-        playerRigidbody.velocity = new Vector2(movement, playerRigidbody.velocity.y);
+        if (shouldPersistVelocity)
+        {
+            playerRigidbody.velocity = new Vector2(previousVelocity.x, playerRigidbody.velocity.y);
+        }
+        else
+        {
+            // Apply new velocity
+            playerRigidbody.velocity = new Vector2(movement, playerRigidbody.velocity.y);
+        }
+
+       
 
         // Flip player when changing direction
         if (!facingRight && horizontalInput > 0f)
@@ -92,4 +104,5 @@ public class PlayerMovement : MonoBehaviour
         localScale.x *= -1f;
         transform.localScale = localScale;
     }
+
 }

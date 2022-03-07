@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 smoothInputMovement;
 
     public Vector2 lastInput;
+    public Vector2 inputMovement;
     //public Vector2 last
 
     [Header("Testing Indicators")]
@@ -41,23 +42,14 @@ public class PlayerController : MonoBehaviour
 
     public void OnMovement(InputAction.CallbackContext value)
     {
-        Vector2 inputMovement = value.ReadValue<Vector2>();
+        inputMovement = value.ReadValue<Vector2>();
         horizontalMovement = value.ReadValue<Vector2>().x;
-
-        // The most recent input movement is saved to a vector2 
-        if (isInAir && inputMovement.x == 0) {
-            inputMovement = lastInput;
-        }
-        else
-        {
-            lastInput = inputMovement;
-        }
 
         // Facing right or left for flipplayer
         horizontalMovement = value.ReadValue<Vector2>().x;
 
         // Putting the movement and saving it to rawmovement
-        rawInputMovement = new Vector3(inputMovement.x, 0, inputMovement.y);
+        rawInputMovement = new Vector3(inputMovement.x, inputMovement.y, 0);
 
         playerAnimation.UpdateRunAnimation(inputMovement, runSpeed);
 
@@ -130,6 +122,7 @@ public class PlayerController : MonoBehaviour
         // Smooth the movement
         CalculateMovementInputSmoothing();
         UpdatePlayerMovement();
+        ShouldPersistVelocity();
     }
 
     void CalculateMovementInputSmoothing()
@@ -152,7 +145,18 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
             canDoubleJump = true;
             isGliding = false;
-            lastInput = Vector2.zero;
+        }
+    }
+
+    void ShouldPersistVelocity()
+    {
+        if (isInAir && inputMovement.x == 0)
+        {
+            playerMovement.shouldPersistVelocity = true;
+        }
+        else
+        {
+            playerMovement.shouldPersistVelocity = false;
         }
     }
 }
