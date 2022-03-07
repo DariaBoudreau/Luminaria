@@ -42,6 +42,15 @@ public class PlayerAnimation : MonoBehaviour
         animator.SetFloat(animatorRunningSpeed, horizontalSpeedNormalized);
     }
 
+    public void JumpAnimation()
+    {
+        animator.SetTrigger(animatorJumpTrigger);
+    }
+
+    public void GlidingAnimation(bool isGliding) {
+        animator.SetBool(animatorGlidingBool, isGliding);
+    }
+
     private void FixedUpdate()
     {
         UpdateAnimationOverride();

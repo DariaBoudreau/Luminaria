@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed = 0.1f;
     public float horizontalInput;
     public float jumpPower = 100f;
-    public bool facingRight = true;
+    public bool facingRight = false;
 
     public float jumpGravity = .5f;
     public float glidingModifier = 3f; 

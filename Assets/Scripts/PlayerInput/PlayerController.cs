@@ -73,12 +73,14 @@ public class PlayerController : MonoBehaviour
             isInAir = true;
             playerMovement.UpdateJump();
             isGrounded = false;
+            playerAnimation.JumpAnimation();
         } else
         {
             if (value.performed && canDoubleJump)
             {
                 playerMovement.UpdateJump();
                 canDoubleJump = false;
+                playerAnimation.JumpAnimation();
             } else
             {
                 if (value.performed && !isGliding)
@@ -104,6 +106,8 @@ public class PlayerController : MonoBehaviour
             playerMovement.UpdateGravity(normalGravity, isGliding);
             sr.color = new Color(1, 1, 1, 1);
         }
+
+        playerAnimation.GlidingAnimation(isGliding);
     }
 
     public void OnRun(InputAction.CallbackContext value)
