@@ -289,14 +289,21 @@ public class CharacterController2D : MonoBehaviour
         // prior to assigning back to the body.
         velocity += movementInput * acceleration * Time.fixedDeltaTime;
 
-        // We've consumed the movement, reset it.
-        movementInput = Vector2.zero;
-
         // Clamp horizontal speed.
         velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
 
-        // Assign back to the body.
-        controllerRigidbody.velocity = velocity;
+        if (isJumping && movementInput.x == 0)
+        {
+            controllerRigidbody.velocity = new Vector2(prevVelocity.x, velocity.y);
+        }
+        else
+        {
+            // Assign back to the body.
+            controllerRigidbody.velocity = velocity;
+        }
+
+        // We've consumed the movement, reset it.
+        movementInput = Vector2.zero;
 
         // Update animator running speed
         var horizontalSpeedNormalized = Mathf.Abs(velocity.x) / maxSpeed;
@@ -304,6 +311,8 @@ public class CharacterController2D : MonoBehaviour
 
         // Play audio
         audioPlayer.PlaySteps(groundType, horizontalSpeedNormalized);
+
+        
     }
 
     private void UpdateJump()
@@ -404,7 +413,10 @@ public class CharacterController2D : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
+            Debug.Log(controllerRigidbody.velocity);
             canJump = true;
+            controllerRigidbody.velocity = Vector2.zero;
+            Debug.Log(controllerRigidbody.velocity);
         }
     }
 }
