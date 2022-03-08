@@ -13,6 +13,7 @@ TagManager:
   - Floor
   - GameMaster
   - Candle
+  - Water
   layers:
   - Default
   - TransparentFX

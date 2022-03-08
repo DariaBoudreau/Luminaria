@@ -84,6 +84,8 @@ public class CharacterController2D : MonoBehaviour
 
     public bool CanMove { get; set; }
 
+    public bool isWet;
+
     void Start()
     {
 #if UNITY_EDITOR
