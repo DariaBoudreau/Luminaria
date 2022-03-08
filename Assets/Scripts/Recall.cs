@@ -16,7 +16,7 @@ public class Recall : MonoBehaviour
             aspenObject.currentCharge = aspenObject.maxCharge;
             if(Recalled != null)
             {
-                Recalled();
+                Recalled.Invoke();
             }
         }
     }

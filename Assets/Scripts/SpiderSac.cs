@@ -9,16 +9,17 @@ public class SpiderSac : MonoBehaviour
     public delegate void CandleLight();
     public static event CandleLight Lighted;
 
-    public Transform startPos;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     private Collider2D col;
+
+    private Vector3 startPos;
 
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         col = this.GetComponent<Collider2D>();
-        startPos.position = transform.position;
+        startPos = transform.position;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -41,18 +42,19 @@ public class SpiderSac : MonoBehaviour
 
     void OnEnable()
     {
-        Recall.Recalled += Reset;
+        Recall.Recalled += ResetSac;
     }
 
     void OnDisable()
     {
-        Recall.Recalled -= Reset;
+        Recall.Recalled -= ResetSac;
     }
 
-    private void Reset()
+    private void ResetSac()
     {
-       rb.gravityScale = 0;
-       transform.position = startPos.position;
+        rb.gravityScale = 0;
+        rb.velocity = Vector3.zero;
+        transform.position = startPos;
     }
 
 
