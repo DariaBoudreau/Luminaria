@@ -55,6 +55,7 @@ public class Candles : MonoBehaviour
     void OnDisable()
     {
         Recall.Recalled -= Reset;
+        SpiderSac.Lighted -= LightCandle;
     }
 
     void OnTriggerStay2D(Collider2D other)
