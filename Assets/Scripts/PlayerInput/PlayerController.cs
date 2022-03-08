@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
-
 public class PlayerController : MonoBehaviour
 {
     [Header("Sub Behaviours")]
@@ -26,14 +25,20 @@ public class PlayerController : MonoBehaviour
     public Vector2 inputMovement;
     //public Vector2 last
 
+    [Header("Ground Types")]
+    private LayerMask softGroundMask;
+    private LayerMask hardGroundMask;
+    private GroundType groundType;
+
     [Header("Testing Indicators")]
     private SpriteRenderer sr;
 
     public bool isInAir = false;
+    public bool isBurning;
+    public bool hasTransitioned;
     bool isGrounded = false;
     bool canDoubleJump = true;
     bool isGliding = false;
-
 
     private void Start()
     {
@@ -115,6 +120,11 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeedModifier = 1f;
         }
+    }
+
+    public void OnShine(InputAction.CallbackContext value)
+    {
+
     }
 
     void Update()
