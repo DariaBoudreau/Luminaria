@@ -18,6 +18,7 @@ public class FloatingPlatform2 : MonoBehaviour
     new public Light2D light;
     private float maxIntensity;
     private bool waitingDelay = false;
+    private bool shouldMove;
 
     void Start()
     {
@@ -40,18 +41,42 @@ public class FloatingPlatform2 : MonoBehaviour
 
     void Update()
     {
-        if (triggerActive && aspenObject.isBurning)
+        if (waitingDelay)
+            return;
+        if (!triggerActive)
+            return;
+        if (!aspenObject.isBurning)
+            return;
+        if (aspenObject.currentCharge < chargeCost)
+            return;
+        if (isLit)
         {
-            if (aspenObject.currentCharge >= chargeCost && !waitingDelay)
-            {
-                Float();
-            }
-            else if (isLit == true && !waitingDelay)
-            {
-                Float();
-            }
+            StartCoroutine(Delay(2));
+            AddCharge();
+            shouldMove = true;
+            isLit = false;
+            waitingDelay = true;
+        }
+        else if (!isLit)
+        {
+            StartCoroutine(Delay(2));
+            RemoveCharge();
+            shouldMove = true;
+            isLit = true;
+            waitingDelay = true;
+        }
+            
+        
+    }
+
+    void FixedUpdate()
+    {
+        if (shouldMove)
+        {
+            Float();
         }
     }
+
     void OnEnable()
     {
         Recall.Recalled += Reset;
@@ -62,7 +87,7 @@ public class FloatingPlatform2 : MonoBehaviour
         Recall.Recalled -= Reset;
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Aspen"))
         {
@@ -99,29 +124,39 @@ public class FloatingPlatform2 : MonoBehaviour
     }
     private void Float()
     {
-        isLit = !isLit;
-        waitingDelay = true;
         float step = riseRate * Time.deltaTime; 
 
         if (isLit)
         {
+            if (Vector3.Distance(transform.position, pos2.position) < .05)
+                return;
+                        
             light.intensity = maxIntensity;
-            aspenObject.currentCharge -= chargeCost;
-            transform.position = Vector3.MoveTowards(pos2.position, pos1.position, step);
-            StartCoroutine(Delay(0.5f));
+            transform.position = Vector3.MoveTowards(transform.position, pos2.position, step);
         }
-        else if (isLit == false)
+        else if (!isLit)
         {
+            if (Vector3.Distance(transform.position, pos1.position) < .05)
+                return;
+
             light.intensity = 0f;
-            aspenObject.currentCharge += chargeCost;
-            transform.position = Vector3.MoveTowards(pos1.position, pos2.position, step);
-            StartCoroutine(Delay(0.5f));
+            transform.position = Vector3.MoveTowards(transform.position, pos1.position, step);
         }
     }
 
      IEnumerator Delay(float seconds)
-    {
+     {
         yield return new WaitForSeconds(seconds);
         waitingDelay = false;
+     }
+
+    void AddCharge()
+    {
+        aspenObject.currentCharge += chargeCost;
+    }
+
+    void RemoveCharge()
+    {
+        aspenObject.currentCharge -= chargeCost;
     }
 }
