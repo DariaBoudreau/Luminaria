@@ -49,12 +49,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void UpdateGravity(float gravitymod, bool glidingbool)
     {
-        float gravityApplied = gravitymod;
+        float gravityApplied = jumpGravity;
 
         if (playerRigidbody.velocity.y > 0f && glidingbool)
         {
             // If the player is jumping up, make gravity less intense
-            gravityApplied *= jumpGravity;
+            gravityApplied *= gravitymod;
         }
 
         playerRigidbody.gravityScale = gravityApplied;

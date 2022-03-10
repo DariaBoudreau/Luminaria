@@ -15,9 +15,13 @@ public class PlayerAnimation : MonoBehaviour
     private int animatorBurningBool;
     private int animatorGlidingBool;
 
+    bool isBurning;
+
     [Header("Animation Overrides")]
     public AnimatorOverrideController AspenLeft;
     public AnimatorOverrideController AspenRight;
+
+    public float runAnimationSpeedModifier = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +43,7 @@ public class PlayerAnimation : MonoBehaviour
     public void UpdateRunAnimation(Vector2 velocity, float runSpeed)
     {
         var horizontalSpeedNormalized = Mathf.Abs(velocity.x) / runSpeed;
+        horizontalSpeedNormalized *= runAnimationSpeedModifier;
         animator.SetFloat(animatorRunningSpeed, horizontalSpeedNormalized);
     }
 
@@ -54,6 +59,11 @@ public class PlayerAnimation : MonoBehaviour
     public void UpdateGroundingAnimation(bool isGrounded)
     {
         animator.SetBool(animatorGroundedBool, isGrounded);
+    }
+
+    public void UpdateBurningAnimation()
+    {
+        animator.SetTrigger(animatorBurnTrigger);
     }
 
     private void FixedUpdate()

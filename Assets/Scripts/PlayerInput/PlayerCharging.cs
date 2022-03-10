@@ -17,6 +17,8 @@ public class PlayerCharging : MonoBehaviour
     public bool isBurning;
     public bool hasTransitioned;
 
+    // Pretty much everything here is the same as Miles' original code
+
     void Start()
     {
         ps = GetComponentInChildren<ParticleSystem>(true);
@@ -29,6 +31,53 @@ public class PlayerCharging : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        if (prevCharge != currentCharge)
+            UpdateCharge();
+    }
+
+    private float bounds(float n, int lower, int upper)
+    {
+        if (n < lower) return lower;
+        if (n > upper) return upper;
+        return n;
+    }
+
+    public void UpdateCharge()
+    {
+        currentCharge = (int)bounds(currentCharge, 0, maxCharge);
+
+        main.maxParticles = 7 * currentCharge;
+        em.rateOverTime = 3 * currentCharge;
+
+        if (prevCharge < currentCharge)
+        {
+            StartCoroutine(FadeUp());
+        }
+        else if (prevCharge > currentCharge)
+        {
+            StartCoroutine(FadeDown());
+        }
+
+        prevCharge = (float)currentCharge;
+    }
+
+    private IEnumerator FadeUp()
+    {
+        for (float ft = prevCharge; ft < currentCharge; ft += 0.1f)
+        {
+            main.simulationSpeed = ft + 1;
+            lt.intensity = ft;
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    private IEnumerator FadeDown()
+    {
+        for (float ft = prevCharge; ft >= currentCharge; ft -= 0.1f)
+        {
+            main.simulationSpeed = ft + 1;
+            lt.intensity = ft;
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 }

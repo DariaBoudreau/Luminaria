@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("Sub Behaviours")]
     public PlayerMovement playerMovement;
     public PlayerAnimation playerAnimation;
+    public PlayerCharging playerCharging;
 
     [Header("Input Settings")]
     public PlayerInput playerInput;
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isInAir = false;
     public bool isBurning;
-    public bool hasTransitioned;
+    public bool hasTransitioned = false;
     bool isGrounded = false;
     bool canDoubleJump = true;
     bool isGliding = false;
@@ -67,8 +68,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext value)
     {
-        // Normal jump
-        // TODO add double jump
         if (value.performed && isGrounded)
         {
             isInAir = true;
@@ -100,7 +99,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // TODO add gravity changes with gliding
         if (value.canceled)
         {
             isGliding = false;
@@ -128,7 +126,12 @@ public class PlayerController : MonoBehaviour
 
     public void OnShine(InputAction.CallbackContext value)
     {
-
+        if (!hasTransitioned)
+        {
+            playerAnimation.UpdateBurningAnimation();
+            isBurning = true;
+            hasTransitioned = true;
+        }
     }
 
     void Update()
