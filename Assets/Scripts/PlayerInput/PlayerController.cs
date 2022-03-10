@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private LayerMask softGroundMask;
     private LayerMask hardGroundMask;
     private GroundType groundType;
+    private CapsuleCollider2D controllerCollider;
 
     [Header("Testing Indicators")]
     private SpriteRenderer sr;
@@ -43,6 +44,9 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        controllerCollider = GetComponent<CapsuleCollider2D>();
+        softGroundMask = LayerMask.GetMask("Ground Soft");
+        hardGroundMask = LayerMask.GetMask("Ground Hard");
     }
 
     public void OnMovement(InputAction.CallbackContext value)
@@ -135,6 +139,7 @@ public class PlayerController : MonoBehaviour
         ShouldPersistVelocity();
     }
 
+
     void CalculateMovementInputSmoothing()
     {
         smoothInputMovement = Vector3.Lerp(smoothInputMovement, rawInputMovement, Time.deltaTime * movementSmoothingSpeed);
@@ -168,5 +173,26 @@ public class PlayerController : MonoBehaviour
         {
             playerMovement.shouldPersistVelocity = false;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        UpdateGrounding();
+    }
+
+    void UpdateGrounding()
+    {
+        // Taken from previous character controller because it was already written in the best way imo
+
+        // Use character collider to check if touching ground layers
+        if (controllerCollider.IsTouchingLayers(softGroundMask))
+            groundType = GroundType.Soft;
+        else if (controllerCollider.IsTouchingLayers(hardGroundMask))
+            groundType = GroundType.Hard;
+        else
+            groundType = GroundType.None;
+
+        // Update animator
+        playerAnimation.UpdateGroundingAnimation(groundType != GroundType.None);
     }
 }

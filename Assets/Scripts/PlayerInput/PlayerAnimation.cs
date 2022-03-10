@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     [Header("Animation Components")]
-    [SerializeField] Animator animator = null;
+    [SerializeField] public Animator animator = null;
 
     [Header("Animator Values")]
     private int animatorGroundedBool;
@@ -49,6 +49,11 @@ public class PlayerAnimation : MonoBehaviour
 
     public void GlidingAnimation(bool isGliding) {
         animator.SetBool(animatorGlidingBool, isGliding);
+    }
+
+    public void UpdateGroundingAnimation(bool isGrounded)
+    {
+        animator.SetBool(animatorGroundedBool, isGrounded);
     }
 
     private void FixedUpdate()
