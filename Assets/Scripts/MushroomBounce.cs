@@ -29,9 +29,12 @@ public class MushroomBounce : MonoBehaviour
 
     private void GoDown()
     {
+        LeanTween.cancel(gameObject);
+
+        LeanTween.scale(gameObject, Vector3.one, 2).setEasePunch();
         //use transform local scale
         Debug.Log("Landed");
-        this.transform.localScale = downScaleVector;
+        //this.transform.localScale = downScaleVector;
         isDown = true;
     }
 
@@ -50,8 +53,6 @@ public class MushroomBounce : MonoBehaviour
             GoDown();
         }
     }
-
-    
 
     private void OnTriggerExit2D(Collider2D collision)
     {

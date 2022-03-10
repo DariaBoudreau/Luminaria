@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("Sub Behaviours")]
     public PlayerMovement playerMovement;
     public PlayerAnimation playerAnimation;
-    public PlayerCharging playerCharging;
+    //public PlayerCharging playerCharging;
 
     [Header("Input Settings")]
     public PlayerInput playerInput;
