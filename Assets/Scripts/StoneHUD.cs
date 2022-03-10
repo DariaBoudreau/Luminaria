@@ -15,11 +15,17 @@ public class StoneHUD : MonoBehaviour
     [SerializeField] Image stone3_circle;
     [SerializeField] Image stone4_circle;
 
+    [SerializeField] float stoneTweenTime = 5f;
+    [SerializeField] float stoneTweenScale;
+
     // Booleans for showing the stones
     bool stoneOneCollected, stoneTwoCollected, stoneThreeCollected, stoneFourCollected;
 
     // Booleans for showing the frames
     bool showFrameOne, showFrameTwo, showFrameThree, showFrameFour;
+
+    // Booleans for tweening
+    bool tweenStoneOne, tweenStoneTwo, tweenStoneThree, tweenStoneFour;
 
 
     void Start()
@@ -45,6 +51,10 @@ public class StoneHUD : MonoBehaviour
         showFrameTwo = false;
         showFrameThree = false;
         showFrameFour = false;
+        tweenStoneOne = false;
+        tweenStoneTwo = false;
+        tweenStoneThree = false;
+        tweenStoneFour = false;
     }
 
     void UpdateStones()
@@ -52,10 +62,33 @@ public class StoneHUD : MonoBehaviour
         StoneCheck();
         // Starts out as false (so image is off and turns on when is collected)
         stone1_image.enabled = stoneOneCollected;
-        stone2_image.enabled = stoneTwoCollected; 
+        if (stoneOneCollected && tweenStoneOne)
+        {
+            TweenStone(stone1_image);
+            tweenStoneOne = false;
+        }
+
+        stone2_image.enabled = stoneTwoCollected;
+        if (stoneOneCollected && tweenStoneTwo)
+        {
+            TweenStone(stone2_image);
+            tweenStoneTwo = false;
+        }
+
         stone3_image.enabled = stoneThreeCollected;
+        if (stoneOneCollected && tweenStoneThree)
+        {
+            TweenStone(stone3_image);
+            tweenStoneThree = false;
+        }
+
         stone4_image.enabled = stoneFourCollected;
-        
+        if (stoneOneCollected && tweenStoneFour)
+        {
+            TweenStone(stone4_image);
+            tweenStoneFour = false;
+        }
+
         // Starts out as false and becomes true when first stone is collected
         stone1_circle.enabled = showFrameOne;
         stone2_circle.enabled = showFrameTwo;
@@ -123,5 +156,15 @@ public class StoneHUD : MonoBehaviour
         {
             showFrameFour = false;
         }
+    }
+
+    void TweenStone(Image stone)
+    {
+        GameObject stoneobject = stone.gameObject;
+
+        LeanTween.cancel(stoneobject);
+        stone.transform.localScale = Vector3.one;
+
+        LeanTween.scale(stoneobject, Vector3.one * stoneTweenScale, stoneTweenTime).setEasePunch();
     }
 }
