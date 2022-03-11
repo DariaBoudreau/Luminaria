@@ -57,19 +57,6 @@ public class LevelEndManger : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Aspen"))
-        {
-
-            if (portalActiveDone && Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                StartCoroutine(DelayedExitScene());
-            }
-        }
-    }
-
-
     private IEnumerator SetPortal()
     {
         if (conditionClear && !portalActivatedOnce)
@@ -79,6 +66,7 @@ public class LevelEndManger : MonoBehaviour
             yield return new WaitForSeconds(8);
             ActivePortal.SetActive(true);
             portalActiveDone = true;
+            StartCoroutine(DelayedExitScene());
             
         }
     }
