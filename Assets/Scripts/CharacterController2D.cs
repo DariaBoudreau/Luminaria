@@ -282,7 +282,8 @@ public class CharacterController2D : MonoBehaviour
         // Update animator
         animator.SetBool(animatorGroundedBool, groundType != GroundType.None);
     }
-
+    [SerializeField]
+    bool usingNewVelocity = false;
     private void UpdateVelocity()
     {
         Vector2 velocity = controllerRigidbody.velocity;
@@ -290,22 +291,26 @@ public class CharacterController2D : MonoBehaviour
         // Apply acceleration directly as we'll want to clamp
         // prior to assigning back to the body.
         velocity += movementInput * acceleration * Time.fixedDeltaTime;
-
+        if (!usingNewVelocity) movementInput = Vector2.zero;
         // Clamp horizontal speed.
         velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
+        if (!usingNewVelocity) controllerRigidbody.velocity = velocity;
 
-        if (isJumping && movementInput.x == 0)
+        if (usingNewVelocity)
         {
-            controllerRigidbody.velocity = new Vector2(prevVelocity.x, velocity.y);
-        }
-        else
-        {
-            // Assign back to the body.
-            controllerRigidbody.velocity = velocity;
-        }
+            if (isJumping && movementInput.x == 0)
+            {
+                controllerRigidbody.velocity = new Vector2(prevVelocity.x, velocity.y);
+            }
+            else
+            {
+                // Assign back to the body.
+                controllerRigidbody.velocity = velocity;
+            }
 
-        // We've consumed the movement, reset it.
-        movementInput = Vector2.zero;
+            // We've consumed the movement, reset it.
+            movementInput = Vector2.zero;
+        }
 
         // Update animator running speed
         var horizontalSpeedNormalized = Mathf.Abs(velocity.x) / maxSpeed;
@@ -415,10 +420,10 @@ public class CharacterController2D : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-            Debug.Log(controllerRigidbody.velocity);
+            //Debug.Log(controllerRigidbody.velocity);
             canJump = true;
-            controllerRigidbody.velocity = Vector2.zero;
-            Debug.Log(controllerRigidbody.velocity);
+            if (usingNewVelocity) controllerRigidbody.velocity = Vector2.zero;
+            //Debug.Log(controllerRigidbody.velocity);
         }
     }
 }
