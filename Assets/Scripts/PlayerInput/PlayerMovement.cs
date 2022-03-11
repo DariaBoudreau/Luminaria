@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get rigidbody
         playerRigidbody = GetComponent<Rigidbody2D>();
+        FlipPlayer();
     }
 
     public void UpdateMovementData(Vector3 newMovementDirection, float newHorizontalInput, float moveSpeedModifier)
