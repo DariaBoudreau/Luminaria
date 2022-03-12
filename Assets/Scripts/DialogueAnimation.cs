@@ -9,19 +9,19 @@ public class DialogueAnimation : MonoBehaviour
     [Header("Animations")]
     private int animatorNodTrigger;
     private int animatorGesutreTrigger;
-    private int animatorTalkTrigger;
+    private int animatorTalkBool;
 
     // Start is called before the first frame update
     void Start()
     {
         animatorNodTrigger = Animator.StringToHash("Nod");
         animatorGesutreTrigger = Animator.StringToHash("Gesture");
-        animatorTalkTrigger = Animator.StringToHash("Talk");
+        animatorTalkBool = Animator.StringToHash("Talk");
     }
 
-    public void PlayTalk()
+    public void PlayTalk(bool isTalking)
     {
-
+        animator.SetBool(animatorTalkBool, isTalking);
     }
 
     public void PlayNod()
