@@ -9,7 +9,7 @@ public class CharacterDialogue : MonoBehaviour
     [SerializeField] bool destroyOnFadeOut;
     [SerializeField] DialogueAnimation dialogueCharacter;
     //[SerializeField] PlayerAnimation aspenAnimator;
-    [SerializeField] CharacterController2D aspenObject;
+    //[SerializeField] CharacterController2D aspenObject;
 
     private Coroutine fading;
     private SpriteRenderer[] spriteRenderers;
@@ -64,8 +64,11 @@ public class CharacterDialogue : MonoBehaviour
     {
         if (aspenIsNear && textNullOrEmptyAtStart)
         {
+            
             if (shouldChangeOnButtonPress)
             {
+               
+
                 if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.LeftShift))
                 {
                     if (text.text == lines[index])
@@ -82,6 +85,12 @@ public class CharacterDialogue : MonoBehaviour
         }
     }
 
+    void AnimateTalking()
+    {
+        //Debug.Log("Character is trying to talk");
+        dialogueCharacter.PlayTalk(true);
+    }
+
     void StartDialogue()
     {
         index = 0;
@@ -94,6 +103,7 @@ public class CharacterDialogue : MonoBehaviour
         {
             fading = StartCoroutine(FadeIn());
             aspenIsNear = true;
+            AnimateTalking();
             //If the text to display is not preset in the TMP text then we will set it from the lines field in the inspector
             if (textNullOrEmptyAtStart)
             {

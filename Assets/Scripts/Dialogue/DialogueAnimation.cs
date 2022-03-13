@@ -16,12 +16,12 @@ public class DialogueAnimation : MonoBehaviour
     {
         animatorNodTrigger = Animator.StringToHash("Nod");
         animatorGesutreTrigger = Animator.StringToHash("Gesture");
-        animatorTalkBool = Animator.StringToHash("Talk");
+        animatorTalkBool = Animator.StringToHash("isTalking");
     }
 
     public void PlayTalk(bool isTalking)
     {
-        animator.SetBool(animatorTalkBool, isTalking);
+        animator.SetBool(animatorTalkBool, true);
     }
 
     public void PlayNod()
