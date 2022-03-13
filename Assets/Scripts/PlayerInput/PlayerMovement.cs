@@ -18,11 +18,12 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed = 0.1f;
     public float horizontalInput;
     public float jumpPower = 100f;
+    public float glideVelocityNegation = .3f;
+    public float jumpGravity = .5f;
+    //public float glidingModifier = 3f;
+
     public bool facingRight = false;
     public bool shouldPersistVelocity;
-
-    public float jumpGravity = .5f;
-    public float glidingModifier = 3f; 
 
     private Vector3 movementDirection;
     [System.NonSerialized] private Vector2 previousVelocity;
@@ -52,11 +53,23 @@ public class PlayerMovement : MonoBehaviour
     {
         float gravityApplied = jumpGravity;
 
-        if (playerRigidbody.velocity.y > 0f && glidingbool)
+        if (glidingbool)
         {
-            // If the player is jumping up, make gravity less intense
+            // Check if rb has built up negative y velocity. If so, scale velocity by glideVelocityNegation
+            if (playerRigidbody.velocity.y < 0f)
+            {
+                float newVelocityY = playerRigidbody.velocity.y * glideVelocityNegation;
+                Vector2 newVelocity = new Vector2(playerRigidbody.velocity.x, newVelocityY);
+                playerRigidbody.velocity = newVelocity;
+            }
+            // If the player starts gliding, make gravity less intense
             gravityApplied *= gravitymod;
         }
+
+        //if (playerRigidbody)
+        //{
+
+        //}
 
         playerRigidbody.gravityScale = gravityApplied;
     }
