@@ -67,13 +67,12 @@ public class CharacterDialogue : MonoBehaviour
             
             if (shouldChangeOnButtonPress)
             {
-               
-
                 if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.LeftShift))
                 {
                     if (text.text == lines[index])
                     {
                         NextLine();
+                        DetermineAnimation();
                     }
                     else
                     {
@@ -82,6 +81,19 @@ public class CharacterDialogue : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    void DetermineAnimation()
+    {
+        int value = Random.RandomRange(0, 2);
+        
+        if (value == 0)
+        {
+            dialogueCharacter.PlayNod();
+        } else
+        {
+            dialogueCharacter.PlayGesture();
         }
     }
 

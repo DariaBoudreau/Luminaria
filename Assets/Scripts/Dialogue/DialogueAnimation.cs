@@ -26,11 +26,11 @@ public class DialogueAnimation : MonoBehaviour
 
     public void PlayNod()
     {
-
+        animator.SetTrigger(animatorNodTrigger);
     }
 
     public void PlayGesture()
     {
-
+        animator.SetTrigger(animatorGesutreTrigger);
     }
 }
