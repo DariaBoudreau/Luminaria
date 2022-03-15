@@ -9,7 +9,7 @@ public class CharacterDialogue : MonoBehaviour
     [SerializeField] bool destroyOnFadeOut;
     [SerializeField] DialogueAnimation dialogueCharacter;
     //[SerializeField] PlayerAnimation aspenAnimator;
-    //[SerializeField] CharacterController2D aspenObject;
+    [SerializeField] CharacterController2D aspenObject;
 
     private Coroutine fading;
     private SpriteRenderer[] spriteRenderers;
@@ -72,6 +72,7 @@ public class CharacterDialogue : MonoBehaviour
                     if (text.text == lines[index])
                     {
                         NextLine();
+                        aspenObject.shouldNod = true;
                         DetermineAnimation();
                     }
                     else

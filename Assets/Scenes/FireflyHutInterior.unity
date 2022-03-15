@@ -213,6 +213,7 @@ MonoBehaviour:
   ThingToGuide: {fileID: 8024549}
   destroyOnFadeOut: 0
   dialogueCharacter: {fileID: 811394453}
+  aspenObject: {fileID: 187629627}
   lines:
   - Ah, don't fear, child, I don't bite.
   - Not a big talker, are ya? You lost?
@@ -433,6 +434,7 @@ MonoBehaviour:
   ThingToGuide: {fileID: 462457347}
   destroyOnFadeOut: 1
   dialogueCharacter: {fileID: 811394453}
+  aspenObject: {fileID: 187629627}
   lines:
   - Hm?? I've not had visitors in some time...
   shouldChangeOnButtonPress: 0
@@ -1398,6 +1400,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shouldStartWithStaff: 0
+--- !u!114 &187629627 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7906095723340371953, guid: 21c18efccfb014049bdf0988134a95ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 1868787966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187629618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec7379ebb24eb1478bb7ad77827756b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &195536927
 PrefabInstance:
   m_ObjectHideFlags: 0

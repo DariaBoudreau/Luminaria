@@ -62,6 +62,7 @@ public class CharacterController2D : MonoBehaviour
     private bool faceRight = false;
     private bool hasTransitioned;
     private bool canJump = true;
+    public bool shouldNod = false;
 
     private int animatorGroundedBool;
     private int animatorRunningSpeed;
@@ -69,6 +70,7 @@ public class CharacterController2D : MonoBehaviour
     private int animatorBurnTrigger;
     private int animatorBurningBool;
     private int animatorGlidingBool;
+    private int animatorNodTrigger;
 
     // Staff Charge Variables
     [Header("Charge")]
@@ -120,6 +122,7 @@ public class CharacterController2D : MonoBehaviour
         animatorBurnTrigger = Animator.StringToHash("Burn");
         animatorBurningBool = Animator.StringToHash("Burning");
         animatorGlidingBool = Animator.StringToHash("Gliding");
+        animatorNodTrigger = Animator.StringToHash("Nod");
 
         CanMove = true;
 
@@ -233,6 +236,12 @@ public class CharacterController2D : MonoBehaviour
             UpdateCharge();
 
         prevVelocity = controllerRigidbody.velocity;
+    }
+
+    public void Nod()
+    {
+        animator.SetTrigger(animatorNodTrigger);
+        shouldNod = false;
     }
 
     public void UpdateCharge()
@@ -380,6 +389,11 @@ public class CharacterController2D : MonoBehaviour
         {
             faceRight = false;
             controllerCollider.GetComponent<CapsuleCollider2D>().offset = new Vector2(-colliderOffset, controllerCollider.offset.y);
+        }
+
+        if (shouldNod)
+        {
+            Nod();
         }
     }
 
