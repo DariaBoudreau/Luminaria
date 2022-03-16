@@ -37,6 +37,11 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] float fallGravityScale = 5.0f;
     [SerializeField] float groundedGravityScale = 1.0f;
     [SerializeField] bool resetSpeedOnLand = false;
+
+    //Whether Aspen should be able to jump at all in this scene
+    [SerializeField] bool ableToJump = true;
+    //Whether Aspen should be able to burn at all in this scene
+    [SerializeField] bool ableToBurn = true;
     // [SerializeField] UnityEvent test;
 
     private Rigidbody2D controllerRigidbody;
@@ -173,7 +178,10 @@ public class CharacterController2D : MonoBehaviour
             // only allow burning while falling and not moving
             if (!hasTransitioned)
             {
-                animator.SetTrigger(animatorBurnTrigger);
+                if (ableToBurn)
+                {
+                    animator.SetTrigger(animatorBurnTrigger);
+                }
                 hasTransitioned = true;
             }
             isBurning = true;
@@ -184,27 +192,30 @@ public class CharacterController2D : MonoBehaviour
 
     void GetVerticalMovement(Keyboard keyboard)
     {
-        // Jumping input
-        if (keyboard.spaceKey.wasPressedThisFrame)
+        if (ableToJump)
         {
-            if (!isJumping && canJump)
-                jumpInput = true;
-            else if (!doubleJump && canJump)
+            // Jumping input
+            if (keyboard.spaceKey.wasPressedThisFrame)
             {
-                jumpInput = true;
-                doubleJump = true;
-                canJump = false;
+                if (!isJumping && canJump)
+                    jumpInput = true;
+                else if (!doubleJump && canJump)
+                {
+                    jumpInput = true;
+                    doubleJump = true;
+                    canJump = false;
+                }
             }
-        }
 
-        // Gliding
-        if (keyboard.spaceKey.isPressed && isFalling)
-        {
-            isGliding = true;
-        }
-        else
-        {
-            isGliding = false;
+            // Gliding
+            if (keyboard.spaceKey.isPressed && isFalling)
+            {
+                isGliding = true;
+            }
+            else
+            {
+                isGliding = false;
+            }
         }
     }
     
@@ -374,7 +385,10 @@ public class CharacterController2D : MonoBehaviour
 
     private void UpdateAnimation()
     {
-        animator.SetBool(animatorBurningBool, isBurning);
+        if (ableToBurn)
+        {
+            animator.SetBool(animatorBurningBool, isBurning);
+        }
         animator.SetBool(animatorGlidingBool, isGliding);
 
         animator.runtimeAnimatorController = faceRight? AspenRight : AspenLeft;
