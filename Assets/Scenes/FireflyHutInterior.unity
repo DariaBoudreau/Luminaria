@@ -224,7 +224,7 @@ MonoBehaviour:
   - Me and my fireflies, we keep the forest nice and bright.
   - It helps to keep the... nastier critters away.
   - Not so many fireflies around here lately though...
-  - ' I keep sending ''em out to check on the lanterns...'
+  - I keep sending 'em out to check on the lanterns...
   - But none of 'em have come back!
   - And I'm gettin' real weak in my old age...
   - I fear my time is short...
@@ -232,7 +232,7 @@ MonoBehaviour:
   - Protect... the... light...
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
-  textSpeed: 0.05
+  textSpeed: 0.035
   shouldFadeOut: 1
 --- !u!61 &9026723
 BoxCollider2D:
@@ -457,7 +457,7 @@ MonoBehaviour:
   - Hm?? I've not had visitors in some time...
   shouldChangeOnButtonPress: 0
   shouldLoop: 0
-  textSpeed: 0.05
+  textSpeed: 0.035
   shouldFadeOut: 1
 --- !u!61 &96568326
 BoxCollider2D:
@@ -472,7 +472,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.140923, y: -3.6002483}
+  m_Offset: {x: 1.2767782, y: -3.9641}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -483,7 +483,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 24.202496, y: 17.810108}
+  m_Size: {x: 35.572815, y: 24.723267}
   m_EdgeRadius: 0
 --- !u!1 &100472747
 GameObject:
@@ -1306,7 +1306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &149128649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2448,7 +2448,7 @@ Transform:
   m_GameObject: {fileID: 338524936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4, y: 5.2, z: 0}
-  m_LocalScale: {x: 2.08208, y: 1.2446096, z: 1.6491721}
+  m_LocalScale: {x: 1.607782, y: 0.9610875, z: 1.2734907}
   m_Children: []
   m_Father: {fileID: 462457348}
   m_RootOrder: 1
@@ -2494,7 +2494,7 @@ SpriteRenderer:
   m_SortingLayerID: -1567155121
   m_SortingLayer: 2
   m_SortingOrder: 39
-  m_Sprite: {fileID: 21300000, guid: 4f786498abca04362bdb15530a4d608b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf39216e933b34dcf95ae0e53712a710, type: 3}
   m_Color: {r: 0.8284087, g: 0.94719356, b: 0.9811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4304,7 +4304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.84, y: 0.93}
+  m_AnchoredPosition: {x: 51.4, y: 2.02}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &486245570
@@ -4529,7 +4529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000016689, y: 5.7}
+  m_AnchoredPosition: {x: -0.00000041723, y: 5.61}
   m_SizeDelta: {x: 16.9297, y: 5.9025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532085975
@@ -5366,7 +5366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.49, y: 4.72}
+  m_AnchoredPosition: {x: 4.13, y: 5.27}
   m_SizeDelta: {x: 16.9297, y: 5.9025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &600642068
@@ -12652,7 +12652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1634735904
 RectTransform:
   m_ObjectHideFlags: 0
