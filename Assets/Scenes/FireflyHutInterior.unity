@@ -219,20 +219,17 @@ MonoBehaviour:
   - Ah, don't fear, child, I don't bite.
   - Not a big talker, are ya? You lost?
   - Well...Where are my manners?
-  - Guess I should introduce myself.
-  - "I\u2019m the Elder Firefly, the guardian of the forest."
-  - I've been tasked with protecting the light...
-  - "...But in my old age... I\u2019ve been getting weak..."
-  - "But you, young one\u2026"
-  - You seem worthy of taking my place.
-  - Us fireflies and moths, we go way back...
-  - But that's a story for another day.
-  - Here, take my staff.
-  - ' It will give you the power to brighten up this world.'
-  - But, beware, there are dark forces in these woods...
-  - ...Creatures that will try to destroy the staff...
-  - "...And drown the world in darkness.\_"
-  - You must not let that happen...
+  - "I\u2019m Spruce, the guardian of this neck of the woods."
+  - All those lanterns you're seeing around? That's my doin'.
+  - Me and my fireflies, we keep the forest nice and bright.
+  - It helps to keep the... nastier critters away.
+  - Not so many fireflies around here lately though...
+  - ' I keep sending ''em out to check on the lanterns...'
+  - But none of 'em have come back!
+  - And I'm gettin' real weak in my old age...
+  - I fear my time is short...
+  - Do an old man a favor...
+  - Protect... the... light...
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
   textSpeed: 0.05
@@ -4532,7 +4529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.5, y: 5.6}
+  m_AnchoredPosition: {x: 0.0000016689, y: 5.7}
   m_SizeDelta: {x: 16.9297, y: 5.9025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532085975
@@ -5369,7 +5366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 4.63}
+  m_AnchoredPosition: {x: 0.49, y: 4.72}
   m_SizeDelta: {x: 16.9297, y: 5.9025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &600642068
