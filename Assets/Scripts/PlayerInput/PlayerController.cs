@@ -126,12 +126,20 @@ public class PlayerController : MonoBehaviour
 
     public void OnShine(InputAction.CallbackContext value)
     {
-        if (!hasTransitioned)
+        if (value.performed && !hasTransitioned)
         {
-            playerAnimation.UpdateBurningAnimation();
+            playerAnimation.StartBurningAnimation();
             isBurning = true;
             hasTransitioned = true;
+        } 
+
+        if (value.canceled)
+        {
+            isBurning = false;
+            hasTransitioned = false;
         }
+
+        playerAnimation.UpdateBurningAnimation(isBurning);
     }
 
     void Update()
@@ -186,7 +194,6 @@ public class PlayerController : MonoBehaviour
     void UpdateGrounding()
     {
         // Taken from previous character controller because it was already written in the best way imo
-
         // Use character collider to check if touching ground layers
         if (controllerCollider.IsTouchingLayers(softGroundMask))
             groundType = GroundType.Soft;
@@ -196,6 +203,6 @@ public class PlayerController : MonoBehaviour
             groundType = GroundType.None;
 
         // Update animator
-        playerAnimation.UpdateGroundingAnimation(groundType != GroundType.None);
+        playerAnimation.UpdateGroundingAnimation(groundType != GroundType.None, groundType);
     }
 }

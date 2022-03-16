@@ -6,6 +6,7 @@ public class PlayerAnimation : MonoBehaviour
 {
     [Header("Animation Components")]
     [SerializeField] public Animator animator = null;
+    [SerializeField] CharacterAudio audioPlayer = null;
 
     [Header("Animator Values")]
     private int animatorGroundedBool;
@@ -15,6 +16,7 @@ public class PlayerAnimation : MonoBehaviour
     private int animatorBurningBool;
     private int animatorGlidingBool;
 
+    GroundType currentGroundType;
     bool isBurning;
 
     [Header("Animation Overrides")]
@@ -44,26 +46,37 @@ public class PlayerAnimation : MonoBehaviour
     {
         var horizontalSpeedNormalized = Mathf.Abs(velocity.x) / runSpeed;
         horizontalSpeedNormalized *= runAnimationSpeedModifier;
+
         animator.SetFloat(animatorRunningSpeed, horizontalSpeedNormalized);
+        audioPlayer.PlaySteps(currentGroundType, horizontalSpeedNormalized);
     }
 
     public void JumpAnimation()
     {
         animator.SetTrigger(animatorJumpTrigger);
+        audioPlayer.PlayJump();
     }
 
     public void GlidingAnimation(bool isGliding) {
         animator.SetBool(animatorGlidingBool, isGliding);
     }
 
-    public void UpdateGroundingAnimation(bool isGrounded)
+    public void UpdateGroundingAnimation(bool isGrounded, GroundType groundType)
     {
         animator.SetBool(animatorGroundedBool, isGrounded);
+        currentGroundType = groundType;
+
+        audioPlayer.PlayLanding(currentGroundType);
     }
 
-    public void UpdateBurningAnimation()
+    public void StartBurningAnimation()
     {
         animator.SetTrigger(animatorBurnTrigger);
+    }
+
+    public void UpdateBurningAnimation(bool isBurning)
+    {
+        animator.SetBool(animatorBurningBool, isBurning);
     }
 
     private void FixedUpdate()
