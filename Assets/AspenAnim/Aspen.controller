@@ -328,7 +328,7 @@ AnimatorStateMachine:
     m_Position: {x: -290, y: 530, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3957078339479236215}
-    m_Position: {x: -20, y: 520, z: 0}
+    m_Position: {x: -30, y: 530, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -463288467386460382}
     m_Position: {x: 250, y: 530, z: 0}
@@ -340,7 +340,7 @@ AnimatorStateMachine:
     m_Position: {x: 760, y: 530, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 898350165421837922}
-    m_Position: {x: 840, y: 70, z: 0}
+    m_Position: {x: 820, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6010540495296649350}
     m_Position: {x: 560, y: 330, z: 0}
@@ -1256,7 +1256,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New State
+  m_Name: BurnRightIdle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
