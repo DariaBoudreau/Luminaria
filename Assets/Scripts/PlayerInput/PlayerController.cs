@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     bool isGrounded = false;
     bool canDoubleJump = true;
     bool isGliding = false;
+    bool hasLanded = false;
 
     private void Start()
     {
@@ -150,7 +151,6 @@ public class PlayerController : MonoBehaviour
         ShouldPersistVelocity();
     }
 
-
     void CalculateMovementInputSmoothing()
     {
         smoothInputMovement = Vector3.Lerp(smoothInputMovement, rawInputMovement, Time.deltaTime * movementSmoothingSpeed);
@@ -171,6 +171,11 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
             canDoubleJump = true;
             isGliding = false;
+
+            if (collision.gameObject.layer == 8 || collision.gameObject.layer == 9)
+            {
+                hasLanded = true;
+            }
         }
     }
 
@@ -203,6 +208,7 @@ public class PlayerController : MonoBehaviour
             groundType = GroundType.None;
 
         // Update animator
-        playerAnimation.UpdateGroundingAnimation(groundType != GroundType.None, groundType);
+        playerAnimation.UpdateGroundingAnimation(groundType != GroundType.None, hasLanded, groundType);
+        hasLanded = false;
     }
 }

@@ -48,7 +48,7 @@ public class PlayerAnimation : MonoBehaviour
         horizontalSpeedNormalized *= runAnimationSpeedModifier;
 
         animator.SetFloat(animatorRunningSpeed, horizontalSpeedNormalized);
-        audioPlayer.PlaySteps(currentGroundType, horizontalSpeedNormalized);
+        audioPlayer.PlaySteps(currentGroundType, velocity.x);
     }
 
     public void JumpAnimation()
@@ -61,12 +61,15 @@ public class PlayerAnimation : MonoBehaviour
         animator.SetBool(animatorGlidingBool, isGliding);
     }
 
-    public void UpdateGroundingAnimation(bool isGrounded, GroundType groundType)
+    public void UpdateGroundingAnimation(bool isGrounded, bool needsSFX, GroundType groundType)
     {
         animator.SetBool(animatorGroundedBool, isGrounded);
         currentGroundType = groundType;
 
-        audioPlayer.PlayLanding(currentGroundType);
+        if (needsSFX)
+        {
+            audioPlayer.PlayLanding(currentGroundType);
+        }
     }
 
     public void StartBurningAnimation()
