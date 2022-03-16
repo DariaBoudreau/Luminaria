@@ -32,12 +32,19 @@ public class CharacterDialogue : MonoBehaviour
     [SerializeField]
     private float textSpeed;
 
+    [Tooltip("Should this fade out on trigger exit")]
+    [SerializeField]
+    private bool shouldFadeOut = true;
+
     // In a time based dialogue box, the amount of time after the last character has printed before switching to the next line
     private float waitSpeed = 1f;
 
     private int index;
     private bool aspenIsNear = false;
     private bool textNullOrEmptyAtStart = false;
+
+    public delegate void FinishedTalkingAction();
+    public event FinishedTalkingAction finishedTalking;
 
     // Start is called before the first frame update
     private void Start()
@@ -87,7 +94,7 @@ public class CharacterDialogue : MonoBehaviour
 
     void DetermineAnimation()
     {
-        int value = Random.RandomRange(0, 2);
+        int value = Random.Range(0, 2);
         
         if (value == 0)
         {
@@ -129,10 +136,13 @@ public class CharacterDialogue : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Aspen"))
+        if (shouldFadeOut)
         {
-            fading = StartCoroutine(FadeOut());
-            aspenIsNear = false;
+            if (collision.gameObject.CompareTag("Aspen"))
+            {
+                fading = StartCoroutine(FadeOut());
+                aspenIsNear = false;
+            }
         }
     }
 
@@ -210,6 +220,7 @@ public class CharacterDialogue : MonoBehaviour
         }
         else
         {
+            finishedTalking?.Invoke();
             if (shouldLoop && shouldChangeOnButtonPress || !shouldChangeOnButtonPress)
             {
                 index = 0;
