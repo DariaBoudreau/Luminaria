@@ -9,7 +9,7 @@ AnimatorOverrideController:
   m_Name: AspenLeftNoStaff
   m_Controller: {fileID: 9100000, guid: e7140c0305c43b64d87b6d7d9060d1d9, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: a153ef34e42fe384caccdc38981903ac, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 1d2f9702cfbbd7449b0b48ffcfa39167, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 7f5051a6a22c6664ca02c39b422fd3f1, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 892e90c41d6e3e94799b43e074420f1c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 900450dc5ee59d6438de8e6fd2156ec6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1d2f9702cfbbd7449b0b48ffcfa39167, type: 2}
