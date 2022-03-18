@@ -1483,6 +1483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 142978166}
   - component: {fileID: 142978167}
+  - component: {fileID: 142978168}
   m_Layer: 0
   m_Name: UI-Box
   m_TagString: Untagged
@@ -1498,8 +1499,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142978165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7199366, y: -1.3100188, z: 0}
-  m_LocalScale: {x: 0.7948866, y: 0.6937274, z: 0.82827646}
+  m_LocalPosition: {x: -2.7100153, y: 1.4799984, z: 0}
+  m_LocalScale: {x: 0.7735, y: 0.51, z: 0.68}
   m_Children: []
   m_Father: {fileID: 592601989}
   m_RootOrder: 1
@@ -1545,8 +1546,8 @@ SpriteRenderer:
   m_SortingLayerID: -1567155121
   m_SortingLayer: 2
   m_SortingOrder: 39
-  m_Sprite: {fileID: 21300000, guid: 45a075650304242aebaa6ee2937b1f5a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d58315365a0ed48bca1c6a4c2c621636, type: 3}
+  m_Color: {r: 0.66460484, g: 0.8531672, b: 0.9716981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1556,6 +1557,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &142978168
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142978165}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78dedbefc4b4748279fa9be51831ca8a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &149128648
 GameObject:
   m_ObjectHideFlags: 0
@@ -3551,7 +3571,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.52174
+      value: 90.51337
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -4536,8 +4556,8 @@ MonoBehaviour:
   - {fileID: 342024403}
   - {fileID: 500215401}
   m_Bounds:
-    m_Center: {x: 0.06965351, y: -0.9281559, z: 0.0000027529895}
-    m_Extent: {x: 6.419669, y: 4.8279657, z: 3.410605e-13}
+    m_Center: {x: 0.06964588, y: -0.92815495, z: -0.000012028031}
+    m_Extent: {x: 6.4196777, y: 4.827966, z: 1.364242e-12}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
