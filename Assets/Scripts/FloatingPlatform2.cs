@@ -6,19 +6,18 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class FloatingPlatform2 : MonoBehaviour
 {
     [SerializeField] CharacterController2D aspenObject;
-    [SerializeField] int chargeCost;
-    [SerializeField] public float riseRate = 1f;
-    [SerializeField] public bool isLit;
+    [SerializeField] private Transform pos1;
+    [SerializeField] private Transform pos2;
+    [SerializeField] private int chargeCost;
+    [SerializeField] private float riseRate = 1f;
+    [SerializeField] private bool isLit;
     [SerializeField] private bool startsLit;
     [SerializeField] private bool triggerActive;
-    [SerializeField] public Transform pos1;
-    [SerializeField] public Transform pos2;
+    [SerializeField] private bool instantReset;
     
-    private Coroutine floating;
-    new public Light2D light;
+    new private Light2D light;
     private float maxIntensity;
     private bool waitingDelay = false;
-    private bool shouldMove;
 
     void Start()
     {
@@ -36,7 +35,6 @@ public class FloatingPlatform2 : MonoBehaviour
             light.intensity = 0f;
             transform.position = pos1.position;
         }
-
     }
 
     void Update()
@@ -47,34 +45,26 @@ public class FloatingPlatform2 : MonoBehaviour
             return;
         if (!aspenObject.isBurning)
             return;
-        if (aspenObject.currentCharge < chargeCost)
-            return;
+
         if (isLit)
         {
             StartCoroutine(Delay(2));
             AddCharge();
-            shouldMove = true;
             isLit = false;
             waitingDelay = true;
         }
-        else if (!isLit)
+        else if (!isLit && aspenObject.currentCharge >= chargeCost)
         {
             StartCoroutine(Delay(2));
             RemoveCharge();
-            shouldMove = true;
             isLit = true;
             waitingDelay = true;
         }
-            
-        
     }
 
     void FixedUpdate()
     {
-        if (shouldMove)
-        {
-            Float();
-        }
+        Float();
     }
 
     void OnEnable()
@@ -107,30 +97,34 @@ public class FloatingPlatform2 : MonoBehaviour
 
     private void Reset()
     {
-        if(startsLit)
+        if (startsLit)
         {
             isLit = true;
-            float step = riseRate * Time.deltaTime; 
             light.intensity = maxIntensity;
-            transform.position = Vector3.MoveTowards(pos2.position, pos1.position, step);
+            if (instantReset)
+            {
+                transform.position = pos2.position;
+            }
         }
         else
         {
             isLit = false;
-            float step = riseRate * Time.deltaTime; 
             light.intensity = 0f;
-            transform.position = Vector3.MoveTowards(pos1.position, pos2.position, step);
+            if (instantReset)
+            {
+                transform.position = pos1.position;
+            }
         }
     }
     private void Float()
     {
-        float step = riseRate * Time.deltaTime; 
+        float step = riseRate * Time.deltaTime;
 
         if (isLit)
         {
             if (Vector3.Distance(transform.position, pos2.position) < .05)
                 return;
-                        
+
             light.intensity = maxIntensity;
             transform.position = Vector3.MoveTowards(transform.position, pos2.position, step);
         }
@@ -144,11 +138,11 @@ public class FloatingPlatform2 : MonoBehaviour
         }
     }
 
-     IEnumerator Delay(float seconds)
-     {
+    IEnumerator Delay(float seconds)
+    {
         yield return new WaitForSeconds(seconds);
         waitingDelay = false;
-     }
+    }
 
     void AddCharge()
     {
