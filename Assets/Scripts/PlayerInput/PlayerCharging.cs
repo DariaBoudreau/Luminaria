@@ -14,6 +14,8 @@ public class PlayerCharging : MonoBehaviour
     private ParticleSystem.EmissionModule em;
     private float prevCharge;
 
+    public int chargeChange;
+
     public bool isBurning;
     public bool hasTransitioned;
 
@@ -25,14 +27,13 @@ public class PlayerCharging : MonoBehaviour
         lt = ps.gameObject.transform.parent.GetComponentInChildren<Light2D>(true);
         main = ps.main;
         em = ps.emission;
-        currentCharge = 0;
+        currentCharge = maxCharge;
         prevCharge = -1;
     }
 
     private void FixedUpdate()
     {
-        if (prevCharge != currentCharge)
-            UpdateCharge();
+        
     }
 
     private float bounds(float n, int lower, int upper)
@@ -42,23 +43,27 @@ public class PlayerCharging : MonoBehaviour
         return n;
     }
 
-    public void UpdateCharge()
+    public void SpendCharge()
     {
-        currentCharge = (int)bounds(currentCharge, 0, maxCharge);
-
-        main.maxParticles = 7 * currentCharge;
-        em.rateOverTime = 3 * currentCharge;
-
-        if (prevCharge < currentCharge)
+        if (chargeChange >= 1)
         {
             StartCoroutine(FadeUp());
         }
-        else if (prevCharge > currentCharge)
+
+        if (chargeChange <= -1)
         {
             StartCoroutine(FadeDown());
         }
 
-        prevCharge = (float)currentCharge;
+        currentCharge += chargeChange;
+        //UpdateParticles();
+        Debug.Log(currentCharge);
+    }
+
+    public void UpdateParticles()
+    {
+        main.maxParticles = 7 * currentCharge;
+        em.rateOverTime = 3 * currentCharge;
     }
 
     private IEnumerator FadeUp()
