@@ -41,7 +41,8 @@ public class CharacterController2D : MonoBehaviour
     //Whether Aspen should be able to jump at all in this scene
     [SerializeField] bool ableToJump = true;
     //Whether Aspen should be able to burn at all in this scene
-    [SerializeField] bool ableToBurn = true;
+    //Should be public so it can be changed in the animator
+    public bool ableToBurn = true;
     // [SerializeField] UnityEvent test;
 
     private Rigidbody2D controllerRigidbody;
