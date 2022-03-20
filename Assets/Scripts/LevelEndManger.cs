@@ -8,13 +8,18 @@ public class LevelEndManger : MonoBehaviour
     [SerializeField] private GameObject ActivePortal;
     [SerializeField] private GameObject[] KeyStone;
     [SerializeField] Animator animator;
+    [SerializeField] GuideUI toolTip;
+
     public static int totalNumofStone;
+
     [SerializeField] private bool conditionClear = false;
     [SerializeField] private bool portalActivatedOnce = false;
     [SerializeField] private bool portalActiveDone = false;
     [SerializeField] private string nextScene;
+
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip sfxPortal;
+
     bool sfxHasPlayed = false;
     
 
@@ -24,6 +29,7 @@ public class LevelEndManger : MonoBehaviour
         audioSource.GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         animator.SetBool("PortalActivating", false);
+        toolTip.gameObject.SetActive(false);
         ActivePortal.SetActive(false);
         for (int i = 0; i < KeyStone.Length; i++)
         {
@@ -37,8 +43,8 @@ public class LevelEndManger : MonoBehaviour
         if (totalNumofStone <= 0)
         {
             conditionClear = true;
+            toolTip.gameObject.SetActive(true);
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -67,7 +73,6 @@ public class LevelEndManger : MonoBehaviour
             ActivePortal.SetActive(true);
             portalActiveDone = true;
             StartCoroutine(DelayedExitScene());
-            
         }
     }
 
