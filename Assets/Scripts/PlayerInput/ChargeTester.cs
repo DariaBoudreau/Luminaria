@@ -9,6 +9,6 @@ public class ChargeTester : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        aspen.chargeChange = 1;
+        aspen.chargeChange = chargeCost;
     }
 }
