@@ -49,6 +49,22 @@ public class NextLevelTrigger : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Aspen"))
+        {
+            if (playerMustPressKey && Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                StartCoroutine(DelayedExitScene());
+                if (!sfxHasPlayed && audioSource != null && sfxPortal != null)
+                {
+                    audioSource.PlayOneShot(sfxPortal);
+                    sfxHasPlayed = true;
+                }
+            }
+        }
+    }
+
     private IEnumerator DelayedExitScene()
     {
         yield return new WaitForSeconds(waitTime);

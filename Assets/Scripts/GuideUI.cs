@@ -28,6 +28,10 @@ public class GuideUI : MonoBehaviour
     [SerializeField]
     private float textSpeed;
 
+    [Tooltip("Should this fade out on trigger exit")]
+    [SerializeField]
+    private bool shouldFadeOut = true;
+
     // In a time based dialogue box, the amount of time after the last character has printed before switching to the next line
     private float waitSpeed = 1f;
 
@@ -101,10 +105,13 @@ public class GuideUI : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Aspen"))
+        if (shouldFadeOut)
         {
-            fading = StartCoroutine(FadeOut());
-            aspenIsNear = false;
+            if (collision.gameObject.CompareTag("Aspen"))
+            {
+                fading = StartCoroutine(FadeOut());
+                aspenIsNear = false;
+            }
         }
     }
 

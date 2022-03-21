@@ -707,7 +707,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &31597051 stripped
 Transform:
@@ -1935,7 +1936,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &166452397 stripped
 Transform:
@@ -2345,7 +2347,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (18)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &235504208 stripped
 Transform:
@@ -2495,6 +2498,7 @@ GameObject:
   - component: {fileID: 265840597}
   - component: {fileID: 265840599}
   - component: {fileID: 265840598}
+  - component: {fileID: 265840600}
   m_Layer: 0
   m_Name: Intro
   m_TagString: Untagged
@@ -2561,11 +2565,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThingToGuide: {fileID: 592601988}
-  destroyOnFadeOut: 1
+  destroyOnFadeOut: 0
   lines: []
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
   textSpeed: 0
+  shouldFadeOut: 1
+--- !u!95 &265840600
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265840596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &282957164
 GameObject:
   m_ObjectHideFlags: 0
@@ -3258,7 +3282,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &300860554 stripped
 Transform:
@@ -3571,7 +3596,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.51337
+      value: 90.509
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -4025,7 +4050,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &381550507 stripped
 Transform:
@@ -4135,7 +4161,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &397406557 stripped
 Transform:
@@ -4375,7 +4402,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (19)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &419374633 stripped
 Transform:
@@ -4556,8 +4584,8 @@ MonoBehaviour:
   - {fileID: 342024403}
   - {fileID: 500215401}
   m_Bounds:
-    m_Center: {x: 0.06964588, y: -0.92815495, z: -0.000012028031}
-    m_Extent: {x: 6.4196777, y: 4.827966, z: 1.364242e-12}
+    m_Center: {x: 0.06965351, y: -0.9281559, z: 0.0000027529895}
+    m_Extent: {x: 6.419669, y: 4.8279657, z: 3.410605e-13}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -4746,7 +4774,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (20)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &460922876 stripped
 Transform:
@@ -5223,7 +5252,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &557756505 stripped
 Transform:
@@ -5411,7 +5441,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &561471457 stripped
 Transform:
@@ -6427,7 +6458,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &646237632 stripped
 Transform:
@@ -7439,7 +7471,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &739596955 stripped
 Transform:
@@ -7539,7 +7572,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4901995705347349147, guid: 3ff8dcf58862bb94ab6c877fc3604a58, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3ff8dcf58862bb94ab6c877fc3604a58, type: 3}
 --- !u!4 &776429557 stripped
 Transform:
@@ -7841,7 +7875,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &810304531 stripped
 Transform:
@@ -8903,6 +8938,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 265840597}
+  - {fileID: 1979551891}
   m_Father: {fileID: 304030259}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9178,7 +9214,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &992817302 stripped
 Transform:
@@ -10850,7 +10887,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5277611223281819317, guid: 2d5f23a341d6440b6b955cd75c30827f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2d5f23a341d6440b6b955cd75c30827f, type: 3}
 --- !u!4 &1128043990 stripped
 Transform:
@@ -11277,7 +11315,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &1210964631 stripped
 Transform:
@@ -11665,7 +11704,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (17)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &1228185604 stripped
 Transform:
@@ -13040,8 +13080,8 @@ PlayableDirector:
     value: {fileID: 1376956364}
   - key: {fileID: 7707578374035276144, guid: 7122fa03038be784e85b1ddb3853e2b4, type: 2}
     value: {fileID: 1868787967}
-  - key: {fileID: 2391003739487406084, guid: 7122fa03038be784e85b1ddb3853e2b4, type: 2}
-    value: {fileID: 0}
+  - key: {fileID: 4626140600331368444, guid: 7122fa03038be784e85b1ddb3853e2b4, type: 2}
+    value: {fileID: 265840600}
   m_ExposedReferences:
     m_References:
     - ca82e021513494347bccd6d421b544e3: {fileID: 0}
@@ -13362,7 +13402,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &1386096371 stripped
 Transform:
@@ -14179,7 +14220,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &1445368698 stripped
 Transform:
@@ -15664,7 +15706,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (21)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &1611444781 stripped
 Transform:
@@ -15848,7 +15891,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5277611223281819317, guid: 2d5f23a341d6440b6b955cd75c30827f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2d5f23a341d6440b6b955cd75c30827f, type: 3}
 --- !u!4 &1636051977 stripped
 Transform:
@@ -16150,7 +16194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c729bbdd5f72a498c8543a2869a94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMustPressKey: 0
+  playerMustPressKey: 1
   nextScene: FireflyHutInterior
   audioSource: {fileID: 0}
   sfxPortal: {fileID: 0}
@@ -16168,7 +16212,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.79964066, y: 0.57252026}
+  m_Offset: {x: 0.020786285, y: 0.57252026}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -16179,7 +16223,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0022202, y: 4.723688}
+  m_Size: {x: 2.559929, y: 4.723688}
   m_EdgeRadius: 0
 --- !u!1001 &1691570374
 PrefabInstance:
@@ -16398,7 +16442,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &1701798617 stripped
 Transform:
@@ -17092,15 +17137,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1654153091, guid: 21c18efccfb014049bdf0988134a95ce, type: 3}
       propertyPath: m_Intensity
-      value: 0.12
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1913529960, guid: 21c18efccfb014049bdf0988134a95ce, type: 3}
       propertyPath: m_Intensity
       value: 0.95
       objectReference: {fileID: 0}
+    - target: {fileID: 4453718593739600835, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: AspenLeft
+      value: 
+      objectReference: {fileID: 22100000, guid: 7f4bc14d6a9a61040bf0913e1f924c98,
+        type: 2}
+    - target: {fileID: 4453718593739600835, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: AspenRight
+      value: 
+      objectReference: {fileID: 22100000, guid: 5533cb37bdd8c0e4ebb76188f25c8610,
+        type: 2}
     - target: {fileID: 7906095723340371952, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906095723340371953, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: AspenLeft
+      value: 
+      objectReference: {fileID: 22100000, guid: 7f4bc14d6a9a61040bf0913e1f924c98,
+        type: 2}
+    - target: {fileID: 7906095723340371953, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: AspenRight
+      value: 
+      objectReference: {fileID: 22100000, guid: 5533cb37bdd8c0e4ebb76188f25c8610,
+        type: 2}
+    - target: {fileID: 7906095723340371953, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: ableToBurn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906095723340371953, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: ableToJump
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7906095723340371953, guid: 21c18efccfb014049bdf0988134a95ce,
@@ -17126,7 +17205,7 @@ PrefabInstance:
     - target: {fileID: 7906095723340371957, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7906095723340371965, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
@@ -17191,6 +17270,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1868787966}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1868787979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868787967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce419122a86bfcf4a85158a2908f6401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldStartWithStaff: 0
+  characterDialogue: {fileID: 0}
+  playableDirector: {fileID: 0}
 --- !u!1001 &1871607316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17641,7 +17735,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &1921060756 stripped
 Transform:
@@ -17921,6 +18016,89 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiplier: 0.4
   horizontalOnly: 1
+--- !u!1 &1979551890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1979551891}
+  - component: {fileID: 1979551892}
+  m_Layer: 0
+  m_Name: ShiftKey
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1979551891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979551890}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -593.97, y: -283.42, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_Children: []
+  m_Father: {fileID: 892623568}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1979551892
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979551890}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: cc3b2bbd4af5de14d9da8392f8fd5a42, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 1c0fc863ba33f4243983a6a8dc6ebcc6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.82, y: 4.2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1983934899
 GameObject:
   m_ObjectHideFlags: 0
@@ -19278,7 +19456,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain Lantern (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4052646250430703559, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cbf57508af8e51a4c9037b14832e5db6, type: 3}
 --- !u!4 &2141481646 stripped
 Transform:

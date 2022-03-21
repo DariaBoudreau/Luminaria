@@ -29,12 +29,18 @@ public class StaffController : MonoBehaviour
 
     private void OnEnable()
     {
-        characterDialogue.finishedTalking += PlayTimeline;
+        if (characterDialogue != null)
+        {
+            characterDialogue.finishedTalking += PlayTimeline;
+        }
     }
 
     private void OnDisable()
     {
-        characterDialogue.finishedTalking -= PlayTimeline;
+        if (characterDialogue != null)
+        {
+            characterDialogue.finishedTalking -= PlayTimeline;
+        }
     }
 
     void PlayTimeline()
