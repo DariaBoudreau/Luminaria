@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed = 0.1f;
     public float horizontalInput;
     public float jumpPower = 100f;
+    public float wetJumpPower = 50f;
     public float glideVelocityNegation = .3f;
     public float jumpGravity = .5f;
     //public float glidingModifier = 3f;
@@ -43,10 +44,18 @@ public class PlayerMovement : MonoBehaviour
         speedModifier = moveSpeedModifier;
     }
 
-    public void UpdateJump()
+    public void UpdateJump(bool isWet)
     {
         // Making it jump
-        playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpPower);
+        if(isWet)
+        {
+            playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, wetJumpPower);
+        }
+        else
+        {
+            playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpPower);
+        }
+
     }
 
     public void UpdateGravity(float gravitymod, bool glidingbool)

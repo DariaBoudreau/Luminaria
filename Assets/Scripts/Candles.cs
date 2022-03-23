@@ -30,20 +30,20 @@ public class Candles : MonoBehaviour
     }
     void Update()
     {
-            if (triggerActive && aspenObject.isBurning && waitingDelay)
+        if (triggerActive && aspenObject.isBurning && waitingDelay)
+        {
+            if(!aspenObject.isWet)
             {
                 if (isLit)
                 {
-
                     ExtinguishCandle();
                 }
                 else if (aspenObject.currentCharge >= chargeCost && !isLit)
                 {
-
                     LightCandle();
-                }
-
+                }  
             }
+        }
     }
     
     void OnEnable()
