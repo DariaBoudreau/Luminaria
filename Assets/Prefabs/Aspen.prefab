@@ -7030,7 +7030,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1.4493064
+  m_Mass: 2.1602135
   m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0.5
@@ -7134,11 +7134,15 @@ MonoBehaviour:
   fallGravityScale: 5
   groundedGravityScale: 1
   resetSpeedOnLand: 0
+  ableToJump: 1
+  ableToBurn: 1
   AspenLeft: {fileID: 22100000, guid: 9001cb7778ac53e41b1fdef91b2b7eeb, type: 2}
   AspenRight: {fileID: 22100000, guid: 2550dff1dce284647b44954c134fa4e8, type: 2}
+  shouldNod: 0
   isBurning: 0
   currentCharge: 97
   maxCharge: 3
+  isWet: 0
 --- !u!95 &7906095723340371958
 Animator:
   serializedVersion: 3
@@ -7270,6 +7274,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e632bea8-f5a2-49ef-842c-121d5f8815cd
     m_ActionName: PlayerControls/ShineStaff[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c20546e1-ef54-4f4f-ba63-6571b9504379
+    m_ActionName: PlayerControls/Run[/Keyboard/z]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
@@ -7287,16 +7295,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2593528fd260247917ac3930ace1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  acceleration: 30
+  movementSpeed: 0
   maxSpeed: 8
-  jumpForce: 35
-  minFlipSpeed: 0.1
-  jumpGravityScale: 2
-  fallGravityScale: 5
-  groundedGravityScale: 1
-  resetSpeedOnLand: 0
-  jumpInput: 0
+  speedModifier: 0
+  deccel: 0.1
+  turnSpeed: 0.1
+  horizontalInput: 0
+  jumpPower: 100
+  wetJumpPower: 50
+  glideVelocityNegation: 0.3
+  jumpGravity: 0.5
+  facingRight: 0
+  shouldPersistVelocity: 0
 --- !u!114 &4453718593739600835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7309,6 +7319,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cc47143c936634db9a3b1c9f4de4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  audioPlayer: {fileID: 0}
+  AspenLeft: {fileID: 0}
+  AspenRight: {fileID: 0}
+  runAnimationSpeedModifier: 0.5
 --- !u!114 &1756800570643456695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7321,6 +7336,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6570d613d0efe847b6096e5955f577a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
+  playerAnimation: {fileID: 0}
+  playerCharging: {fileID: 0}
   playerInput: {fileID: 0}
   movementSmoothingSpeed: 1
-  playerMovement: {fileID: 0}
+  runSpeed: 3
+  normalGravity: 1
+  glidingModifier: 3
+  lastInput: {x: 0, y: 0}
+  inputMovement: {x: 0, y: 0}
+  isInAir: 0
+  isBurning: 0
+  hasTransitioned: 0
+  isWet: 0

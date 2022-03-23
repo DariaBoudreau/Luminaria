@@ -5,6 +5,8 @@ using UnityEngine;
 public class Water : MonoBehaviour
 {
     [SerializeField] CharacterController2D aspenObject;
+    //[SerializeField] PlayerController aspenObject;
+    [SerializeField] float wetTime;
     private Collider2D col;
     void Start()
     {
@@ -21,11 +23,11 @@ public class Water : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Aspen"))
         {
-            StartCoroutine(Waterlog(10));
+            StartCoroutine(Waterlog(wetTime));
         }
     }
 
-    IEnumerator Waterlog(int seconds)
+    IEnumerator Waterlog(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         aspenObject.isWet = false;

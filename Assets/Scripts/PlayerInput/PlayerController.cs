@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     bool canDoubleJump = true;
     bool isGliding = false;
     bool hasLanded = false;
+    public bool isWet = false;
 
     private void Start()
     {
@@ -72,26 +73,26 @@ public class PlayerController : MonoBehaviour
         if (value.performed && isGrounded)
         {
             isInAir = true;
-            playerMovement.UpdateJump();
+            playerMovement.UpdateJump(isWet);
             isGrounded = false;
             playerAnimation.JumpAnimation();
         } else
         {
-            if (value.performed && canDoubleJump)
+            if (value.performed && canDoubleJump && !isWet)
             {
-                playerMovement.UpdateJump();
+                playerMovement.UpdateJump(isWet);
                 canDoubleJump = false;
                 playerAnimation.JumpAnimation();
             } else
             {
-                if (value.performed && !isGliding)
+                if (value.performed && !isGliding && !isWet) 
                 {
                     isGliding = true;
                     playerMovement.UpdateGravity(glidingModifier, isGliding);
                     sr.color = new Color(0, 1, 0, 1);
                 } else
                 {
-                    if (value.performed)
+                    if (value.performed && !isWet)
                     {
                         //isGliding = true;
                         playerMovement.UpdateGravity(glidingModifier, isGliding);
