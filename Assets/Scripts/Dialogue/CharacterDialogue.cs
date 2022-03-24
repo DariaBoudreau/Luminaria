@@ -8,8 +8,8 @@ public class CharacterDialogue : MonoBehaviour
     [SerializeField] private GameObject ThingToGuide;
     [SerializeField] bool destroyOnFadeOut;
     [SerializeField] DialogueAnimation dialogueCharacter;
-    [SerializeField] PlayerAnimation aspenAnimator;
-    //[SerializeField] CharacterController2D aspenObject;
+    //[SerializeField] PlayerAnimation aspenAnimator;
+    [SerializeField] CharacterController2D aspenObject;
 
     private Coroutine fading;
     private SpriteRenderer[] spriteRenderers;
@@ -75,9 +75,10 @@ public class CharacterDialogue : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.LeftShift))
                 {
-                    aspenAnimator.PlayNod();
+                    
                     if (text.text == lines[index])
                     {
+                        aspenObject.shouldNod = true;
                         NextLine();
                         DetermineAnimation();
                     }

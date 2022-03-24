@@ -216,7 +216,7 @@ MonoBehaviour:
   ThingToGuide: {fileID: 8024549}
   destroyOnFadeOut: 0
   dialogueCharacter: {fileID: 811394453}
-  aspenAnimator: {fileID: 187629623}
+  aspenObject: {fileID: 187629627}
   lines:
   - Ah, don't fear, child, I don't bite.
   - Not a big talker, are ya? You lost?
@@ -451,7 +451,7 @@ MonoBehaviour:
   ThingToGuide: {fileID: 462457347}
   destroyOnFadeOut: 1
   dialogueCharacter: {fileID: 811394453}
-  aspenAnimator: {fileID: 187629623}
+  aspenObject: {fileID: 0}
   lines:
   - Hm?? I've not had visitors in some time...
   shouldChangeOnButtonPress: 0
@@ -1537,21 +1537,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1868787966}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187629618}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: baf34c9aa5bead841b6d6a36a78b66ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &187629623 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4453718593739600835, guid: 21c18efccfb014049bdf0988134a95ce,
-    type: 3}
-  m_PrefabInstance: {fileID: 1868787966}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187629618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7cc47143c936634db9a3b1c9f4de4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &187629625 stripped
@@ -1573,7 +1561,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1868787966}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187629618}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -15743,6 +15731,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1756800570643456695, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756800570643456695, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
       propertyPath: playerInput
       value: 
       objectReference: {fileID: 187629626}
@@ -15768,6 +15761,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
       propertyPath: facingRight
       value: 1
       objectReference: {fileID: 0}
@@ -15780,6 +15778,16 @@ PrefabInstance:
         type: 3}
       propertyPath: movementSpeed
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2198347811559867873, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453718593739600835, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4453718593739600835, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
@@ -16007,6 +16015,11 @@ PrefabInstance:
     - target: {fileID: 7906095723340371965, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334801014397065700, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
