@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void UpdateGravity(float gravitymod, bool glidingbool)
+    public void UpdateGravity(bool glidingbool)
     {
         float gravityApplied = jumpGravity;
 
@@ -84,8 +84,6 @@ public class PlayerMovement : MonoBehaviour
                 Vector2 newVelocity = new Vector2(playerRigidbody.velocity.x, newVelocityY);
                 playerRigidbody.velocity = newVelocity;
             }
-            // If the player starts gliding, make gravity less intense
-            gravityApplied *= gravitymod;
         }
 
         playerRigidbody.gravityScale = gravityApplied;

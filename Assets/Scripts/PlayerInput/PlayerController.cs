@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 3f;
     private float moveSpeedModifier = 1f;
     public float normalGravity = 1f;
-    public float glidingModifier = 3f;
     private float horizontalMovement;
 
     private Vector3 rawInputMovement;
@@ -97,7 +96,7 @@ public class PlayerController : MonoBehaviour
                     jumpInput = true;
                     Debug.Log("Aspen is gliding");
                     isGliding = true;
-                    playerMovement.UpdateGravity(glidingModifier, isGliding);
+                    playerMovement.UpdateGravity(isGliding);
                 } 
             }
         }
@@ -106,7 +105,7 @@ public class PlayerController : MonoBehaviour
         {
             isGliding = false;
             jumpInput = false;
-            playerMovement.UpdateGravity(normalGravity, isGliding);
+            playerMovement.UpdateGravity(isGliding);
             sr.color = new Color(1, 1, 1, 1);
         }
 
@@ -175,7 +174,7 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("Character should glide");
             isGliding = true;
-            playerMovement.UpdateGravity(glidingModifier, isGliding);
+            playerMovement.UpdateGravity(isGliding);
             playerAnimation.GlidingAnimation(isGliding);
         }
     }
