@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     bool canDoubleJump = true;
     bool isGliding = false;
     bool hasLanded = false;
+    public bool jumpInput = false;
     
 
     private void Start()
@@ -72,10 +73,10 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext value)
     {
-        bool isFalling = playerMovement.isFalling;
-
         if (value.performed && isGrounded)
         {
+            Debug.Log("Aspen has jumped");
+            jumpInput = true;
             isInAir = true;
             playerMovement.UpdateJump(isWet);
             isGrounded = false;
@@ -84,29 +85,27 @@ public class PlayerController : MonoBehaviour
         {
             if (value.performed && canDoubleJump && !isWet)
             {
+                jumpInput = true;
+                Debug.Log("Aspen has double jumped");
                 playerMovement.UpdateJump(isWet);
                 canDoubleJump = false;
                 playerAnimation.JumpAnimation();
             } else
             {
-                if (value.performed && !isGliding && !isWet && isFalling) 
+                if (value.performed && !isWet) 
                 {
+                    jumpInput = true;
+                    Debug.Log("Aspen is gliding");
                     isGliding = true;
                     playerMovement.UpdateGravity(glidingModifier, isGliding);
-                } else
-                {
-                    if (value.performed && !isWet)
-                    {
-                        //isGliding = true;
-                        playerMovement.UpdateGravity(glidingModifier, isGliding);
-                    }
-                }
+                } 
             }
         }
 
         if (value.canceled)
         {
             isGliding = false;
+            jumpInput = false;
             playerMovement.UpdateGravity(normalGravity, isGliding);
             sr.color = new Color(1, 1, 1, 1);
         }
@@ -154,6 +153,7 @@ public class PlayerController : MonoBehaviour
         CalculateMovementInputSmoothing();
         UpdatePlayerMovement();
         ShouldPersistVelocity();
+        UpdatePlayerGliding();
     }
 
     void CalculateMovementInputSmoothing()
@@ -165,6 +165,19 @@ public class PlayerController : MonoBehaviour
     {
         // Updating the movement data for movement class
         playerMovement.UpdateMovementData(smoothInputMovement, horizontalMovement, moveSpeedModifier);
+    }
+
+    void UpdatePlayerGliding()
+    {
+        bool isFalling = playerMovement.isFalling;
+
+        if (jumpInput && isFalling)
+        {
+            //Debug.Log("Character should glide");
+            isGliding = true;
+            playerMovement.UpdateGravity(glidingModifier, isGliding);
+            playerAnimation.GlidingAnimation(isGliding);
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
