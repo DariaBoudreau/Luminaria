@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Recall : MonoBehaviour
 {
-    [SerializeField] CharacterController2D aspenObject;
+    [SerializeField]
+    CharacterController2D aspenObject;
+    //PlayerCharging aspenObject;
+
     public delegate void RecallAction();
     public static event RecallAction Recalled;
     private bool triggerActive;

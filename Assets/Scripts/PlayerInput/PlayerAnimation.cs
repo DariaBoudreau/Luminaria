@@ -38,11 +38,10 @@ public class PlayerAnimation : MonoBehaviour
 
     public void UpdateRunAnimation(Vector2 velocity, float runSpeed)
     {
-        var horizontalSpeedNormalized = Mathf.Abs(velocity.x) / runSpeed;
-        horizontalSpeedNormalized *= runAnimationSpeedModifier;
+        var horizontalSpeedNormalized = Mathf.Abs(velocity.x) * runSpeed;
 
         animator.SetFloat(animatorRunningSpeed, horizontalSpeedNormalized);
-        audioPlayer.PlaySteps(currentGroundType, velocity.x);
+        audioPlayer.PlaySteps(currentGroundType, horizontalSpeedNormalized);
     }
 
     public void JumpAnimation()
