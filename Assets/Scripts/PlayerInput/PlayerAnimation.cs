@@ -36,12 +36,6 @@ public class PlayerAnimation : MonoBehaviour
         animatorGlidingBool = Animator.StringToHash("Gliding");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateRunAnimation(Vector2 velocity, float runSpeed)
     {
         var horizontalSpeedNormalized = Mathf.Abs(velocity.x) / runSpeed;

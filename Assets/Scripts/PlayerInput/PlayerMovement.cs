@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
-
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Component References")]
@@ -12,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement Settings")]
     public float movementSpeed;
-    public float maxSpeed;
+    //public float maxSpeed;
     public float speedModifier;
     public float deccel = .1f;
     public float turnSpeed = 0.1f;
@@ -23,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpGravity = .5f;
     //public float glidingModifier = 3f;
 
+    public bool isFalling = false;
     public bool facingRight = false;
     public bool shouldPersistVelocity;
 
@@ -58,6 +58,19 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        UpdateFalling();
+    }
+
+    public void UpdateFalling()
+    {
+        if (playerRigidbody.velocity.y < 0f)
+        {
+            isFalling = true;
+        }
+    }
+
     public void UpdateGravity(float gravitymod, bool glidingbool)
     {
         float gravityApplied = jumpGravity;
@@ -65,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         if (glidingbool)
         {
             // Check if rb has built up negative y velocity. If so, scale velocity by glideVelocityNegation
-            if (playerRigidbody.velocity.y < 0f)
+            if (playerRigidbody.velocity.y <= 0f)
             {
                 float newVelocityY = playerRigidbody.velocity.y * glideVelocityNegation;
                 Vector2 newVelocity = new Vector2(playerRigidbody.velocity.x, newVelocityY);
@@ -74,11 +87,6 @@ public class PlayerMovement : MonoBehaviour
             // If the player starts gliding, make gravity less intense
             gravityApplied *= gravitymod;
         }
-
-        //if (playerRigidbody)
-        //{
-
-        //}
 
         playerRigidbody.gravityScale = gravityApplied;
     }
@@ -91,9 +99,15 @@ public class PlayerMovement : MonoBehaviour
 
     void MoveThePlayer()
     {
-        //Vector2 currentVelocity = playerRigidbody.velocity;
+        // Vector2 currentVelocity = playerRigidbody.velocity;
         // Movement value = the direction times speed times the modifier times deltatime 
         float movement = movementDirection.x * movementSpeed * speedModifier * Time.fixedDeltaTime;
+
+        // If there is no horizontal input slow aspen the hell down!!!!!!!!!!!!
+        if (horizontalInput == 0)
+        {
+            movement *= deccel;
+        }
 
         if (shouldPersistVelocity)
         {
@@ -104,8 +118,6 @@ public class PlayerMovement : MonoBehaviour
             // Apply new velocity
             playerRigidbody.velocity = new Vector2(movement, playerRigidbody.velocity.y);
         }
-
-       
 
         // Flip player when changing direction
         if (!facingRight && horizontalInput > 0f)
@@ -128,4 +140,8 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = localScale;
     }
 
+    public void LandPlayer()
+    {
+        isFalling = false;
+    }
 }

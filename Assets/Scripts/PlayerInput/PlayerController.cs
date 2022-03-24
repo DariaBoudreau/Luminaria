@@ -19,12 +19,12 @@ public class PlayerController : MonoBehaviour
     public float normalGravity = 1f;
     public float glidingModifier = 3f;
     private float horizontalMovement;
+
     private Vector3 rawInputMovement;
     private Vector3 smoothInputMovement;
 
     public Vector2 lastInput;
     public Vector2 inputMovement;
-    //public Vector2 last
 
     [Header("Ground Types")]
     private LayerMask softGroundMask;
@@ -37,12 +37,14 @@ public class PlayerController : MonoBehaviour
 
     public bool isInAir = false;
     public bool isBurning;
-    public bool hasTransitioned = false;
+    public bool hasTransitioned = false; 
+    public bool isWet = false;
+
     bool isGrounded = false;
     bool canDoubleJump = true;
     bool isGliding = false;
     bool hasLanded = false;
-    public bool isWet = false;
+    
 
     private void Start()
     {
@@ -70,6 +72,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext value)
     {
+        bool isFalling = playerMovement.isFalling;
+
         if (value.performed && isGrounded)
         {
             isInAir = true;
@@ -85,11 +89,10 @@ public class PlayerController : MonoBehaviour
                 playerAnimation.JumpAnimation();
             } else
             {
-                if (value.performed && !isGliding && !isWet) 
+                if (value.performed && !isGliding && !isWet && isFalling) 
                 {
                     isGliding = true;
                     playerMovement.UpdateGravity(glidingModifier, isGliding);
-                    sr.color = new Color(0, 1, 0, 1);
                 } else
                 {
                     if (value.performed && !isWet)
@@ -179,6 +182,8 @@ public class PlayerController : MonoBehaviour
                 hasLanded = true;
             }
         }
+
+        playerMovement.LandPlayer();
     }
 
     void ShouldPersistVelocity()
