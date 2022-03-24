@@ -15,9 +15,9 @@ public class PlayerAnimation : MonoBehaviour
     private int animatorBurnTrigger;
     private int animatorBurningBool;
     private int animatorGlidingBool;
+    private int animatorNodTrigger;
 
     GroundType currentGroundType;
-    bool isBurning;
 
     [Header("Animation Overrides")]
     public AnimatorOverrideController AspenLeft;
@@ -34,12 +34,14 @@ public class PlayerAnimation : MonoBehaviour
         animatorBurnTrigger = Animator.StringToHash("Burn");
         animatorBurningBool = Animator.StringToHash("Burning");
         animatorGlidingBool = Animator.StringToHash("Gliding");
+        animatorNodTrigger = Animator.StringToHash("Nod");
     }
 
     public void UpdateRunAnimation(Vector2 velocity, float runSpeed)
     {
         var horizontalSpeedNormalized = Mathf.Abs(velocity.x) * runSpeed;
 
+        //Debug.Log(currentGroundType);
         animator.SetFloat(animatorRunningSpeed, horizontalSpeedNormalized);
         audioPlayer.PlaySteps(currentGroundType, horizontalSpeedNormalized);
     }
@@ -56,12 +58,14 @@ public class PlayerAnimation : MonoBehaviour
 
     public void UpdateGroundingAnimation(bool isGrounded, bool needsSFX, GroundType groundType)
     {
-        animator.SetBool(animatorGroundedBool, isGrounded);
         currentGroundType = groundType;
+        animator.SetBool(animatorGroundedBool, isGrounded);
+        //Debug.Log(currentGroundType);
+        //Debug.Log(isGrounded);
 
         if (needsSFX)
         {
-            audioPlayer.PlayLanding(currentGroundType);
+            //audioPlayer.PlayLanding(currentGroundType);
         }
     }
 
@@ -73,6 +77,12 @@ public class PlayerAnimation : MonoBehaviour
     public void UpdateBurningAnimation(bool isBurning)
     {
         animator.SetBool(animatorBurningBool, isBurning);
+    }
+
+    public void PlayNod()
+    {
+        Debug.Log("Aspen will nod");
+        animator.SetTrigger(animatorNodTrigger);
     }
 
     private void FixedUpdate()

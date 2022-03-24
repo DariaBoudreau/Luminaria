@@ -22,6 +22,8 @@ public class CharacterAudio : MonoBehaviour
         if (groundType == GroundType.None)
             return;
 
+        //Debug.Log("Playing footstep sounds");
+
         stepsTimer += Time.fixedDeltaTime * speedNormalized;
 
         if (stepsTimer >= stepsTimeGap)

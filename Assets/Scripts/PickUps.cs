@@ -6,7 +6,9 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class PickUps : MonoBehaviour
 {
     [Header("Aspen")]
-    [SerializeField] public CharacterController2D aspenObject;
+    [SerializeField]
+    //public CharacterController2D aspenObject;
+    public PlayerCharging aspenObject;
     [SerializeField] int chargeValue = 0;
 
 

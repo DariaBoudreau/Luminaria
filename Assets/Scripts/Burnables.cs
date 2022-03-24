@@ -4,7 +4,8 @@ using System.Collections;
 
 public class Burnables : MonoBehaviour
 {
-    [SerializeField] CharacterController2D aspenObject;
+    //[SerializeField] CharacterController2D aspenObject;
+    [SerializeField] PlayerCharging aspenObject;
     [SerializeField] bool triggerActive = false;
     [SerializeField] int chargeCost = 1;
     [SerializeField] int psRenderLayer = 26;
@@ -70,7 +71,8 @@ public class Burnables : MonoBehaviour
                     fire.SetActive(true);
                     ps.Play();
                     lt.gameObject.SetActive(true);
-                    aspenObject.currentCharge -= chargeCost;
+                    aspenObject.chargeChange = chargeCost;
+                    aspenObject.SpendCharge();
                 }
             } 
             else

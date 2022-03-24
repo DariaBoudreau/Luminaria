@@ -27,7 +27,7 @@ public class PlayerCharging : MonoBehaviour
         lt = ps.gameObject.transform.parent.GetComponentInChildren<Light2D>(true);
         main = ps.main;
         em = ps.emission;
-        currentCharge = maxCharge;
+        //currentCharge = maxCharge;
         prevCharge = -1;
     }
 
@@ -43,6 +43,16 @@ public class PlayerCharging : MonoBehaviour
         return n;
     }
 
+    public void StartBurning()
+    {
+        isBurning = true;
+    }
+
+    public void StopBurning()
+    {
+        isBurning = false;
+    }
+
     public void SpendCharge()
     {
         if (chargeChange >= 1)
@@ -55,7 +65,7 @@ public class PlayerCharging : MonoBehaviour
             StartCoroutine(FadeDown());
         }
 
-        currentCharge += chargeChange;
+        currentCharge -= chargeChange;
         UpdateParticles();
         Debug.Log(currentCharge);
     }

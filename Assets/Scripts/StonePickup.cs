@@ -6,7 +6,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class StonePickup : MonoBehaviour
 {
     [Header("Aspen")]
-    [SerializeField] CharacterController2D aspenObject;
+    [SerializeField] PlayerCharging aspenObject;
     [SerializeField] int chargeValue = 0;
 
     [Header("HUD")]

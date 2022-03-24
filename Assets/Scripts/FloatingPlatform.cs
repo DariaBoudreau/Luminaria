@@ -141,7 +141,9 @@ public class FloatingPlatform : MonoBehaviour
 
     #region  New Floating Platform Script
 
-    [SerializeField] CharacterController2D aspenObject;
+    [SerializeField]
+    //CharacterController2D aspenObject;
+    PlayerCharging aspenObject;
     [SerializeField] private Transform pos1;
     [SerializeField] private Transform pos2;
     [SerializeField] private int chargeCost;
@@ -287,7 +289,9 @@ public class FloatingPlatform : MonoBehaviour
 
     void RemoveCharge()
     {
-        aspenObject.currentCharge -= chargeCost;
+        //aspenObject.currentCharge -= chargeCost;
+        aspenObject.chargeChange = chargeCost;
+        aspenObject.SpendCharge();
     }
     #endregion
 }

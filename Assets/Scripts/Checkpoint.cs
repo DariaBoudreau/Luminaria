@@ -3,7 +3,9 @@ using System.Collections;
 
 public class Checkpoint : MonoBehaviour
 {
-    [SerializeField] public CharacterController2D Aspen;
+    [SerializeField]
+    //public CharacterController2D Aspen;
+    public PlayerController Aspen;
     [SerializeField] private GameObject checkpointLight;
     private GameMaster gameMaster;
     private int xOffset = -2;

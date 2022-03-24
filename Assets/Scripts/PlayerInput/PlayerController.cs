@@ -132,14 +132,14 @@ public class PlayerController : MonoBehaviour
         if (value.performed && !hasTransitioned)
         {
             playerAnimation.StartBurningAnimation();
+            playerCharging.StartBurning();
             playerCharging.SpendCharge();
-            isBurning = true;
             hasTransitioned = true;
         } 
 
         if (value.canceled)
         {
-            isBurning = false;
+            playerCharging.StopBurning();
             hasTransitioned = false;
         }
 
