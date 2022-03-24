@@ -7,6 +7,7 @@ public class ChargeOrbs : MonoBehaviour
 {
     [SerializeField]
     CharacterController2D Aspen;
+    //PlayerCharging Aspen;
 
     int chargeLevel = 0;
     int maxCharge;
