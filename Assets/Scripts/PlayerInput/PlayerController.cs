@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
     {
         bool isFalling = playerMovement.isFalling;
 
-        if (jumpInput && isFalling)
+        if (jumpInput && isFalling && !isWet)
         {
             //Debug.Log("Character should glide");
             isGliding = true;

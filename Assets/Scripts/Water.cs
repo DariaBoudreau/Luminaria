@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
-    [SerializeField] CharacterController2D aspenObject;
-    //[SerializeField] PlayerController aspenObject;
+    //[SerializeField] CharacterController2D aspenObject;
+    [SerializeField] PlayerController aspenObject;
     [SerializeField] float wetTime;
     private Collider2D col;
     private IEnumerator coroutine;
