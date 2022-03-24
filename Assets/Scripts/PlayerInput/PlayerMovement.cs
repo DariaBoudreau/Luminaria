@@ -10,16 +10,16 @@ public class PlayerMovement : MonoBehaviour
     [System.NonSerialized] public Rigidbody2D playerRigidbody;
 
     [Header("Movement Settings")]
-    public float movementSpeed;
+    public float movementSpeed = 500;
     //public float maxSpeed;
-    public float speedModifier;
-    public float deccel = .1f;
-    public float turnSpeed = 0.1f;
+    public float speedModifier = 1;
+    public float deccel = 0.2f;
+    public float turnSpeed = 3f;
     public float horizontalInput;
-    public float jumpPower = 100f;
-    public float wetJumpPower = 50f;
-    public float glideVelocityNegation = .3f;
-    public float jumpGravity = .5f;
+    public float jumpPower = 60f;
+    public float wetJumpPower = 35f;
+    public float glideVelocityNegation = 0.97f;
+    public float jumpGravity = 10f;
     //public float glidingModifier = 3f;
 
     public bool isFalling = false;
