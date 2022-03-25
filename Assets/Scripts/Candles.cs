@@ -5,7 +5,9 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 public class Candles : MonoBehaviour
 {
-    [SerializeField] CharacterController2D aspenObject;
+    //[SerializeField] CharacterController2D aspenObject;
+    [SerializeField] PlayerController aspenObject;
+    [SerializeField] PlayerCharging aspenCharging;
     [SerializeField] int chargeCost;
     [SerializeField] public bool isLit;
     [SerializeField] public bool startsLit;
@@ -30,15 +32,15 @@ public class Candles : MonoBehaviour
     }
     void Update()
     {
-        if (triggerActive && aspenObject.isBurning && waitingDelay)
+        if (triggerActive && aspenCharging.isBurning && waitingDelay)
         {
-            if(!aspenObject.isWet)
+            if(!aspenCharging.isInWater)
             {
                 if (isLit)
                 {
                     ExtinguishCandle();
                 }
-                else if (aspenObject.currentCharge >= chargeCost && !isLit)
+                else if (aspenCharging.currentCharge >= chargeCost && !isLit)
                 {
                     LightCandle();
                 }  
@@ -78,7 +80,8 @@ public class Candles : MonoBehaviour
     {
         waitingDelay = false;
         isLit = true;
-        aspenObject.currentCharge -= chargeCost;
+        aspenCharging.currentCharge -= chargeCost;
+        //aspenObject.isWet = false;
         light.intensity = maxIntensity;
         transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = true;
         StartCoroutine(Delay(1));
@@ -88,7 +91,7 @@ public class Candles : MonoBehaviour
     {
         waitingDelay = false;
         isLit = false;
-        aspenObject.currentCharge += chargeCost;
+        aspenCharging.currentCharge += chargeCost;
         light.intensity = 0f;
         transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = false;
         StartCoroutine(Delay(1));

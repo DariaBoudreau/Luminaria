@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     public bool isBurning;
     public bool hasTransitioned = false; 
     public bool isWet = false;
+    //public bool isInWater = false;
 
     bool isGrounded = false;
     bool canDoubleJump = true;
@@ -66,15 +67,12 @@ public class PlayerController : MonoBehaviour
         rawInputMovement = new Vector3(inputMovement.x, inputMovement.y, 0);
 
         playerAnimation.UpdateRunAnimation(inputMovement, runSpeed);
-
-        Debug.Log(rawInputMovement);
     }
 
     public void OnJump(InputAction.CallbackContext value)
     {
         if (value.performed && isGrounded)
         {
-            Debug.Log("Aspen has jumped");
             jumpInput = true;
             isInAir = true;
             playerMovement.UpdateJump(isWet);
@@ -85,7 +83,6 @@ public class PlayerController : MonoBehaviour
             if (value.performed && canDoubleJump && !isWet)
             {
                 jumpInput = true;
-                Debug.Log("Aspen has double jumped");
                 playerMovement.UpdateJump(isWet);
                 canDoubleJump = false;
                 playerAnimation.JumpAnimation();
@@ -94,7 +91,6 @@ public class PlayerController : MonoBehaviour
                 if (value.performed && !isWet) 
                 {
                     jumpInput = true;
-                    Debug.Log("Aspen is gliding");
                     isGliding = true;
                     playerMovement.UpdateGravity(isGliding);
                 } 

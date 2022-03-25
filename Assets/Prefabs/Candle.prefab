@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspenObject: {fileID: 0}
+  aspenCharging: {fileID: 0}
   chargeCost: 1
   isLit: 0
   startsLit: 0

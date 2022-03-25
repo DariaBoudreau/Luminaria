@@ -18,6 +18,7 @@ public class PlayerCharging : MonoBehaviour
 
     public bool isBurning;
     public bool hasTransitioned;
+    public bool isInWater;
 
     // Pretty much everything here is the same as Miles' original code
 
