@@ -5742,10 +5742,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 304030259}
     m_Modifications:
-    - target: {fileID: 78950764, guid: 9bd03ab8f38a3cf4a8cf7e42d9718f1e, type: 3}
-      propertyPath: stepsTimeGap
-      value: 0.24
-      objectReference: {fileID: 0}
     - target: {fileID: 1589708414503063807, guid: 9bd03ab8f38a3cf4a8cf7e42d9718f1e,
         type: 3}
       propertyPath: m_IsActive

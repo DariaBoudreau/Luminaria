@@ -25,6 +25,9 @@ public class PlayerAnimation : MonoBehaviour
 
     public float runAnimationSpeedModifier = 0.5f;
 
+    private bool isRunning = false;
+    private float speedNormalized;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,14 +39,22 @@ public class PlayerAnimation : MonoBehaviour
         animatorGlidingBool = Animator.StringToHash("Gliding");
         animatorNodTrigger = Animator.StringToHash("Nod");
     }
-
+    
     public void UpdateRunAnimation(Vector2 velocity, float runSpeed)
     {
         var horizontalSpeedNormalized = Mathf.Abs(velocity.x) * runSpeed;
 
         //Debug.Log(currentGroundType);
         animator.SetFloat(animatorRunningSpeed, horizontalSpeedNormalized);
-        audioPlayer.PlaySteps(currentGroundType, horizontalSpeedNormalized);
+        if (velocity.x > 0.1 || velocity.x < 0.1)
+        {
+            isRunning = true;
+        }
+        else
+        {
+            isRunning = false;
+        }
+        speedNormalized = horizontalSpeedNormalized;
     }
 
     public void JumpAnimation()
@@ -87,6 +98,10 @@ public class PlayerAnimation : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isRunning)
+        {
+            audioPlayer.PlaySteps(currentGroundType, speedNormalized);
+        }
         UpdateAnimationOverride();
     }
 
