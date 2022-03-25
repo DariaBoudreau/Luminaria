@@ -3596,7 +3596,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.5199
+      value: 90.5239
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -4584,8 +4584,8 @@ MonoBehaviour:
   - {fileID: 342024403}
   - {fileID: 500215401}
   m_Bounds:
-    m_Center: {x: 0.06964588, y: -0.92815495, z: -0.000012028031}
-    m_Extent: {x: 6.4196777, y: 4.827966, z: 1.364242e-12}
+    m_Center: {x: 0.06965351, y: -0.9281559, z: 0.0000027529895}
+    m_Extent: {x: 6.419669, y: 4.8279657, z: 3.410605e-13}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -17145,6 +17145,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1756800570643456695, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
+      propertyPath: ableToBurn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756800570643456695, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
       propertyPath: playerInput
       value: 
       objectReference: {fileID: 1868787972}
@@ -17161,7 +17166,7 @@ PrefabInstance:
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: jumpPower
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
@@ -17175,6 +17180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
+      propertyPath: wetJumpPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
       propertyPath: movementSpeed
       value: 500
       objectReference: {fileID: 0}
@@ -17182,6 +17192,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speedModifier
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: shouldFlipAtStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
@@ -17255,7 +17270,7 @@ PrefabInstance:
     - target: {fileID: 7906095723340371957, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7906095723340371965, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
@@ -17312,7 +17327,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7906095723340371953, guid: 21c18efccfb014049bdf0988134a95ce, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 21c18efccfb014049bdf0988134a95ce, type: 3}
 --- !u!1 &1868787967 stripped
 GameObject:

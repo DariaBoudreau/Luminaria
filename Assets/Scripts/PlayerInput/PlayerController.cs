@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour
     public bool isWet = false;
     //public bool isInWater = false;
 
+    //Whether Aspen should be able to burn at all in this scene
+    //Should be public so it can be changed in the animator
+    public bool ableToBurn = true;
+
     bool isGrounded = false;
     bool canDoubleJump = true;
     bool isGliding = false;
@@ -71,41 +75,46 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext value)
     {
-        if (value.performed && isGrounded)
+        if (playerMovement.jumpPower > 0)
         {
-            jumpInput = true;
-            isInAir = true;
-            playerMovement.UpdateJump(isWet);
-            isGrounded = false;
-            playerAnimation.JumpAnimation();
-        } else
-        {
-            if (value.performed && canDoubleJump && !isWet)
+            if (value.performed && isGrounded)
             {
                 jumpInput = true;
+                isInAir = true;
                 playerMovement.UpdateJump(isWet);
-                canDoubleJump = false;
+                isGrounded = false;
                 playerAnimation.JumpAnimation();
-            } else
+            }
+            else
             {
-                if (value.performed && !isWet) 
+                if (value.performed && canDoubleJump && !isWet)
                 {
                     jumpInput = true;
-                    isGliding = true;
-                    playerMovement.UpdateGravity(isGliding);
-                } 
+                    playerMovement.UpdateJump(isWet);
+                    canDoubleJump = false;
+                    playerAnimation.JumpAnimation();
+                }
+                else
+                {
+                    if (value.performed && !isWet)
+                    {
+                        jumpInput = true;
+                        isGliding = true;
+                        playerMovement.UpdateGravity(isGliding);
+                    }
+                }
             }
-        }
 
-        if (value.canceled)
-        {
-            isGliding = false;
-            jumpInput = false;
-            playerMovement.UpdateGravity(isGliding);
-            sr.color = new Color(1, 1, 1, 1);
-        }
+            if (value.canceled)
+            {
+                isGliding = false;
+                jumpInput = false;
+                playerMovement.UpdateGravity(isGliding);
+                sr.color = new Color(1, 1, 1, 1);
+            }
 
-        playerAnimation.GlidingAnimation(isGliding);
+            playerAnimation.GlidingAnimation(isGliding);
+        }
     }
 
     public void OnRun(InputAction.CallbackContext value)
@@ -125,20 +134,23 @@ public class PlayerController : MonoBehaviour
 
     public void OnShine(InputAction.CallbackContext value)
     {
-        if (value.performed && !hasTransitioned)
+        if (ableToBurn)
         {
-            playerAnimation.StartBurningAnimation();
-            playerCharging.StartBurning();
-            hasTransitioned = true;
-        } 
+            if (value.performed && !hasTransitioned)
+            {
+                playerAnimation.StartBurningAnimation();
+                playerCharging.StartBurning();
+                hasTransitioned = true;
+            }
 
-        if (value.canceled)
-        {
-            playerCharging.StopBurning();
-            hasTransitioned = false;
+            if (value.canceled)
+            {
+                playerCharging.StopBurning();
+                hasTransitioned = false;
+            }
+
+            playerAnimation.UpdateBurningAnimation(isBurning);
         }
-
-        playerAnimation.UpdateBurningAnimation(isBurning);
     }
 
     void Update()

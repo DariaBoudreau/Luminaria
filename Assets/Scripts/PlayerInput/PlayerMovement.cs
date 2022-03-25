@@ -24,8 +24,9 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isFalling = false;
     public bool facingRight = false;
+    public bool shouldFlipAtStart = true;
     public bool shouldPersistVelocity;
-
+    
     private Vector3 movementDirection;
     [System.NonSerialized] private Vector2 previousVelocity;
 
@@ -33,7 +34,10 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get rigidbody
         playerRigidbody = GetComponent<Rigidbody2D>();
-        FlipPlayer();
+        if (shouldFlipAtStart)
+        {
+            FlipPlayer();
+        }
     }
 
     public void UpdateMovementData(Vector3 newMovementDirection, float newHorizontalInput, float moveSpeedModifier)
