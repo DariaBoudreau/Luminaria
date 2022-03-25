@@ -68,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         if (playerRigidbody.velocity.y < 0f)
         {
             isFalling = true;
+            UpdateGravity(false);
         }
     }
 
