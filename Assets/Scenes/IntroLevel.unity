@@ -2565,7 +2565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThingToGuide: {fileID: 592601988}
-  destroyOnFadeOut: 0
+  destroyOnFadeOut: 1
   lines: []
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
@@ -3571,7 +3571,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358129, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_DefaultBlend.m_Time
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358132, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -3591,17 +3591,17 @@ PrefabInstance:
     - target: {fileID: 4401863854545358132, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: orthographic size
-      value: 10.6
+      value: 9.85
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.51642
+      value: 89.18529
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.997818
+      value: 23.247822
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -3716,12 +3716,12 @@ PrefabInstance:
     - target: {fileID: 4401863856316295328, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7768053
+      value: 1.7777778
       objectReference: {fileID: 0}
     - target: {fileID: 4401863856316295328, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 10.6
+      value: 9.85
       objectReference: {fileID: 0}
     - target: {fileID: 4401863856316295334, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -3731,7 +3731,7 @@ PrefabInstance:
     - target: {fileID: 4401863856316295334, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.303318
+      value: 20.15332
       objectReference: {fileID: 0}
     - target: {fileID: 4401863856316295334, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -4584,8 +4584,8 @@ MonoBehaviour:
   - {fileID: 342024403}
   - {fileID: 500215401}
   m_Bounds:
-    m_Center: {x: 0.06965351, y: -0.9281559, z: 0.0000027529895}
-    m_Extent: {x: 6.419669, y: 4.8279657, z: 3.410605e-13}
+    m_Center: {x: 0.06964588, y: -0.92815495, z: -0.000012028031}
+    m_Extent: {x: 6.4196777, y: 4.827966, z: 1.364242e-12}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -16190,7 +16190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c729bbdd5f72a498c8543a2869a94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMustPressKey: 1
+  playerMustPressKey: 0
   nextScene: FireflyHutInterior
   audioSource: {fileID: 0}
   sfxPortal: {fileID: 0}
@@ -16208,7 +16208,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.020786285, y: 0.57252026}
+  m_Offset: {x: 0.4782219, y: 0.50390434}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -16219,7 +16219,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.559929, y: 4.723688}
+  m_Size: {x: 2.8343887, y: 8.794872}
   m_EdgeRadius: 0
 --- !u!1001 &1691570374
 PrefabInstance:
@@ -17266,7 +17266,7 @@ PrefabInstance:
     - target: {fileID: 7906095723340371957, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7906095723340371965, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
@@ -18118,7 +18118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1979551891
 Transform:
   m_ObjectHideFlags: 0
