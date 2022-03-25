@@ -17,6 +17,7 @@ public class Recall : MonoBehaviour
         if(aspenObject.isBurning && triggerActive)
         {
             aspenObject.currentCharge = aspenObject.maxCharge;
+            aspenObject.CheckForFullLights();
             if(Recalled != null)
             {
                 Recalled.Invoke();

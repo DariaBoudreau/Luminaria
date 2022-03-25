@@ -30,6 +30,8 @@ public class PlayerCharging : MonoBehaviour
         em = ps.emission;
         //currentCharge = maxCharge;
         prevCharge = -1;
+
+        CheckForDimLights();
     }
 
     private void FixedUpdate()
@@ -67,9 +69,29 @@ public class PlayerCharging : MonoBehaviour
         }
 
         currentCharge -= chargeChange;
+
+        CheckForDimLights();
+        CheckForFullLights();
+
         UpdateParticles();
         Debug.Log(currentCharge);
         chargeChange = 0;
+    }
+
+    void CheckForDimLights()
+    {
+        if (currentCharge == 0)
+        {
+            lt.intensity = 0;
+        }
+    }
+
+    public void CheckForFullLights()
+    {
+        if (currentCharge == maxCharge)
+        {
+            lt.intensity = 3;
+        }
     }
 
     public void UpdateParticles()
