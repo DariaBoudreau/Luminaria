@@ -7,23 +7,33 @@ using UnityEngine;
 public class CandleDoor : MonoBehaviour
 {
     [SerializeField] Candles[] candles;
-    void Start()
+    //[SerializeField] bool startsAwake;
+/*     void Start()
     {
-
-    }
+        if(startsAwake)
+        {
+            SetActive(true);
+        }
+        else
+        {
+            SetActive(false);
+        }
+    } */
 
     void Update()
     {   
         bool success = Check();
-        if(success == true)
+        if(success == false)
         {
+            //this.SetActive(false);
             this.GetComponent<SpriteRenderer>().enabled = false;
-            this.GetComponent<BoxCollider2D>().enabled = false;
+            this.GetComponent<EdgeCollider2D>().enabled = false;
         }
         else
         {
+            //this.SetActive(true);
             this.GetComponent<SpriteRenderer>().enabled = true;
-            this.GetComponent<BoxCollider2D>().enabled = true;
+            this.GetComponent<EdgeCollider2D>().enabled = true;
         }
     }
 

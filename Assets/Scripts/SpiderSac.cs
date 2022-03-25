@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SpiderSac : MonoBehaviour
 {
-    [SerializeField] CharacterController2D aspenObject;
+    [SerializeField] PlayerCharging aspenObject;
     [SerializeField] int chargeCost;
     public delegate void CandleLight();
     public static event CandleLight Lighted;
 
     private Rigidbody2D rb;
     private Collider2D col;
-
     private Vector3 startPos;
+    public bool triggerActive;
 
     void Start()
     {
@@ -26,7 +26,8 @@ public class SpiderSac : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Aspen"))
         {
-            if (aspenObject.isBurning)
+            triggerActive = true;
+            if (aspenObject.isBurning && triggerActive)
             {
                 rb.gravityScale = 1;
             }
@@ -37,6 +38,14 @@ public class SpiderSac : MonoBehaviour
             {
                 Lighted();
             }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Aspen"))
+        {
+            triggerActive = false;
         }
     }
 
