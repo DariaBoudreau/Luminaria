@@ -7186,11 +7186,26 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 9ba03e19ff643544481c8a0fcfb5d280, type: 2}
+    - {fileID: 11400000, guid: e2686c575c95ca74c8cd34861da1b5d1, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7906095723340371953}
-          m_TargetAssemblyTypeName: CharacterController2D, Assembly-CSharp
+        - m_Target: {fileID: 2160760846529054750}
+          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+          m_MethodName: set_CanMove
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2160760846529054750}
+          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
           m_MethodName: set_CanMove
           m_Mode: 6
           m_Arguments:
@@ -7307,6 +7322,7 @@ MonoBehaviour:
   jumpGravity: 0.5
   isFalling: 0
   facingRight: 0
+  shouldFlipAtStart: 1
   shouldPersistVelocity: 0
 --- !u!114 &4453718593739600835
 MonoBehaviour:
@@ -7350,6 +7366,7 @@ MonoBehaviour:
   isBurning: 0
   hasTransitioned: 0
   isWet: 0
+  ableToBurn: 1
   jumpInput: 0
 --- !u!114 &8334801014397065700
 MonoBehaviour:
@@ -7368,3 +7385,4 @@ MonoBehaviour:
   chargeChange: 0
   isBurning: 0
   hasTransitioned: 0
+  isInWater: 0

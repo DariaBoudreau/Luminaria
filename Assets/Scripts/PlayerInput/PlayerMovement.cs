@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     public bool facingRight = false;
     public bool shouldFlipAtStart = true;
     public bool shouldPersistVelocity;
+
+    public bool CanMove { get; set; }
     
     private Vector3 movementDirection;
     [System.NonSerialized] private Vector2 previousVelocity;
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         {
             FlipPlayer();
         }
+        CanMove = true;
     }
 
     public void UpdateMovementData(Vector3 newMovementDirection, float newHorizontalInput, float moveSpeedModifier)
@@ -102,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MoveThePlayer()
     {
+        if (!CanMove) return;
         // Vector2 currentVelocity = playerRigidbody.velocity;
         // Movement value = the direction times speed times the modifier times deltatime 
         float movement = movementDirection.x * movementSpeed * speedModifier * Time.fixedDeltaTime;
@@ -134,7 +138,8 @@ public class PlayerMovement : MonoBehaviour
         //playerRigidbody.MovePosition(transform.position + movement);
     }
 
-    void FlipPlayer()
+    //public so it can be flipped with a signal in the inspector
+    public void FlipPlayer()
     {
         // Flip the player
         facingRight = !facingRight;

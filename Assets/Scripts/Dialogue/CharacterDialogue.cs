@@ -78,7 +78,7 @@ public class CharacterDialogue : MonoBehaviour
                     
                     if (text.text == lines[index])
                     {
-                        aspenObject.shouldNod = true;
+                        //aspenObject.shouldNod = true;
                         NextLine();
                         DetermineAnimation();
                     }
