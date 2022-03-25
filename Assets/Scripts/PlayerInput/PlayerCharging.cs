@@ -69,6 +69,7 @@ public class PlayerCharging : MonoBehaviour
         currentCharge -= chargeChange;
         UpdateParticles();
         Debug.Log(currentCharge);
+        chargeChange = 0;
     }
 
     public void UpdateParticles()

@@ -129,7 +129,6 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimation.StartBurningAnimation();
             playerCharging.StartBurning();
-            playerCharging.SpendCharge();
             hasTransitioned = true;
         } 
 

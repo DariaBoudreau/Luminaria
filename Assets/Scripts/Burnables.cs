@@ -58,22 +58,21 @@ public class Burnables : MonoBehaviour
 
     void Update()
     {
+        if (hasBurned)
+            return;
         if (triggerActive && aspenObject.isBurning)
         {
             if (aspenObject.currentCharge >= chargeCost)
             {
-                if (!hasBurned) 
-                {
-                    hasBurned = true;
-                    soundClip.Play();
-                    StartCoroutine(IsBurning());
+                hasBurned = true;
+                soundClip.Play();
+                StartCoroutine(IsBurning());
 
-                    fire.SetActive(true);
-                    ps.Play();
-                    lt.gameObject.SetActive(true);
-                    aspenObject.chargeChange = chargeCost;
-                    aspenObject.SpendCharge();
-                }
+                fire.SetActive(true);
+                ps.Play();
+                lt.gameObject.SetActive(true);
+                aspenObject.chargeChange = chargeCost;
+                aspenObject.SpendCharge();
             } 
             else
             {
