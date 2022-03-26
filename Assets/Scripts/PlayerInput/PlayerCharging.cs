@@ -68,7 +68,10 @@ public class PlayerCharging : MonoBehaviour
             StartCoroutine(FadeDown());
         }
 
-        currentCharge -= chargeChange;
+        if (currentCharge - chargeChange >= 0 && currentCharge - chargeChange <= maxCharge)
+        {
+            currentCharge -= chargeChange;
+        }
 
         CheckForDimLights();
         CheckForFullLights();

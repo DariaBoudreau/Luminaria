@@ -85,7 +85,9 @@ public class PickUps : MonoBehaviour
             {
                 LevelEndManger.totalNumofStone--;
             }
-            aspenObject.currentCharge += chargeValue;
+            aspenObject.chargeChange = chargeValue;
+            aspenObject.SpendCharge();
+            Debug.Log(aspenObject.currentCharge);
             StartCoroutine(Collect());
         }
     }

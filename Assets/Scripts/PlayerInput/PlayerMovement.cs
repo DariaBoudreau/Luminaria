@@ -111,10 +111,7 @@ public class PlayerMovement : MonoBehaviour
         float movement = movementDirection.x * movementSpeed * speedModifier * Time.fixedDeltaTime;
 
         // If there is no horizontal input slow aspen the hell down!!!!!!!!!!!!
-        if (horizontalInput == 0)
-        {
-            movement *= deccel;
-        }
+        
 
         if (shouldPersistVelocity)
         {
@@ -122,6 +119,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            if (horizontalInput == 0)
+            {
+                movement *= deccel;
+            }
+            
             // Apply new velocity
             playerRigidbody.velocity = new Vector2(movement, playerRigidbody.velocity.y);
         }
@@ -146,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
+        playerRigidbody.velocity *= -0.1f;
     }
 
     public void LandPlayer()
