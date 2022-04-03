@@ -4,18 +4,28 @@ using UnityEngine;
 
 public class OpacityAdjustor : MonoBehaviour
 {
+    [SerializeField] float fadeSpeed;
+    [SerializeField] float fadedAlpha;
+    [SerializeField] float opaqueAlpha;
+
     private SpriteRenderer sprite;
+    private bool shouldFade;
+
     void Start()
     {
         sprite = this.GetComponent<SpriteRenderer>();
     }
+
+    void Update()
+    {
+        FadeAlpha();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Aspen"))
         {
-            Color temp = sprite.color;
-            temp.a = 0f;
-            sprite.color = temp;
+            shouldFade = true;
         }
     }
 
@@ -23,9 +33,20 @@ public class OpacityAdjustor : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Aspen"))
         {
-            Color temp = sprite.color;
-            temp.a = 1f;
-            sprite.color = temp;
+            shouldFade = false;
         }
+    }
+
+    void FadeAlpha()
+    {
+        float step = fadeSpeed * Time.deltaTime;
+        Color tempColor = sprite.color;
+
+        if(shouldFade)
+            tempColor.a = Mathf.MoveTowards(tempColor.a, fadedAlpha, step);
+        else
+            tempColor.a = Mathf.MoveTowards(tempColor.a, opaqueAlpha, step);
+
+        sprite.color = tempColor;
     }
 }
