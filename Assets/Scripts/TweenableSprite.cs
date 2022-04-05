@@ -23,7 +23,7 @@ public class TweenableSprite : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Tween");
+        //Debug.Log("Tween");
 
         if (canTween)
         {
@@ -37,16 +37,16 @@ public class TweenableSprite : MonoBehaviour
 
         while (currentTime < timer)
         {
+            Debug.Log(currentTime);
             currentTime += Time.deltaTime;
         }
 
-        currentTime = 0;
         canTween = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        TweenResetTimer();
+        //TweenResetTimer();
     }
 
     void TweenSprite()
