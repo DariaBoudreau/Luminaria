@@ -34,7 +34,7 @@ public class Candles : MonoBehaviour
     {
         if (triggerActive && aspenCharging.isBurning && waitingDelay)
         {
-            if(!aspenCharging.isInWater)
+            if(!aspenCharging.isInWater && !aspenObject.isWet)
             {
                 if (isLit)
                 {
