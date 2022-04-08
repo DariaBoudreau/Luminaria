@@ -3706,7 +3706,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.95035
+      value: 91.403145
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -4694,8 +4694,8 @@ MonoBehaviour:
   - {fileID: 342024403}
   - {fileID: 500215401}
   m_Bounds:
-    m_Center: {x: 0.06964588, y: -0.92815495, z: -0.000012028031}
-    m_Extent: {x: 6.4196777, y: 4.827966, z: 1.364242e-12}
+    m_Center: {x: 0.06965351, y: -0.9281559, z: 0.0000027529895}
+    m_Extent: {x: 6.419669, y: 4.8279657, z: 3.410605e-13}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -6107,7 +6107,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606099833}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 5cb1a19f9b7b2d24489bfd9006d8a217, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: bea43fe789682ed40b0cc04db9fc0793, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -7033,6 +7033,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 304030259}
     m_Modifications:
+    - target: {fileID: 78950764, guid: 9bd03ab8f38a3cf4a8cf7e42d9718f1e, type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 8300000, guid: 7db93eeba29ae9f41a8dcad835d3d298, type: 3}
+    - target: {fileID: 78950764, guid: 9bd03ab8f38a3cf4a8cf7e42d9718f1e, type: 3}
+      propertyPath: hardLanding
+      value: 
+      objectReference: {fileID: 8300000, guid: 7db93eeba29ae9f41a8dcad835d3d298, type: 3}
+    - target: {fileID: 78950764, guid: 9bd03ab8f38a3cf4a8cf7e42d9718f1e, type: 3}
+      propertyPath: softLanding
+      value: 
+      objectReference: {fileID: 8300000, guid: 7db93eeba29ae9f41a8dcad835d3d298, type: 3}
+    - target: {fileID: 78950764, guid: 9bd03ab8f38a3cf4a8cf7e42d9718f1e, type: 3}
+      propertyPath: softSteps.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1589708414503063807, guid: 9bd03ab8f38a3cf4a8cf7e42d9718f1e,
         type: 3}
       propertyPath: m_IsActive
