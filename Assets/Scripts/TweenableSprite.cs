@@ -24,11 +24,11 @@ public class TweenableSprite : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log("Tween");
-
-        if (canTween)
-        {
-            TweenSprite();
-        }
+        TweenSprite();
+        //if (canTween)
+        //{
+        //    TweenSprite();
+        //}
     }
 
     void TweenResetTimer()
