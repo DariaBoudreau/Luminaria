@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     public void UpdateMovementData(Vector3 newMovementDirection, float newHorizontalInput, float moveSpeedModifier)
     {
         // Every frame update these values for moving
-        movementDirection = NormalizeMovement(newMovementDirection.x);
+        movementDirection = NormalizeMovement(newHorizontalInput);
         horizontalInput = newHorizontalInput;
         speedModifier = moveSpeedModifier;
     }
