@@ -189,7 +189,7 @@ public class PlayerController : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         // Grounding for jumping
-        if (collision.gameObject.tag == "Floor")
+        if (collision.gameObject.CompareTag("Floor"))
         {
             isInAir = false;
             isGrounded = true;

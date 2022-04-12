@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 500;
     //public float maxSpeed;
     public float speedModifier = 1;
-    public float deccel = 0.2f;
+    public float deccel = 0.01f;
     public float turnSpeed = 3f;
     public float horizontalInput;
     public float jumpPower = 60f;
@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool CanMove { get; set; }
     
-    private Vector3 movementDirection;
+    private float movementDirection;
     [System.NonSerialized] private Vector2 previousVelocity;
 
     private void Start()
@@ -43,10 +43,27 @@ public class PlayerMovement : MonoBehaviour
         CanMove = true;
     }
 
+    private float NormalizeMovement(float newMovementDirectionAxis)
+    {
+        if (newMovementDirectionAxis > 0.1)
+        {
+            return 1;
+        }
+        else if (newMovementDirectionAxis < -0.1)
+        {
+            return -1;
+        }
+        else if (newMovementDirectionAxis == 0)
+        {
+            return 0;
+        }
+        else { return 0;  }
+    }
+
     public void UpdateMovementData(Vector3 newMovementDirection, float newHorizontalInput, float moveSpeedModifier)
     {
         // Every frame update these values for moving
-        movementDirection = newMovementDirection;
+        movementDirection = NormalizeMovement(newMovementDirection.x);
         horizontalInput = newHorizontalInput;
         speedModifier = moveSpeedModifier;
     }
@@ -108,10 +125,18 @@ public class PlayerMovement : MonoBehaviour
         if (!CanMove) return;
         // Vector2 currentVelocity = playerRigidbody.velocity;
         // Movement value = the direction times speed times the modifier times deltatime 
-        float movement = movementDirection.x * movementSpeed * speedModifier * Time.fixedDeltaTime;
+        float movement = movementDirection * movementSpeed * speedModifier * Time.fixedDeltaTime;
 
         // If there is no horizontal input slow aspen the hell down!!!!!!!!!!!!
         
+        // Flip player when changing direction
+        if (!facingRight && horizontalInput > 0f)
+        {
+            FlipPlayer();
+        } else if (facingRight && horizontalInput < 0f)
+        {
+            FlipPlayer();
+        }
 
         if (shouldPersistVelocity)
         {
@@ -128,14 +153,6 @@ public class PlayerMovement : MonoBehaviour
             playerRigidbody.velocity = new Vector2(movement, playerRigidbody.velocity.y);
         }
 
-        // Flip player when changing direction
-        if (!facingRight && horizontalInput > 0f)
-        {
-            FlipPlayer();
-        } else if (facingRight && horizontalInput < 0f)
-        {
-            FlipPlayer();
-        }
 
         //playerRigidbody.MovePosition(transform.position + movement);
     }
@@ -148,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
-        playerRigidbody.velocity *= -0.1f;
+        //playerRigidbody.velocity *= -0.1f;
     }
 
     public void LandPlayer()
