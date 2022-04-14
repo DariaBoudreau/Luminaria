@@ -22,6 +22,7 @@ public class Burnables : MonoBehaviour
     private GameObject fire;
     [SerializeField] bool hasNPC;
     [SerializeField] GameObject NPC;
+    [SerializeField] Transform npcSpawn; 
     
     void Start()
     {
@@ -117,7 +118,7 @@ public class Burnables : MonoBehaviour
         }
         if(hasNPC)
         {
-            Instantiate(NPC, transform.position- (Vector3.up*4), transform.rotation);
+            Instantiate(NPC, npcSpawn.position, npcSpawn.rotation);
         }
     }
 }
