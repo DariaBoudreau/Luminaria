@@ -20,6 +20,8 @@ public class Burnables : MonoBehaviour
     private Collider2D barrier;
     private AudioSource soundClip;
     private GameObject fire;
+    [SerializeField] bool hasNPC;
+    [SerializeField] GameObject NPC;
     
     void Start()
     {
@@ -108,10 +110,14 @@ public class Burnables : MonoBehaviour
         {
             thingToHide.GetComponent<Collider2D>().enabled = true;
         }
-        if(givesBack == true)
+        if(givesBack)
         {
             Instantiate(orb, transform.position - (Vector3.up*4), transform.rotation);
             orb.aspenObject = this.aspenObject;
+        }
+        if(hasNPC)
+        {
+            Instantiate(NPC, transform.position- (Vector3.up*4), transform.rotation);
         }
     }
 }
