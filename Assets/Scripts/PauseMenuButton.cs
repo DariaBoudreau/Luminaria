@@ -20,7 +20,7 @@ public class PauseMenuButton : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
-        Debug.Log("Exit the Game");
+        //Debug.Log("Exit the Game");
     }
 
     public void CloseMenu()

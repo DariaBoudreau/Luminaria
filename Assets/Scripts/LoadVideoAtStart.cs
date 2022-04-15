@@ -11,7 +11,7 @@ public class LoadVideoAtStart : MonoBehaviour
         this.GetComponent<VideoPlayer>().targetTexture.Create();
         if (this.GetComponent<VideoPlayer>().targetTexture == null)
         {
-            print("u");
+            //print("u");
         }
     }
 

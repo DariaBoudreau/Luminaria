@@ -33,14 +33,14 @@ public class MushroomBounce : MonoBehaviour
 
         LeanTween.scale(gameObject, Vector3.one, 2).setEasePunch();
         //use transform local scale
-        Debug.Log("Landed");
+        //Debug.Log("Landed");
         //this.transform.localScale = downScaleVector;
         isDown = true;
     }
 
     private void BounceUp()
     {
-        Debug.Log("Bouncing");
+        //Debug.Log("Bouncing");
         this.transform.localScale = bounceScaleVector;
         isDown = false;
     }

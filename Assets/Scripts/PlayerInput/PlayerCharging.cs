@@ -20,6 +20,8 @@ public class PlayerCharging : MonoBehaviour
     public bool hasTransitioned;
     public bool isInWater;
 
+    WaitForSeconds wait = new WaitForSeconds(0.05f);
+
     // Pretty much everything here is the same as Miles' original code
 
     void Start()
@@ -77,7 +79,7 @@ public class PlayerCharging : MonoBehaviour
         CheckForFullLights();
 
         UpdateParticles();
-        Debug.Log(currentCharge);
+        //Debug.Log(currentCharge);
         chargeChange = 0;
     }
 
@@ -109,7 +111,7 @@ public class PlayerCharging : MonoBehaviour
         {
             main.simulationSpeed = ft + 1;
             lt.intensity = ft;
-            yield return new WaitForSeconds(0.05f);
+            yield return wait;
         }
     }
 
@@ -119,7 +121,7 @@ public class PlayerCharging : MonoBehaviour
         {
             main.simulationSpeed = ft + 1;
             lt.intensity = ft;
-            yield return new WaitForSeconds(0.05f);
+            yield return wait;
         }
     }
 }

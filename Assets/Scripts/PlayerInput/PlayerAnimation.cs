@@ -92,7 +92,7 @@ public class PlayerAnimation : MonoBehaviour
 
     public void PlayNod()
     {
-        Debug.Log("Aspen will nod");
+        //Debug.Log("Aspen will nod");
         animator.SetTrigger(animatorNodTrigger);
     }
 

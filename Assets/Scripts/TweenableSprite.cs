@@ -50,7 +50,7 @@ public class TweenableSprite : MonoBehaviour
 
         while (currentTime < timer)
         {
-            Debug.Log(currentTime);
+            //Debug.Log(currentTime);
             currentTime += Time.deltaTime;
         }
 

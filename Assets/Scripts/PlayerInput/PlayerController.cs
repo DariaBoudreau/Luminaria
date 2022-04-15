@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
                         {
                             isGliding = false;
                         }
-                        print(isGliding);
+                        //print(isGliding);
                         playerMovement.UpdateGravity(isGliding);
                     }
                 }

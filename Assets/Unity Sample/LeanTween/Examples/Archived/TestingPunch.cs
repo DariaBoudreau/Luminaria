@@ -40,7 +40,7 @@ public class TestingPunch : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            print("scale punch!");
+            //print("scale punch!");
 
             tweenStatically( this.gameObject );
 
@@ -68,7 +68,7 @@ public class TestingPunch : MonoBehaviour {
         {
             Vector3[] pts = new Vector3[] {new Vector3(-1f,0f,0f), new Vector3(0f,0f,0f), new Vector3(4f,0f,0f), new Vector3(20f,0f,0f)};
             descr = LeanTween.move(gameObject, pts, 15f).setOrientToPath(true).setDirection(1f).setOnComplete( ()=>{
-                Debug.Log("move path finished");
+                //Debug.Log("move path finished");
             });
         }
 
@@ -81,19 +81,19 @@ public class TestingPunch : MonoBehaviour {
         {
             // LeanTween.rotate(this.gameObject, Vector3.one, 1.0f).setEase(LeanTweenType.punch);
             LeanTween.rotateAroundLocal(this.gameObject, this.transform.forward, -80f, 5.0f).setPoint(new Vector3(1.25f, 0f, 0f));
-            print("rotate punch!");
+            //print("rotate punch!");
         }
  
         if (Input.GetKeyDown(KeyCode.M))
         {
             // LeanTween.move(this.gameObject, new Vector3(0f,0f,1f), 1.0f).setEase(LeanTweenType.punch);
-            print("move punch!");
+            //print("move punch!");
             Time.timeScale = 0.25f;
             float start = Time.realtimeSinceStartup;
             LeanTween.moveX( this.gameObject, 1f, 1f).setOnComplete( destroyOnComp ).setOnCompleteParam( this.gameObject ).setOnComplete( ()=>{
                 float end = Time.realtimeSinceStartup;
                 float diff = end - start;
-                Debug.Log("start:"+start+" end:"+end+" diff:"+diff+" x:"+this.gameObject.transform.position.x);
+                //Debug.Log("start:"+start+" end:"+end+" diff:"+diff+" x:"+this.gameObject.transform.position.x);
             }).setEase(LeanTweenType.easeInBack).setOvershoot( overShootValue ).setPeriod(0.3f);
         }
 

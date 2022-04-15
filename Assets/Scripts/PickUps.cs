@@ -38,6 +38,8 @@ public class PickUps : MonoBehaviour
     private Coroutine pulsing;
     public bool isCollected = false;
 
+    WaitForSeconds wait = new WaitForSeconds(0.02f);
+
     void Start()
     {
         lt = GetComponentInChildren<Light2D>(true);
@@ -87,7 +89,7 @@ public class PickUps : MonoBehaviour
             }
             aspenObject.chargeChange = chargeValue;
             aspenObject.SpendCharge();
-            Debug.Log(aspenObject.currentCharge);
+            //Debug.Log(aspenObject.currentCharge);
             StartCoroutine(Collect());
         }
     }
@@ -103,7 +105,7 @@ public class PickUps : MonoBehaviour
             c.a = 1.0f - ft / 6;
             r.color = c;
 
-            yield return new WaitForSeconds(0.02f);
+            yield return wait;
         }
 
         for (float ft = lt.intensity; ft >= 0; ft -= 1.2f) {
@@ -111,7 +113,7 @@ public class PickUps : MonoBehaviour
                 lt.intensity = ft;
             transform.localScale -= shrinkFactor;
 
-            yield return new WaitForSeconds(0.02f);
+            yield return wait;
         }
         isCollected = true;
         Destroy(gameObject);
