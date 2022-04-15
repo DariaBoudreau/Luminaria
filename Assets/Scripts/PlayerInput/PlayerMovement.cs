@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,8 +19,11 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalInput;
     public float jumpPower = 60f;
     public float wetJumpPower = 35f;
+
+    [Tooltip("Velocity while gliding is scaled by this value")]
     public float glideVelocityNegation = 0.97f;
     public float jumpGravity = 10f;
+    public float maxJumpVelo = 1500f;
     //public float glidingModifier = 3f;
 
     public bool isFalling = false;
@@ -82,9 +86,13 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void Update()
+    /// <summary>
+    /// Clamping the max y velocity 
+    /// </summary>
+    private void ClampYVelocity()
     {
-        UpdateFalling();
+        var clampedVelocity = Mathf.Clamp(playerRigidbody.velocity.y, -maxJumpVelo, maxJumpVelo);
+        playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, clampedVelocity);
     }
 
     public void UpdateFalling()
@@ -117,6 +125,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         MoveThePlayer();
+        UpdateFalling();
+        ClampYVelocity();
         previousVelocity = playerRigidbody.velocity;
     }
 
