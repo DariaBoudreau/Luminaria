@@ -86,12 +86,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        UpdateFalling();
-        ClampYVelocity();
-    }
-
     /// <summary>
     /// Clamping the max y velocity 
     /// </summary>
@@ -131,6 +125,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         MoveThePlayer();
+        UpdateFalling();
+        ClampYVelocity();
         previousVelocity = playerRigidbody.velocity;
     }
 
