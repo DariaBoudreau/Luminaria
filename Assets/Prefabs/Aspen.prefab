@@ -6986,7 +6986,6 @@ GameObject:
   - component: {fileID: 7906095723340371954}
   - component: {fileID: 7906095723340371955}
   - component: {fileID: 7906095723340371952}
-  - component: {fileID: 7906095723340371953}
   - component: {fileID: 7906095723340371958}
   - component: {fileID: 7906095723340371959}
   - component: {fileID: 7906095723340371956}
@@ -7109,41 +7108,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7906095723340371953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7906095723340371957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec7379ebb24eb1478bb7ad77827756b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 7906095723340371958}
-  transform: {fileID: 7906095723340371965}
-  audioPlayer: {fileID: 0}
-  playerInput: {fileID: 0}
-  handAnchor: {fileID: 0}
-  spriteLibrary: {fileID: 0}
-  acceleration: 40
-  maxSpeed: 10
-  jumpForce: 35
-  minFlipSpeed: 0.1
-  jumpGravityScale: 2
-  fallGravityScale: 5
-  groundedGravityScale: 1
-  resetSpeedOnLand: 0
-  ableToJump: 1
-  ableToBurn: 1
-  AspenLeft: {fileID: 22100000, guid: 9001cb7778ac53e41b1fdef91b2b7eeb, type: 2}
-  AspenRight: {fileID: 22100000, guid: 2550dff1dce284647b44954c134fa4e8, type: 2}
-  shouldNod: 0
-  isBurning: 0
-  currentCharge: 97
-  maxCharge: 3
-  isWet: 0
 --- !u!95 &7906095723340371958
 Animator:
   serializedVersion: 3
@@ -7313,11 +7277,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 0
   speedModifier: 0
-  deccel: 0.1
+  deccel: 0.01
   turnSpeed: 0.1
   horizontalInput: 0
-  jumpPower: 100
-  wetJumpPower: 50
+  jumpPower: 45
+  wetJumpPower: 25
   glideVelocityNegation: 0.3
   jumpGravity: 0.5
   isFalling: 0
@@ -7355,8 +7319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 2160760846529054750}
   playerAnimation: {fileID: 4453718593739600835}
-  playerCharging: {fileID: 0}
-  playerInput: {fileID: 0}
+  playerCharging: {fileID: 8334801014397065700}
+  playerInput: {fileID: 2198347811559867873}
   movementSmoothingSpeed: 1
   runSpeed: 3
   normalGravity: 1

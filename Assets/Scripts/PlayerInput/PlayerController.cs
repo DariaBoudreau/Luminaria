@@ -99,7 +99,15 @@ public class PlayerController : MonoBehaviour
                     if (value.performed && !isWet)
                     {
                         jumpInput = true;
-                        isGliding = true;
+                        if (!isGrounded)
+                        {
+                            isGliding = true;
+                        }
+                        else
+                        {
+                            isGliding = false;
+                        }
+                        print(isGliding);
                         playerMovement.UpdateGravity(isGliding);
                     }
                 }
@@ -180,7 +188,14 @@ public class PlayerController : MonoBehaviour
         if (jumpInput && isFalling && !isWet)
         {
             //Debug.Log("Character should glide");
-            isGliding = true;
+            if (!isGrounded)
+            {
+                isGliding = true;
+            }
+            else
+            {
+                isGliding = false;
+            }
             playerMovement.UpdateGravity(isGliding);
             playerAnimation.GlidingAnimation(isGliding);
         }
