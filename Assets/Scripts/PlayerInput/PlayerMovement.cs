@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpPower);
+            playerRigidbody.AddForce(Vector2.up * jumpPower);
         }
 
     }
