@@ -7280,10 +7280,11 @@ MonoBehaviour:
   deccel: 0.2
   turnSpeed: 3
   horizontalInput: 0
-  jumpPower: 500
+  jumpPower: 3000
   wetJumpPower: 25
-  glideVelocityNegation: 0.7
-  jumpGravity: 1
+  glideVelocityNegation: 0.9
+  jumpGravity: 3
+  maxJumpVelo: 18
   isFalling: 0
   facingRight: 0
   shouldFlipAtStart: 1
