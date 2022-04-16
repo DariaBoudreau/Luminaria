@@ -49,12 +49,14 @@ public class PlayerController : MonoBehaviour
     bool isGliding = false;
     bool hasLanded = false;
     public bool jumpInput = false;
-    
+
+    private ChargeOrbs2 chargeOrbs;
 
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         controllerCollider = GetComponent<CapsuleCollider2D>();
+        chargeOrbs = GameObject.Find("Charge Orbs").GetComponent<ChargeOrbs2>();
         softGroundMask = LayerMask.GetMask("Ground Soft");
         hardGroundMask = LayerMask.GetMask("Ground Hard");
     }
@@ -159,6 +161,7 @@ public class PlayerController : MonoBehaviour
 
             playerAnimation.UpdateBurningAnimation(isBurning);
         }
+        chargeOrbs.UpdateFollowerOrbs(playerCharging.currentCharge);
     }
 
     void Update()
