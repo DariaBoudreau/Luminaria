@@ -14,8 +14,6 @@ public class CharacterFollower : MonoBehaviour
 
     Vector3 previousPosition;
 
-    WaitForSeconds wait = new WaitForSeconds(.25f);
-
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +36,7 @@ public class CharacterFollower : MonoBehaviour
 
     IEnumerator ApproachCo(float xPos, float yPos, float xPosFollowObject)
     {
-        yield return wait;
+        yield return new WaitForSeconds(.25f);
 
         if (xPos > xPosFollowObject && xOffset < 0 || xPos < xPosFollowObject && xOffset > 0)
         {
