@@ -49,9 +49,6 @@ public class PlayerController : MonoBehaviour
     bool isGliding = false;
     bool hasLanded = false;
     public bool jumpInput = false;
-    public bool findChargeOrbs;
-
-    private ChargeOrbs2 chargeOrbs;
 
     private void Start()
     {
@@ -59,12 +56,6 @@ public class PlayerController : MonoBehaviour
         controllerCollider = GetComponent<CapsuleCollider2D>();
         softGroundMask = LayerMask.GetMask("Ground Soft");
         hardGroundMask = LayerMask.GetMask("Ground Hard");
-
-        // check to see if gameobject should be found, should not be found in intro scene
-        if (findChargeOrbs)
-        {
-            chargeOrbs = GameObject.Find("Charge Orbs").GetComponent<ChargeOrbs2>();
-        }
     }
 
     public void OnMovement(InputAction.CallbackContext value)
@@ -166,10 +157,6 @@ public class PlayerController : MonoBehaviour
             }
 
             playerAnimation.UpdateBurningAnimation(isBurning);
-        }
-        if (chargeOrbs != null)
-        {
-            chargeOrbs.UpdateFollowerOrbs(playerCharging.currentCharge);
         }
     }
 

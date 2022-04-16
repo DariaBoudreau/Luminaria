@@ -11,7 +11,7 @@ public class ChargeOrbs2 : MonoBehaviour
     PlayerMovement aspenMovement;
     PlayerCharging aspenCharging;
 
-    int chargeLevel;
+    int lastCharge;
     int maxCharge;
 
     GameObject[] children;
@@ -37,8 +37,21 @@ public class ChargeOrbs2 : MonoBehaviour
             index++;
         }
 
+        lastCharge = aspenCharging.currentCharge;
+
         UpdateFollowerOrbs(aspenCharging.currentCharge);
     }
+
+    private void Update()
+    {
+        if (lastCharge != aspenCharging.currentCharge)
+        {
+            UpdateFollowerOrbs(aspenCharging.currentCharge);
+        }
+        lastCharge = aspenCharging.currentCharge;
+    }
+
+
 
     // Movement in FixedUpdate because it is following an object moving via rigidbody forces
     private void FixedUpdate()
