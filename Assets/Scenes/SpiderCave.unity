@@ -81062,6 +81062,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168429942}
     m_Modifications:
+    - target: {fileID: 1756800570643456695, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: findChargeOrbs
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: isFalling
@@ -81081,6 +81086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: glideVelocityNegation
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: shouldPersistVelocity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4453718593739600835, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
