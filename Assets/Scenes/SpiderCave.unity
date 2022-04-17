@@ -19862,6 +19862,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168429942}
     m_Modifications:
+    - target: {fileID: 240406754, guid: 4050eee9574d8b14c90e6707bf34794a, type: 3}
+      propertyPath: spacing
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 240406754, guid: 4050eee9574d8b14c90e6707bf34794a, type: 3}
+      propertyPath: xOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 240406754, guid: 4050eee9574d8b14c90e6707bf34794a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 240406754, guid: 4050eee9574d8b14c90e6707bf34794a, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3722947371178346154, guid: 4050eee9574d8b14c90e6707bf34794a,
         type: 3}
       propertyPath: objectToFollow
@@ -19872,6 +19888,11 @@ PrefabInstance:
       propertyPath: Aspen
       value: 
       objectReference: {fileID: 577177923}
+    - target: {fileID: 3722947372079106576, guid: 4050eee9574d8b14c90e6707bf34794a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3722947372079106576, guid: 4050eee9574d8b14c90e6707bf34794a,
         type: 3}
       propertyPath: children.Array.size

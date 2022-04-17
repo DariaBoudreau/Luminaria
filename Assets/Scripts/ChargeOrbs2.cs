@@ -7,6 +7,7 @@ public class ChargeOrbs2 : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 50;
     [SerializeField] float xOffset = 3;
+    [SerializeField] float spacing = 1;
 
     PlayerMovement aspenMovement;
     PlayerCharging aspenCharging;
@@ -67,7 +68,7 @@ public class ChargeOrbs2 : MonoBehaviour
         {
             if (children[i] == null)
                 continue;
-            Vector3 desiredPosition = aspenMovement.transform.position - new Vector3((xOffset + i) * direction, 0, 0);
+            Vector3 desiredPosition = aspenMovement.transform.position - new Vector3((xOffset + i) * direction * spacing, 0, 0);
             Vector3 moveTowards = desiredPosition - children[i].transform.position;
             moveTowards *= moveSpeed / (i + 1);
             children[i].transform.position += moveTowards * Time.deltaTime;
