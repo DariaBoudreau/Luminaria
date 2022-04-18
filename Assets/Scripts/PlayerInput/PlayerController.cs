@@ -195,7 +195,9 @@ public class PlayerController : MonoBehaviour
             {
                 isGliding = false;
             }
-            playerMovement.UpdateGravity(isGliding);
+
+            //The following line was moved to FixedUpdate() because it should happen every physics tick instead of every frame.
+            //playerMovement.UpdateGravity(isGliding);
             playerAnimation.GlidingAnimation(isGliding);
         }
     }
@@ -234,6 +236,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         UpdateGrounding();
+        playerMovement.UpdateGravity(isGliding);
     }
 
     void UpdateGrounding()
