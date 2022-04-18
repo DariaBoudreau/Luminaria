@@ -12,6 +12,8 @@ public class StonePickup : MonoBehaviour
     [Header("HUD")]
     [SerializeField] StoneHUD stonehud;
 
+    public LevelEndManger portal;
+
     // Scaling
     private Vector3 initialScale;
 
@@ -86,7 +88,9 @@ public class StonePickup : MonoBehaviour
         {
             if (gameObject.CompareTag("KeyStone"))
             {
-                LevelEndManger.totalNumofStone--;
+                //LevelEndManger.totalNumofStone--;
+                portal.AddOneStone();
+                portal.CheckIfClear();
             }
             //aspenObject.currentCharge += chargeValue;
             StartCoroutine(Collect());
