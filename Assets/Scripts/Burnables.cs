@@ -118,7 +118,8 @@ public class Burnables : MonoBehaviour
         }
         if(hasNPC)
         {
-            Instantiate(NPC, npcSpawn.position, npcSpawn.rotation);
+            NPC = Instantiate(NPC, npcSpawn.position, npcSpawn.rotation);
+            NPC.transform.localScale = npcSpawn.localScale; 
         }
     }
 }

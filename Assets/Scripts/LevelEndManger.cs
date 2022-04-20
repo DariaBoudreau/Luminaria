@@ -40,11 +40,11 @@ public class LevelEndManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (totalNumofStone <= 0)
-        {
-            conditionClear = true;
-            toolTip.gameObject.SetActive(true);
-        }
+        //if (totalNumofStone <= 0)
+        //{
+        //    conditionClear = true;
+        //    toolTip.gameObject.SetActive(true);
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -80,5 +80,19 @@ public class LevelEndManger : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(nextScene);
+    }
+
+    public void AddOneStone()
+    {
+        totalNumofStone--;
+    }
+
+    public void CheckIfClear()
+    {
+        if (totalNumofStone <= 0)
+        {
+            conditionClear = true;
+            toolTip.gameObject.SetActive(true);
+        }
     }
 }

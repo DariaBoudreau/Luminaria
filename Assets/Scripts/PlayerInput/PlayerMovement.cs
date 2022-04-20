@@ -116,6 +116,10 @@ public class PlayerMovement : MonoBehaviour
                 float newVelocityY = playerRigidbody.velocity.y * glideVelocityNegation;
                 Vector2 newVelocity = new Vector2(playerRigidbody.velocity.x, newVelocityY);
                 playerRigidbody.velocity = newVelocity;
+                if (Mathf.Abs(previousVelocity.x) > .9f)
+                {
+                    previousVelocity.x *= .9f;
+                }
             }
         }
 
