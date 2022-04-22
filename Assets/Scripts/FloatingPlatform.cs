@@ -152,6 +152,9 @@ public class FloatingPlatform : MonoBehaviour
     [SerializeField] private bool startsLit;
     [SerializeField] private bool triggerActive;
     [SerializeField] private bool instantReset;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] private AudioClip lanternFloating;
+
 
     new private Light2D light;
     private float maxIntensity;
@@ -161,6 +164,8 @@ public class FloatingPlatform : MonoBehaviour
     {
         light = GetComponentInChildren<Light2D>(true);
         maxIntensity = light.intensity;
+        audioSource.GetComponent<AudioSource>();
+
         if (startsLit)
         {
             isLit = true;
@@ -187,16 +192,20 @@ public class FloatingPlatform : MonoBehaviour
         if (isLit)
         {
             StartCoroutine(Delay(2));
+            audioSource.PlayOneShot(lanternFloating);
             AddCharge();
             isLit = false;
             waitingDelay = true;
+            
         }
         else if (!isLit && aspenObject.currentCharge >= chargeCost)
         {
             StartCoroutine(Delay(2));
+            audioSource.PlayOneShot(lanternFloating);
             RemoveCharge();
             isLit = true;
             waitingDelay = true;
+            
         }
     }
 
