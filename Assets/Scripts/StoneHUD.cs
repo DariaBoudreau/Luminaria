@@ -51,10 +51,10 @@ public class StoneHUD : MonoBehaviour
         showFrameTwo = false;
         showFrameThree = false;
         showFrameFour = false;
-        tweenStoneOne = false;
-        tweenStoneTwo = false;
-        tweenStoneThree = false;
-        tweenStoneFour = false;
+        tweenStoneOne = true;
+        tweenStoneTwo = true;
+        tweenStoneThree = true;
+        tweenStoneFour = true;
     }
 
     void UpdateStones()
@@ -161,7 +161,6 @@ public class StoneHUD : MonoBehaviour
     void TweenStone(Image stone)
     {
         GameObject stoneobject = stone.gameObject;
-
         LeanTween.cancel(stoneobject);
         stone.transform.localScale = Vector3.one;
 

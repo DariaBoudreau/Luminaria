@@ -7,16 +7,25 @@ public class Recall : MonoBehaviour
     [SerializeField]
     //CharacterController2D aspenObject;
     PlayerCharging aspenObject;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip usedStation;
 
     public delegate void RecallAction();
     public static event RecallAction Recalled;
     private bool triggerActive;
 
+
+    private void Start()
+    {
+        audioSource = gameObject.GetComponent<AudioSource>();
+    }
+
     void Update()
     {
-        if(aspenObject.isBurning && triggerActive)
+        if(aspenObject.isBurning && triggerActive && !audioSource.isPlaying)
         {
             aspenObject.currentCharge = aspenObject.maxCharge;
+            if (usedStation != null) audioSource.PlayOneShot(usedStation);
             aspenObject.CheckForFullLights();
             if(Recalled != null)
             {
