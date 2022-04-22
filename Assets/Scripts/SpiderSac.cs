@@ -32,7 +32,7 @@ public class SpiderSac : MonoBehaviour
                 rb.gravityScale = 1;
             }
         }
-        else if(other.gameObject.CompareTag("Candle"))
+        else if(other.gameObject.CompareTag("Candle") || other.gameObject.CompareTag("burnable"))
         {
             if(Lighted != null)
             {

@@ -67,13 +67,7 @@ public class Burnables : MonoBehaviour
         {
             if (aspenObject.currentCharge >= chargeCost)
             {
-                hasBurned = true;
-                soundClip.Play();
-                StartCoroutine(IsBurning());
-
-                fire.SetActive(true);
-                ps.Play();
-                lt.gameObject.SetActive(true);
+                Burn();
                 aspenObject.chargeChange = chargeCost;
                 aspenObject.SpendCharge();
             } 
@@ -82,6 +76,16 @@ public class Burnables : MonoBehaviour
                 // NOT ENOUGH CHARGE
             }
         }
+    }
+    public void Burn()
+    {
+        hasBurned = true;
+        soundClip.Play();
+        StartCoroutine(IsBurning());
+
+        fire.SetActive(true);
+        ps.Play();
+        lt.gameObject.SetActive(true);
     }
 
     private IEnumerator IsBurning()
@@ -121,5 +125,13 @@ public class Burnables : MonoBehaviour
             NPC = Instantiate(NPC, npcSpawn.position, npcSpawn.rotation);
             NPC.transform.localScale = npcSpawn.localScale; 
         }
+    }
+    void OnEnable()
+    {
+        SpiderSac.Lighted += Burn;
+    }
+    void OnDisable()
+    {
+        SpiderSac.Lighted -= Burn;
     }
 }
