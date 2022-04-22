@@ -8,12 +8,15 @@ public class AwakingPlatform : MonoBehaviour
     [SerializeField] GameObject platform;
     [SerializeField] bool startsAwake;
     private bool awake;
+    private Animator anim;
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         if(startsAwake)
         {
             awake = true;
             platform.SetActive(true);
+            anim.SetTrigger("Awake");
         }
         else
         {
@@ -30,6 +33,7 @@ public class AwakingPlatform : MonoBehaviour
             {
                 awake = true;
                 platform.SetActive(true);
+                anim.SetTrigger("Awake");
             }
             else
             {
