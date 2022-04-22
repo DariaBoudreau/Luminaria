@@ -912,7 +912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: -2899310012103090614}
   stonePickup: {fileID: 0}
-  orbPickup: {fileID: 8300000, guid: 12dc4d0b2275989458a53798f7292ef4, type: 3}
+  orbPickup: {fileID: 8300000, guid: 05cbdf2999c7c7045a529d5ce8a628e3, type: 3}
 --- !u!114 &6524128806638113800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,6 +935,7 @@ MonoBehaviour:
   rotate: 1
   scale: 1
   glow: 1
+  isCollected: 0
 --- !u!82 &-2899310012103090614
 AudioSource:
   m_ObjectHideFlags: 0
