@@ -42,6 +42,8 @@ public class Candles : MonoBehaviour
                 }
                 else if (aspenCharging.currentCharge >= chargeCost && !isLit)
                 {
+                    // I had to put the charge subtraction outside the method for something -Ricky
+                    aspenCharging.currentCharge -= chargeCost;
                     LightCandle();
                 }  
             }
@@ -76,11 +78,10 @@ public class Candles : MonoBehaviour
         }
     }
 
-    private void LightCandle()
+    public void LightCandle()
     {
         waitingDelay = false;
         isLit = true;
-        aspenCharging.currentCharge -= chargeCost;
         //aspenObject.isWet = false;
         light.intensity = maxIntensity;
         transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = true;

@@ -6,6 +6,8 @@ public class SpiderSac : MonoBehaviour
 {
     [SerializeField] PlayerCharging aspenObject;
     [SerializeField] int chargeCost;
+    [SerializeField] Candles candle;
+    [SerializeField] Burnables web;
     public delegate void CandleLight();
     public static event CandleLight Lighted;
 
@@ -21,7 +23,17 @@ public class SpiderSac : MonoBehaviour
         col = this.GetComponent<Collider2D>();
         startPos = transform.position;
     }
-
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject == candle.gameObject)
+        {
+            candle.LightCandle();
+        }
+        if(other.gameObject == web.gameObject)
+        {
+            web.Burn();
+        }
+    }
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Aspen"))
@@ -30,13 +42,7 @@ public class SpiderSac : MonoBehaviour
             if (aspenObject.isBurning && triggerActive)
             {
                 rb.gravityScale = 1;
-            }
-        }
-        else if(other.gameObject.CompareTag("Candle") || other.gameObject.CompareTag("burnable"))
-        {
-            if(Lighted != null)
-            {
-                Lighted();
+                aspenObject.currentCharge -= chargeCost;
             }
         }
     }
