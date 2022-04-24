@@ -23,6 +23,7 @@ public class Burnables : MonoBehaviour
     [SerializeField] bool hasNPC;
     [SerializeField] GameObject NPC;
     [SerializeField] Transform npcSpawn; 
+    [SerializeField] NPCTracker tracker;
     
     void Start()
     {
@@ -124,6 +125,7 @@ public class Burnables : MonoBehaviour
         {
             NPC = Instantiate(NPC, npcSpawn.position, npcSpawn.rotation);
             NPC.transform.localScale = npcSpawn.localScale; 
+            tracker.NPCsRescued++;
         }
     }
     void OnEnable()
