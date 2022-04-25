@@ -10,7 +10,7 @@ public class SpiderSac : MonoBehaviour
     [SerializeField] Burnables web;
     public delegate void CandleLight();
     public static event CandleLight Lighted;
-
+    private bool hasFallen = false;
     private Rigidbody2D rb;
     private Collider2D col;
     private Vector3 startPos;
@@ -25,13 +25,19 @@ public class SpiderSac : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject == candle.gameObject)
+        if(candle != null)
         {
-            candle.LightCandle();
+            if(other.gameObject == candle.gameObject)
+            {
+                candle.LightCandle();
+            }
         }
-        if(other.gameObject == web.gameObject)
+        if(web != null)
         {
-            web.Burn();
+            if(other.gameObject == web.gameObject)
+            {
+                web.Burn();
+            }
         }
     }
     void OnTriggerStay2D(Collider2D other)
@@ -39,8 +45,9 @@ public class SpiderSac : MonoBehaviour
         if (other.gameObject.CompareTag("Aspen"))
         {
             triggerActive = true;
-            if (aspenObject.isBurning && triggerActive)
+            if (aspenObject.isBurning && triggerActive && !hasFallen)
             {
+                hasFallen = true;
                 rb.gravityScale = 1;
                 aspenObject.currentCharge -= chargeCost;
             }
@@ -67,10 +74,9 @@ public class SpiderSac : MonoBehaviour
 
     private void ResetSac()
     {
+        hasFallen = false;
         rb.gravityScale = 0;
         rb.velocity = Vector3.zero;
         transform.position = startPos;
     }
-
-
 }
