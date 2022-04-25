@@ -2338,7 +2338,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 119.910675
+      value: 119.93384
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -16054,6 +16054,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906095723340371956, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7906095723340371956, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
