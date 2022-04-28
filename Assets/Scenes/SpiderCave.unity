@@ -61196,7 +61196,11 @@ MonoBehaviour:
   dialogueCharacter: {fileID: 592177541}
   aspenAnimator: {fileID: 586681705}
   aspenObject: {fileID: 2142950610}
-  lines: []
+  lines:
+  - "Oh, I thought I was a goner for sure\u2026 "
+  - "I suppose I should introduce myself. I\u2019m Petunia, the middle butterfly
+    sister.  "
+  - "I\u2019m forever in your debt, little one. "
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
   textSpeed: 0
@@ -67197,7 +67201,11 @@ MonoBehaviour:
   dialogueCharacter: {fileID: 1623922655}
   aspenAnimator: {fileID: 586681705}
   aspenObject: {fileID: 2142950610}
-  lines: []
+  lines:
+  - 'About time you got me out of this darn thing! '
+  - "Stupid webs ruined my new dress\u2026 "
+  - "Well, I\u2019m Poppy. Mari and Tuni\u2019s little sister. "
+  - 'Anyway, thanks for saving me, I guess. '
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
   textSpeed: 0
@@ -84695,7 +84703,16 @@ MonoBehaviour:
   dialogueCharacter: {fileID: 1815538263}
   aspenAnimator: {fileID: 586681705}
   aspenObject: {fileID: 2142950610}
-  lines: []
+  lines:
+  - "Oh, thank you. Those webs were so tight\u2026 "
+  - 'Nuts, my squad is going to kill me for sure! '
+  - "I had one task, save the princesses\u2026 Some job I\u2019m doing. "
+  - "Oh, my name? I\u2019m Chestnut. Soldier of the Miyama Regiment. "
+  - 'Do you uh, think you could help me, maybe? '
+  - 'Three butterfly princesses were kidnapped by the Spider Queen. '
+  - "They\u2019re somewhere down in these caves to the east\u2026 "
+  - "I would do it, but I\u2019m still uh, recovering. "
+  - 'You would? Oh, thank you! Good luck out there, little moth! '
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
   textSpeed: 0
@@ -111132,7 +111149,11 @@ MonoBehaviour:
   dialogueCharacter: {fileID: 89686303}
   aspenAnimator: {fileID: 586681705}
   aspenObject: {fileID: 2142950610}
-  lines: []
+  lines:
+  - 'Oh, thank you, thank you! '
+  - "That nasty spider\u2026 I\u2019d like to give her a piece of my mind! "
+  - "Anyway, it\u2019s nice to finally meet you."
+  - "I\u2019m Marigold, princess of the Glimmer Groves. "
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
   textSpeed: 0
