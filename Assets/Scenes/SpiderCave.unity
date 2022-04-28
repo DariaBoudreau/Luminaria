@@ -1568,8 +1568,8 @@ GameObject:
   - component: {fileID: 89686302}
   - component: {fileID: 89686306}
   - component: {fileID: 89686304}
-  - component: {fileID: 89686303}
   - component: {fileID: 89686305}
+  - component: {fileID: 89686303}
   m_Layer: 0
   m_Name: Marigold
   m_TagString: Untagged
@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 89686301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b88cbeb406782a43a04f8ad7c1d0b5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 775359a1aaf55274898471bff76e52b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 89686304}
@@ -35205,6 +35205,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf34c9aa5bead841b6d6a36a78b66ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &586681705 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4453718593739600835, guid: 21c18efccfb014049bdf0988134a95ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 7906095724789732453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cc47143c936634db9a3b1c9f4de4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &587195898
 GameObject:
   m_ObjectHideFlags: 0
@@ -35927,8 +35939,8 @@ GameObject:
   - component: {fileID: 592177540}
   - component: {fileID: 592177544}
   - component: {fileID: 592177542}
-  - component: {fileID: 592177541}
   - component: {fileID: 592177543}
+  - component: {fileID: 592177541}
   m_Layer: 0
   m_Name: Petunia
   m_TagString: Untagged
@@ -35960,7 +35972,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 592177539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b88cbeb406782a43a04f8ad7c1d0b5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 775359a1aaf55274898471bff76e52b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 592177542}
@@ -61119,8 +61131,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1211450800}
   - component: {fileID: 1211450803}
-  - component: {fileID: 1211450802}
   - component: {fileID: 1211450801}
+  - component: {fileID: 1211450802}
   m_Layer: 0
   m_Name: Petunia Dialogue
   m_TagString: Untagged
@@ -61176,18 +61188,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1211450799}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718c95255bdab88498d6d17bf637c0bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d3190f4f20a33247aaa425b429e01ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingToGuide: {fileID: 1687734891}
+  ThingToGuide: {fileID: 592177539}
   destroyOnFadeOut: 0
   dialogueCharacter: {fileID: 592177541}
-  aspenObject: {fileID: 0}
-  lines:
-  - This is what Petunia will say!
+  aspenAnimator: {fileID: 586681705}
+  aspenObject: {fileID: 2142950610}
+  lines: []
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
-  textSpeed: 0.035
+  textSpeed: 0
   shouldFadeOut: 1
 --- !u!61 &1211450803
 BoxCollider2D:
@@ -67120,8 +67132,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1245675822}
   - component: {fileID: 1245675825}
-  - component: {fileID: 1245675824}
   - component: {fileID: 1245675823}
+  - component: {fileID: 1245675824}
   m_Layer: 0
   m_Name: PoppyDialogue
   m_TagString: Untagged
@@ -67177,18 +67189,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1245675821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718c95255bdab88498d6d17bf637c0bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d3190f4f20a33247aaa425b429e01ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingToGuide: {fileID: 1935231766}
+  ThingToGuide: {fileID: 1623922653}
   destroyOnFadeOut: 0
   dialogueCharacter: {fileID: 1623922655}
-  aspenObject: {fileID: 0}
-  lines:
-  - This is what Poppy will say!
+  aspenAnimator: {fileID: 586681705}
+  aspenObject: {fileID: 2142950610}
+  lines: []
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
-  textSpeed: 0.035
+  textSpeed: 0
   shouldFadeOut: 1
 --- !u!61 &1245675825
 BoxCollider2D:
@@ -84618,8 +84630,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1531653334}
   - component: {fileID: 1531653337}
-  - component: {fileID: 1531653336}
   - component: {fileID: 1531653335}
+  - component: {fileID: 1531653336}
   m_Layer: 0
   m_Name: ChestnutDialogue
   m_TagString: Untagged
@@ -84675,18 +84687,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1531653333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718c95255bdab88498d6d17bf637c0bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d3190f4f20a33247aaa425b429e01ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingToGuide: {fileID: 1033488050}
+  ThingToGuide: {fileID: 1815538260}
   destroyOnFadeOut: 0
   dialogueCharacter: {fileID: 1815538263}
-  aspenObject: {fileID: 0}
-  lines:
-  - This is what Chesnut will say!
+  aspenAnimator: {fileID: 586681705}
+  aspenObject: {fileID: 2142950610}
+  lines: []
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
-  textSpeed: 0.035
+  textSpeed: 0
   shouldFadeOut: 1
 --- !u!61 &1531653337
 BoxCollider2D:
@@ -95226,8 +95238,8 @@ GameObject:
   - component: {fileID: 1623922654}
   - component: {fileID: 1623922658}
   - component: {fileID: 1623922656}
-  - component: {fileID: 1623922655}
   - component: {fileID: 1623922657}
+  - component: {fileID: 1623922655}
   m_Layer: 0
   m_Name: Poppy
   m_TagString: Untagged
@@ -95259,7 +95271,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1623922653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b88cbeb406782a43a04f8ad7c1d0b5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 775359a1aaf55274898471bff76e52b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1623922656}
@@ -108014,8 +108026,8 @@ GameObject:
   - component: {fileID: 1815538261}
   - component: {fileID: 1815538265}
   - component: {fileID: 1815538264}
-  - component: {fileID: 1815538263}
   - component: {fileID: 1815538262}
+  - component: {fileID: 1815538263}
   m_Layer: 0
   m_Name: Chestnut
   m_TagString: Untagged
@@ -108045,13 +108057,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815538260}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07665253, y: -0.63009167}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -108062,7 +108074,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.387558, y: 11.514349}
+  m_Size: {x: 15, y: 15}
   m_EdgeRadius: 0
 --- !u!114 &1815538263
 MonoBehaviour:
@@ -108073,7 +108085,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1815538260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b88cbeb406782a43a04f8ad7c1d0b5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 775359a1aaf55274898471bff76e52b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1815538264}
@@ -111055,8 +111067,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1931041873}
   - component: {fileID: 1931041876}
-  - component: {fileID: 1931041875}
   - component: {fileID: 1931041874}
+  - component: {fileID: 1931041875}
   m_Layer: 0
   m_Name: MarigoldDialogue
   m_TagString: Untagged
@@ -111112,18 +111124,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1931041872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718c95255bdab88498d6d17bf637c0bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d3190f4f20a33247aaa425b429e01ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingToGuide: {fileID: 37638490}
+  ThingToGuide: {fileID: 89686301}
   destroyOnFadeOut: 0
   dialogueCharacter: {fileID: 89686303}
-  aspenObject: {fileID: 0}
-  lines:
-  - This is what Marigold will say!
+  aspenAnimator: {fileID: 586681705}
+  aspenObject: {fileID: 2142950610}
+  lines: []
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
-  textSpeed: 0.035
+  textSpeed: 0
   shouldFadeOut: 1
 --- !u!61 &1931041876
 BoxCollider2D:
