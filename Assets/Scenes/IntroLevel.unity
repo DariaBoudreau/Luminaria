@@ -3784,7 +3784,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 91.39993
+      value: 91.40987
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -4837,8 +4837,8 @@ MonoBehaviour:
   - {fileID: 342024403}
   - {fileID: 500215401}
   m_Bounds:
-    m_Center: {x: 0.06965351, y: -0.9281559, z: 0.0000027529895}
-    m_Extent: {x: 6.419669, y: 4.8279657, z: 3.410605e-13}
+    m_Center: {x: 0.06964588, y: -0.92815495, z: -0.000012028031}
+    m_Extent: {x: 6.4196777, y: 4.827966, z: 1.364242e-12}
   m_UseBatching: 1
   m_AlwaysUpdate: 0
   m_AutoRebind: 0
@@ -20848,6 +20848,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FPSCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978547643680788836, guid: 8ba8e04c1c3354749b6c77058c805fcd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4978547643680788837, guid: 8ba8e04c1c3354749b6c77058c805fcd,
         type: 3}

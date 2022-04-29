@@ -97653,7 +97653,7 @@ PrefabInstance:
     - target: {fileID: 8170934153641564918, guid: 41648dee4828c5d45a211ec7a79190a7,
         type: 3}
       propertyPath: sceneToLoad
-      value: FirstLevel
+      value: CreditsScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41648dee4828c5d45a211ec7a79190a7, type: 3}
