@@ -7,12 +7,16 @@ public class AwakingPlatform : MonoBehaviour
     [SerializeField] Candles[] candles;
     [SerializeField] GameObject platform;
     [SerializeField] bool startsAwake;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] private AudioClip plantGrow;
+
     private bool awake;
     private Animator anim;
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
-        if(startsAwake)
+        audioSource.GetComponent<AudioSource>();
+        if (startsAwake)
         {
             awake = true;
             platform.SetActive(true);
@@ -34,6 +38,7 @@ public class AwakingPlatform : MonoBehaviour
                 awake = true;
                 platform.SetActive(true);
                 anim.SetTrigger("Awake");
+                audioSource.PlayOneShot(plantGrow);
             }
             else
             {

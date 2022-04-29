@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!243 &-9094300744715743930
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LanternsFLoating
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 9a737fdd8f1cecd46b18ae816027536b
+  m_Children: []
+  m_Volume: 95125861c3e64774eb845bab42002af5
+  m_Pitch: 7f7c62299a5b6834595d0d752ac8b1b3
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -511111248103885064}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-8698993279719332085
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -148,6 +167,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-511111248103885064
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 3eacedd861ad50441b84ada4e2ec1437
+  m_EffectName: Attenuation
+  m_MixLevel: e71d741941fe8c84a9ce283066ef2f52
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -174,6 +207,7 @@ AudioMixerController:
     - bc1c339acf045794288ded5a31a3a9e2
     - 434f243402962dd45830cf21081e6ca5
     - ee624fe174df26c489905bafe9046a22
+    - 9a737fdd8f1cecd46b18ae816027536b
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -192,6 +226,7 @@ AudioMixerGroupController:
   - {fileID: -4210775888077249283}
   - {fileID: -7593056070048271492}
   - {fileID: 3501567830289413453}
+  - {fileID: -9094300744715743930}
   m_Volume: 05ce5f837d7d69249bad92d085b3892d
   m_Pitch: 6dbabed999d4a714f9ed5ce10f077c17
   m_Send: 00000000000000000000000000000000
@@ -225,12 +260,13 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 685d505642690804f9389c0045f7188b
   m_FloatValues:
+    95125861c3e64774eb845bab42002af5: -11.400904
     b12d3322c6a0d5841af46ea3b56fcdd2: -1.8728366
     d5fe35449c7017c46bcadb84ab289497: -6.991066
     1ca852f5dbbd887488302757be747ef3: -4.54787
     9f81350a27dd849439a21ce5d4879a11: -0.021158498
     0646c72bc6046f64f97eb91aeca5a89b: -7.8940845
-    197857be5815864419df38c043069628: 0
+    197857be5815864419df38c043069628: -4.9356413
     32bd964f21741b04a9ba31f0adf7ce8a: -4.1580763
   m_TransitionOverrides: {}
 --- !u!243 &3501567830289413453

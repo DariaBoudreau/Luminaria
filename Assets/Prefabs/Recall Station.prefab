@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspenObject: {fileID: 0}
+  audioSource: {fileID: 0}
+  usedStation: {fileID: 0}
 --- !u!61 &1267359880750554240
 BoxCollider2D:
   m_ObjectHideFlags: 0
