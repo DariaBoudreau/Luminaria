@@ -24,6 +24,9 @@ public class Recall : MonoBehaviour
     {
         if(aspenObject.isBurning && triggerActive && !audioSource.isPlaying)
         {
+            Debug.Log("bababooey");
+            Debug.Log(aspenObject.maxCharge);
+
             aspenObject.currentCharge = aspenObject.maxCharge;
             if (usedStation != null) audioSource.PlayOneShot(usedStation);
             aspenObject.CheckForFullLights();

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Charging : MonoBehaviour
 {
-    [SerializeField] CharacterController2D Aspen;
+    [SerializeField] PlayerCharging Aspen;
     [SerializeField] bool triggerActive = false;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip usedStation;

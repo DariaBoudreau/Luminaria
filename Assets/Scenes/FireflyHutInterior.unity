@@ -2532,7 +2532,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 119.90599
+      value: 120.053955
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -2826,7 +2826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMustPressKey: 0
   nextScene: FirstLevel
-  levelLoader: {fileID: 0}
+  levelLoader: {fileID: 2047972492}
   audioSource: {fileID: 0}
   sfxPortal: {fileID: 0}
   waitTime: 0
@@ -18031,6 +18031,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2047972492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8170934153641564918, guid: 41648dee4828c5d45a211ec7a79190a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 757127480}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65993eff6461ec44fbcd7acd9f53ff15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2085102186 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1458862933987016496, guid: 5d1056ca946321141bb5d25892c68a9a,
