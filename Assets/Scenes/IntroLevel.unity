@@ -2321,6 +2321,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiplier: 0.4
   horizontalOnly: 1
+--- !u!114 &189888969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8170934153641564918, guid: 41648dee4828c5d45a211ec7a79190a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2174099741646751415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65993eff6461ec44fbcd7acd9f53ff15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &192671992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,7 +3784,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 100.70291
+      value: 91.39993
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -4825,8 +4837,8 @@ MonoBehaviour:
   - {fileID: 342024403}
   - {fileID: 500215401}
   m_Bounds:
-    m_Center: {x: 0.06964588, y: -0.92815495, z: -0.000012028031}
-    m_Extent: {x: 6.4196777, y: 4.827966, z: 1.364242e-12}
+    m_Center: {x: 0.06965351, y: -0.9281559, z: 0.0000027529895}
+    m_Extent: {x: 6.419669, y: 4.8279657, z: 3.410605e-13}
   m_UseBatching: 1
   m_AlwaysUpdate: 0
   m_AutoRebind: 0
@@ -16984,6 +16996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMustPressKey: 0
   nextScene: FireflyHutInterior
+  levelLoader: {fileID: 189888969}
   audioSource: {fileID: 0}
   sfxPortal: {fileID: 0}
   waitTime: 0
@@ -17000,7 +17013,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4782219, y: 0.50390434}
+  m_Offset: {x: 0.4782219, y: 1.3446336}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -17011,7 +17024,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8343887, y: 8.794872}
+  m_Size: {x: 2.8343887, y: 10.476331}
   m_EdgeRadius: 0
 --- !u!1001 &1691570374
 PrefabInstance:
@@ -20745,6 +20758,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2141481645}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2174099741646751415
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2174099742412216101, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174099742412216101, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174099742412216101, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174099742412216101, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174099742412216101, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174099742412216101, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174099742412216101, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174099742412216101, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174099742412216101, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174099742412216101, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174099742412216101, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174099742412216102, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Level Loader
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170934153641564918, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: sceneToLoad
+      value: FireflyHutInterior
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170934153641564918, guid: 41648dee4828c5d45a211ec7a79190a7,
+        type: 3}
+      propertyPath: shouldFadeIn
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 41648dee4828c5d45a211ec7a79190a7, type: 3}
 --- !u!1001 &4978547644208576198
 PrefabInstance:
   m_ObjectHideFlags: 0

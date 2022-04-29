@@ -12,6 +12,10 @@ public class NextLevelTrigger : MonoBehaviour
     [Tooltip("The exact name of the scene to go to.")]
     [SerializeField] private string nextScene;
 
+    [Tooltip("The object that will load the next level.")]
+    [SerializeField]
+    private SceneTransitionLevelLoader levelLoader;
+
     [Tooltip("Optional audio source.")]
     [SerializeField] AudioSource audioSource;
 
@@ -39,7 +43,8 @@ public class NextLevelTrigger : MonoBehaviour
         {
             if (playerMustPressKey && Input.GetKeyDown(KeyCode.LeftShift) || !playerMustPressKey)
             {
-                StartCoroutine(DelayedExitScene());
+                //StartCoroutine(DelayedExitScene());
+                levelLoader.LoadNextLevel();
                 if (!sfxHasPlayed && audioSource != null && sfxPortal != null)
                 {
                     audioSource.PlayOneShot(sfxPortal);
@@ -55,7 +60,8 @@ public class NextLevelTrigger : MonoBehaviour
         {
             if (playerMustPressKey && Input.GetKeyDown(KeyCode.LeftShift))
             {
-                StartCoroutine(DelayedExitScene());
+                //StartCoroutine(DelayedExitScene());
+                levelLoader.LoadNextLevel();
                 if (!sfxHasPlayed && audioSource != null && sfxPortal != null)
                 {
                     audioSource.PlayOneShot(sfxPortal);

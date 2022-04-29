@@ -13,12 +13,6 @@ public class Loading : MonoBehaviour
         StartCoroutine(LoadAsyncScene());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public static void LoadScene()
     {
         SceneManager.LoadScene("LoadingScreen");
