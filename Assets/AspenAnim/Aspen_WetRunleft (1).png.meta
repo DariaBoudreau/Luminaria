@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 53d83d8d3d1b6654c8e8e952bd0b2a5d
+guid: 3d5519cace6f3034fb71627235044cdb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5695809595319792121
-    second: Aspen_WetRunleft_0
+      213: 8574372569319864224
+    second: Aspen_WetRunleft (1)_0
   - first:
-      213: 790466868072806230
-    second: Aspen_WetRunleft_1
+      213: 4281528388405004557
+    second: Aspen_WetRunleft (1)_1
   - first:
-      213: -4669330694155959040
-    second: Aspen_WetRunleft_2
+      213: -3347521047536292860
+    second: Aspen_WetRunleft (1)_2
   - first:
-      213: 9187626090896163970
-    second: Aspen_WetRunleft_3
+      213: 2436887863705617069
+    second: Aspen_WetRunleft (1)_3
   - first:
-      213: -3958784169291966794
-    second: Aspen_WetRunleft_4
+      213: -5033281820669772536
+    second: Aspen_WetRunleft (1)_4
   - first:
-      213: -2445390216032894831
-    second: Aspen_WetRunleft_5
+      213: 5182640719894385788
+    second: Aspen_WetRunleft (1)_5
   - first:
-      213: -2125361989659140437
-    second: Aspen_WetRunleft_6
+      213: -8809184765698652741
+    second: Aspen_WetRunleft (1)_6
   - first:
-      213: -3480864724337177740
-    second: Aspen_WetRunleft_7
+      213: -6409875063904467456
+    second: Aspen_WetRunleft (1)_7
   - first:
-      213: -5864132910557674889
-    second: Aspen_WetRunleft_8
+      213: -6494458443224459919
+    second: Aspen_WetRunleft (1)_8
   - first:
-      213: 1680663460443555296
-    second: Aspen_WetRunleft_9
+      213: -5634469812790729862
+    second: Aspen_WetRunleft (1)_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -62,7 +62,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -133,7 +133,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Aspen_WetRunleft_0
+      name: Aspen_WetRunleft (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -147,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70ec3bac95b64f0b0800000000000000
-      internalID: -5695809595319792121
+      spriteID: 0a7f92e3c6a4ef670800000000000000
+      internalID: 8574372569319864224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aspen_WetRunleft_1
+      name: Aspen_WetRunleft (1)_1
       rect:
         serializedVersion: 2
         x: 588
@@ -168,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 657f13ead6d48fa00800000000000000
-      internalID: 790466868072806230
+      spriteID: d0981ae726b0b6b30800000000000000
+      internalID: 4281528388405004557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aspen_WetRunleft_2
+      name: Aspen_WetRunleft (1)_2
       rect:
         serializedVersion: 2
         x: 1176
@@ -189,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 005810c0974333fb0800000000000000
-      internalID: -4669330694155959040
+      spriteID: 40ca47bd7573b81d0800000000000000
+      internalID: -3347521047536292860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aspen_WetRunleft_3
+      name: Aspen_WetRunleft (1)_3
       rect:
         serializedVersion: 2
         x: 1764
@@ -210,14 +210,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2840af46041018f70800000000000000
-      internalID: 9187626090896163970
+      spriteID: da242a1d99091d120800000000000000
+      internalID: 2436887863705617069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aspen_WetRunleft_4
+      name: Aspen_WetRunleft (1)_4
       rect:
         serializedVersion: 2
         x: 2352
@@ -231,14 +231,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b699e6c5c29f09c0800000000000000
-      internalID: -3958784169291966794
+      spriteID: 80dfb800ad0362ab0800000000000000
+      internalID: -5033281820669772536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aspen_WetRunleft_5
+      name: Aspen_WetRunleft (1)_5
       rect:
         serializedVersion: 2
         x: 2940
@@ -252,14 +252,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 190c4240e8a301ed0800000000000000
-      internalID: -2445390216032894831
+      spriteID: c7497c3a6407ce740800000000000000
+      internalID: 5182640719894385788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aspen_WetRunleft_6
+      name: Aspen_WetRunleft (1)_6
       rect:
         serializedVersion: 2
         x: 3528
@@ -273,14 +273,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baedf33f7823182e0800000000000000
-      internalID: -2125361989659140437
+      spriteID: bb5cfbfe02d7fb580800000000000000
+      internalID: -8809184765698652741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aspen_WetRunleft_7
+      name: Aspen_WetRunleft (1)_7
       rect:
         serializedVersion: 2
         x: 4116
@@ -294,14 +294,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47bc1b2c9fb71bfc0800000000000000
-      internalID: -3480864724337177740
+      spriteID: 0060751279c8b07a0800000000000000
+      internalID: -6409875063904467456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aspen_WetRunleft_8
+      name: Aspen_WetRunleft (1)_8
       rect:
         serializedVersion: 2
         x: 4704
@@ -315,14 +315,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7724886ff2a6e9ea0800000000000000
-      internalID: -5864132910557674889
+      spriteID: 175d11b747c0fd5a0800000000000000
+      internalID: -6494458443224459919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aspen_WetRunleft_9
+      name: Aspen_WetRunleft (1)_9
       rect:
         serializedVersion: 2
         x: 5292
@@ -336,8 +336,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e587b2438ae25710800000000000000
-      internalID: 1680663460443555296
+      spriteID: a7362f6de875ec1b0800000000000000
+      internalID: -5634469812790729862
       vertices: []
       indices: 
       edges: []
