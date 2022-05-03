@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Component References")]
     [System.NonSerialized] public Rigidbody2D playerRigidbody;
+    private CapsuleCollider2D controllerCollider;
+    public PhysicsMaterial2D playerPhysicsMaterial;
+    private float normalFriction;
 
     [Header("Movement Settings")]
     public float movementSpeed = 500;
@@ -40,6 +43,10 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get rigidbody
         playerRigidbody = GetComponent<Rigidbody2D>();
+        // Get physics material
+        controllerCollider = GetComponent<CapsuleCollider2D>();
+        playerPhysicsMaterial = controllerCollider.sharedMaterial;
+        normalFriction = playerPhysicsMaterial.friction;
         if (shouldFlipAtStart)
         {
             FlipPlayer();
@@ -100,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
         if (playerRigidbody.velocity.y < 0f)
         {
             isFalling = true;
+            playerPhysicsMaterial.friction = 0;
             UpdateGravity(false);
         }
     }
@@ -186,5 +194,6 @@ public class PlayerMovement : MonoBehaviour
     public void LandPlayer()
     {
         isFalling = false;
+        playerPhysicsMaterial.friction = normalFriction;
     }
 }

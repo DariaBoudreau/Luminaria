@@ -3784,7 +3784,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 91.40987
+      value: 93.49941
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -18002,7 +18002,7 @@ PrefabInstance:
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: jumpPower
-      value: 0
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
@@ -18012,12 +18012,17 @@ PrefabInstance:
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: facingRight
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: jumpGravity
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: maxJumpVelo
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
@@ -18037,12 +18042,12 @@ PrefabInstance:
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: shouldFlipAtStart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: glideVelocityNegation
-      value: 0
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4453718593739600835, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
@@ -18103,6 +18108,11 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 1.4493064
       objectReference: {fileID: 0}
+    - target: {fileID: 7906095723340371955, guid: 21c18efccfb014049bdf0988134a95ce,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: dbbe5e00228a91f44b65162b5800e188, type: 2}
     - target: {fileID: 7906095723340371957, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: m_Name
@@ -18111,7 +18121,7 @@ PrefabInstance:
     - target: {fileID: 7906095723340371957, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7906095723340371965, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
