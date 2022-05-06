@@ -5510,10 +5510,10 @@ Transform:
   m_Children:
   - {fileID: 1712266467}
   - {fileID: 1056828824}
+  - {fileID: 943491388}
   - {fileID: 1870487998}
   - {fileID: 922162079}
   - {fileID: 2062582376}
-  - {fileID: 943491388}
   - {fileID: 1309955954}
   m_Father: {fileID: 890594238}
   m_RootOrder: 2
@@ -50461,7 +50461,7 @@ Transform:
   m_LocalScale: {x: 1.1595888, y: 0.98874485, z: 0.075677425}
   m_Children: []
   m_Father: {fileID: 161840353}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &943491389
 BoxCollider2D:
@@ -95891,7 +95891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1813723037
 Transform:
   m_ObjectHideFlags: 0
