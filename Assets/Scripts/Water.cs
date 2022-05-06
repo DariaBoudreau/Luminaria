@@ -26,6 +26,7 @@ public class Water : MonoBehaviour
             sprite.color = blue;
             aspenCharging.isInWater = true;
             aspenObject.isWet = true;
+            aspenObject.playerAnimation.UpdateWetBool(true);
         }
     }
     void OnTriggerExit2D(Collider2D other)
@@ -43,6 +44,7 @@ public class Water : MonoBehaviour
         if(!aspenCharging.isInWater)
         {
             aspenObject.isWet = false;
+            aspenObject.playerAnimation.UpdateWetBool(false);
             sprite.color = trueColor;
         }
     }

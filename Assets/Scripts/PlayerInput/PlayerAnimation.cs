@@ -10,12 +10,16 @@ public class PlayerAnimation : MonoBehaviour
 
     [Header("Animator Values")]
     private int animatorGroundedBool;
-    private int animatorRunningSpeed;
-    private int animatorJumpTrigger;
-    private int animatorBurnTrigger;
+    private int animatorWetBool;
     private int animatorBurningBool;
     private int animatorGlidingBool;
+
+    private int animatorRunningSpeed;
+
+    private int animatorJumpTrigger;
+    private int animatorBurnTrigger;
     private int animatorNodTrigger;
+   
 
     GroundType currentGroundType;
 
@@ -38,6 +42,7 @@ public class PlayerAnimation : MonoBehaviour
         animatorBurningBool = Animator.StringToHash("Burning");
         animatorGlidingBool = Animator.StringToHash("Gliding");
         animatorNodTrigger = Animator.StringToHash("Nod");
+        animatorWetBool = Animator.StringToHash("isWet");
     }
     
     public void UpdateRunAnimation(Vector2 velocity, float runSpeed)
@@ -65,6 +70,11 @@ public class PlayerAnimation : MonoBehaviour
 
     public void GlidingAnimation(bool isGliding) {
         animator.SetBool(animatorGlidingBool, isGliding);
+    }
+
+    public void UpdateWetBool(bool isWet)
+    {
+        animator.SetBool(animatorWetBool, isWet);
     }
 
     public void UpdateGroundingAnimation(bool isGrounded, bool needsSFX, GroundType groundType)
