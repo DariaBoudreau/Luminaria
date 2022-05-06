@@ -10,6 +10,10 @@ public class LevelEndManger : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] GuideUI toolTip;
 
+    [Tooltip("The object that will load the next level.")]
+    [SerializeField]
+    private SceneTransitionLevelLoader levelLoader;
+
     public static int totalNumofStone;
 
     [SerializeField] private bool conditionClear = false;
@@ -72,7 +76,8 @@ public class LevelEndManger : MonoBehaviour
             yield return new WaitForSeconds(8);
             ActivePortal.SetActive(true);
             portalActiveDone = true;
-            StartCoroutine(DelayedExitScene());
+            levelLoader.LoadNextLevel();
+            //StartCoroutine(DelayedExitScene());
         }
     }
 

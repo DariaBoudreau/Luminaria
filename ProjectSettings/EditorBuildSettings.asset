@@ -21,15 +21,15 @@ EditorBuildSettings:
     path: Assets/Scenes/FirstLevel.unity
     guid: f5b76a0aecddc194eb93b26edaccb38e
   - enabled: 1
+    path: Assets/Scenes/SpiderCave.unity
+    guid: ddca6ab898a7ef34d9d60e4442d8294c
+  - enabled: 1
     path: Assets/Scenes/CreditScene.unity
     guid: e12dc87ffa69f654592705dbcb5cf5b1
   - enabled: 1
     path: Assets/Scenes/LoadingScreen2.unity
     guid: 5cd9fefe0e0e4c94991a817de2d5f7d3
   - enabled: 1
-    path: Assets/Scenes/IntroLevelBlockout.unity
+    path: Assets/Scenes/Defunct/IntroLevelBlockout.unity
     guid: 2ea06beec10557646bf9f9344508b453
-  - enabled: 1
-    path: Assets/Scenes/SpiderCaveRevision.unity
-    guid: ddca6ab898a7ef34d9d60e4442d8294c
   m_configObjects: {}
