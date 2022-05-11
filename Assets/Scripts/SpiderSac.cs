@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class SpiderSac : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class SpiderSac : MonoBehaviour
     private Collider2D col;
     private Vector3 startPos;
     public bool triggerActive;
+    private ParticleSystem ps;
+    private Light2D lt;
+    private Collider2D barrier;
+    private AudioSource soundClip;
+    private GameObject fire;
 
     void Start()
     {
@@ -22,6 +28,12 @@ public class SpiderSac : MonoBehaviour
         rb.gravityScale = 0;
         col = this.GetComponent<Collider2D>();
         startPos = transform.position;
+        ps = GetComponentInChildren<ParticleSystem>();
+        //ps.GetComponent<Renderer>().sortingOrder = 26;
+        lt = GetComponentInChildren<Light2D>();
+        //fire = ps.gameObject.transform.parent.gameObject;
+        soundClip = GetComponent<AudioSource>();
+        //fire.SetActive(false);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -50,6 +62,11 @@ public class SpiderSac : MonoBehaviour
                 hasFallen = true;
                 rb.gravityScale = 1;
                 aspenObject.currentCharge -= chargeCost;
+
+                soundClip.Play();
+                //fire.SetActive(true);
+                ps.Play();
+                lt.gameObject.SetActive(true);
             }
         }
     }
@@ -61,17 +78,6 @@ public class SpiderSac : MonoBehaviour
             triggerActive = false;
         }
     }
-
-    void OnEnable()
-    {
-        Recall.Recalled += ResetSac;
-    }
-
-    void OnDisable()
-    {
-        Recall.Recalled -= ResetSac;
-    }
-
     private void ResetSac()
     {
         hasFallen = false;
