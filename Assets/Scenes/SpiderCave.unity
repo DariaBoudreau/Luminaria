@@ -85576,7 +85576,10 @@ MonoBehaviour:
   - 'Three princesses were kidnapped by the Spider Queen. '
   - "They\u2019re somewhere down in these caves to the east\u2026 "
   - "I would do it, but I\u2019m still uh, recovering. "
-  - 'You would? Oh, thank you! Good luck out there, little moth! '
+  - 'You would? Oh, thank you! '
+  - There should be a way out of the caves to the far east.
+  - Meet me there once you've saved everyone.
+  - 'Good luck out there, little moth! '
   shouldChangeOnButtonPress: 1
   shouldLoop: 0
   textSpeed: 0
