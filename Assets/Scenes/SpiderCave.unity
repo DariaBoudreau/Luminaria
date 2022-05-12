@@ -13239,6 +13239,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AwakingPlatform (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1892560958561261766, guid: c46e0135fc4ceac4b82283b8f6543cef,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.707
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46e0135fc4ceac4b82283b8f6543cef, type: 3}
 --- !u!4 &222054440 stripped
@@ -35473,6 +35478,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: AwakingPlatform (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1892560958561261766, guid: c46e0135fc4ceac4b82283b8f6543cef,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5279879887323704666, guid: 6c9354103c3802249b754094e0febe03,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46e0135fc4ceac4b82283b8f6543cef, type: 3}
 --- !u!4 &576828314 stripped
@@ -40761,6 +40772,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AwakingPlatform (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892560958561261766, guid: c46e0135fc4ceac4b82283b8f6543cef,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.789
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46e0135fc4ceac4b82283b8f6543cef, type: 3}
@@ -47412,8 +47428,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715299541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3, y: -13.1, z: -186.8929}
-  m_LocalScale: {x: 7.849458, y: 6.881497, z: 1}
+  m_LocalPosition: {x: 8.95, y: 1.15, z: -186.8929}
+  m_LocalScale: {x: 6.8353086, y: 5.704761, z: 1}
   m_Children: []
   m_Father: {fileID: 906538958}
   m_RootOrder: 1
@@ -47529,7 +47545,7 @@ MonoBehaviour:
   Aspen: {fileID: 0}
   triggerActive: 0
   audioSource: {fileID: 715299543}
-  rockCrumbles: {fileID: 8300000, guid: 6ee9b37de13450048b1e9be8df212b7a, type: 3}
+  rockCrumbles: {fileID: 8300000, guid: a58ea60f96636604d81448141f673506, type: 3}
 --- !u!212 &715299545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -56724,6 +56740,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: AwakingPlatform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1892560958561261766, guid: c46e0135fc4ceac4b82283b8f6543cef,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5279879887323704666, guid: 6c9354103c3802249b754094e0febe03,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46e0135fc4ceac4b82283b8f6543cef, type: 3}
 --- !u!4 &958250417 stripped
@@ -66473,6 +66495,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: AwakingPlatform (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1892560958561261766, guid: c46e0135fc4ceac4b82283b8f6543cef,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5279879887323704666, guid: 6c9354103c3802249b754094e0febe03,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46e0135fc4ceac4b82283b8f6543cef, type: 3}
 --- !u!4 &1184470636 stripped
@@ -112046,6 +112074,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: AwakingPlatform (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1892560958561261766, guid: c46e0135fc4ceac4b82283b8f6543cef,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.602
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892560958561261766, guid: c46e0135fc4ceac4b82283b8f6543cef,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5279879887323704666, guid: 6c9354103c3802249b754094e0febe03,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46e0135fc4ceac4b82283b8f6543cef, type: 3}
 --- !u!4 &1828704603 stripped
@@ -136901,6 +136940,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: AwakingPlatform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1892560958561261766, guid: c46e0135fc4ceac4b82283b8f6543cef,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5279879887323704666, guid: 6c9354103c3802249b754094e0febe03,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46e0135fc4ceac4b82283b8f6543cef, type: 3}
 --- !u!4 &2102506738 stripped
@@ -138937,6 +138982,12 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.695
       objectReference: {fileID: 0}
+    - target: {fileID: 1892560958561261766, guid: c46e0135fc4ceac4b82283b8f6543cef,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5279879887323704666, guid: 6c9354103c3802249b754094e0febe03,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46e0135fc4ceac4b82283b8f6543cef, type: 3}
 --- !u!1001 &4848105199680387100

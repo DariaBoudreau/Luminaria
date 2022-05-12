@@ -208,6 +208,7 @@ AudioMixerController:
     - 434f243402962dd45830cf21081e6ca5
     - ee624fe174df26c489905bafe9046a22
     - 9a737fdd8f1cecd46b18ae816027536b
+    - 5e9c9ea1c095b7f4d8fde26dbccb373a
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -227,6 +228,7 @@ AudioMixerGroupController:
   - {fileID: -7593056070048271492}
   - {fileID: 3501567830289413453}
   - {fileID: -9094300744715743930}
+  - {fileID: 5279879887323704666}
   m_Volume: 05ce5f837d7d69249bad92d085b3892d
   m_Pitch: 6dbabed999d4a714f9ed5ce10f077c17
   m_Send: 00000000000000000000000000000000
@@ -263,6 +265,7 @@ AudioMixerSnapshotController:
     95125861c3e64774eb845bab42002af5: -11.400904
     b12d3322c6a0d5841af46ea3b56fcdd2: -1.8728366
     d5fe35449c7017c46bcadb84ab289497: -6.991066
+    0aaeebd563a960d45afbafa18b9ba5c0: -13.637256
     1ca852f5dbbd887488302757be747ef3: -4.54787
     9f81350a27dd849439a21ce5d4879a11: -0.021158498
     0646c72bc6046f64f97eb91aeca5a89b: -7.8940845
@@ -302,6 +305,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &5279879887323704666
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GrowingVines
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 5e9c9ea1c095b7f4d8fde26dbccb373a
+  m_Children: []
+  m_Volume: 0aaeebd563a960d45afbafa18b9ba5c0
+  m_Pitch: f3f7b2a1b7c7e8846bc6e0fa668942d9
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 8650546766150658543}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &5841969282528135812
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -354,3 +376,17 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &8650546766150658543
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: d89992b376bce3e40bfad8129c05474c
+  m_EffectName: Attenuation
+  m_MixLevel: 0a0f0de7c47a7b541a342bc327c5f139
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
