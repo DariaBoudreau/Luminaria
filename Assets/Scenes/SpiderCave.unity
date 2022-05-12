@@ -23391,7 +23391,7 @@ MonoBehaviour:
   aspenObject: {fileID: 2142950610}
   aspenCharging: {fileID: 577177923}
   wetTime: 3
-  blue: {r: 61, g: 128, b: 200, a: 255}
+  blue: {r: 0.7056337, g: 0.82548654, b: 0.9528302, a: 1}
 --- !u!61 &400475568
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120611,7 +120611,7 @@ MonoBehaviour:
   aspenObject: {fileID: 2142950610}
   aspenCharging: {fileID: 577177923}
   wetTime: 3
-  blue: {r: 0.13656996, g: 0.37227535, b: 0.8773585, a: 255}
+  blue: {r: 0.7058824, g: 0.827451, b: 0.91764706, a: 1}
 --- !u!61 &1936794782
 BoxCollider2D:
   m_ObjectHideFlags: 0
