@@ -367,7 +367,7 @@ AnimatorStateMachine:
     m_Position: {x: 560, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2956561582875727897}
-    m_Position: {x: 240, y: 610, z: 0}
+    m_Position: {x: 520, y: 610, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 6703040379993268688}
@@ -1700,7 +1700,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Aspen_WetIdle
+  m_Name: Aspen_WetIdleLeft
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1710,12 +1710,12 @@ AnimatorState:
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
-  m_Mirror: 1
+  m_Mirror: 0
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 481ac545de4944945b44419f37677ff1, type: 2}
+  m_Motion: {fileID: 7400000, guid: 138b146f3cf224339ab01f83b5592ad2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
