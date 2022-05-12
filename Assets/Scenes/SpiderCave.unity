@@ -527,7 +527,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dc41b817f471ea042b6d397a8f58713e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 319ecd3dd9c2d0f4b8ac82e54606eb22, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -66933,7 +66933,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dc41b817f471ea042b6d397a8f58713e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 319ecd3dd9c2d0f4b8ac82e54606eb22, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -70345,7 +70345,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dc41b817f471ea042b6d397a8f58713e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 319ecd3dd9c2d0f4b8ac82e54606eb22, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -120335,7 +120335,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dc41b817f471ea042b6d397a8f58713e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 319ecd3dd9c2d0f4b8ac82e54606eb22, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -136036,7 +136036,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dc41b817f471ea042b6d397a8f58713e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 319ecd3dd9c2d0f4b8ac82e54606eb22, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -138530,7 +138530,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dc41b817f471ea042b6d397a8f58713e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 319ecd3dd9c2d0f4b8ac82e54606eb22, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -138931,6 +138931,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AwakingPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892560958561261766, guid: c46e0135fc4ceac4b82283b8f6543cef,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.695
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46e0135fc4ceac4b82283b8f6543cef, type: 3}

@@ -12,11 +12,14 @@ public class Candles : MonoBehaviour
     [SerializeField] public bool isLit;
     [SerializeField] public bool startsLit;
     [SerializeField] private bool triggerActive;
+    [SerializeField] private AudioClip lightCandle;
+    [SerializeField] public AudioSource audioSource;
     new public Light2D light;
     private float maxIntensity;
     private bool waitingDelay = true;
     void Start()
     {
+        audioSource.GetComponent<AudioSource>();
         light = GetComponentInChildren<Light2D>(true);
         maxIntensity = light.intensity;
         if (startsLit)
@@ -86,6 +89,7 @@ public class Candles : MonoBehaviour
         light.intensity = maxIntensity;
         transform.Find("Flame").GetComponent<SpriteRenderer>().enabled = true;
         StartCoroutine(Delay(1));
+        audioSource.PlayOneShot(lightCandle);
     }
 
     private void ExtinguishCandle()
