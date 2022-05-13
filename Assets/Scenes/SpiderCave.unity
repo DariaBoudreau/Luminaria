@@ -29950,7 +29950,7 @@ SpriteShapeRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1988455705
   m_SortingLayer: -3
-  m_SortingOrder: 11
+  m_SortingOrder: 13
   m_Color: {r: 0.6650944, g: 0.8069367, b: 1, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: f8642d82e8d444c168ddffdc1aa2cfb7, type: 3}
@@ -57778,9 +57778,9 @@ SpriteShapeRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -358291261
-  m_SortingLayer: -4
-  m_SortingOrder: 20
+  m_SortingLayerID: 1988455705
+  m_SortingLayer: -3
+  m_SortingOrder: 12
   m_Color: {r: 0.28132787, g: 0.3673355, b: 0.5471698, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 0}
@@ -67966,7 +67966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1222079250
 RectTransform:
   m_ObjectHideFlags: 0
@@ -91392,7 +91392,7 @@ PrefabInstance:
     - target: {fileID: 2174099742412216102, guid: 41648dee4828c5d45a211ec7a79190a7,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8170934153641564918, guid: 41648dee4828c5d45a211ec7a79190a7,
         type: 3}
