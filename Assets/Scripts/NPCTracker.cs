@@ -11,18 +11,15 @@ public class NPCTracker : MonoBehaviour
     {
         barrier = GetComponent<Collider2D>();
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void Update()
     {
-        if(other.gameObject.CompareTag("Aspen"))
+        if(NPCsNeeded == NPCsRescued)
         {
-            if(NPCsNeeded == NPCsRescued)
-            {
-                Destroy(barrier);
-            }
-            else
-            {
-                //Display some text
-            }
+            Destroy(barrier.gameObject);
+        }
+        else
+        {
+            //Display some text
         }
     }
 }
