@@ -29,6 +29,12 @@ public class StaffController : MonoBehaviour
 
     private void OnEnable()
     {
+        animator = gameObject.GetComponent<Animator>();
+        animatorNoStaffBool = Animator.StringToHash("HasNoStaff");
+        if (!shouldStartWithStaff)
+        {
+            animator.SetBool(animatorNoStaffBool, true);
+        }
         if (characterDialogue != null)
         {
             characterDialogue.finishedTalking += PlayTimeline;

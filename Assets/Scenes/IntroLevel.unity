@@ -3795,7 +3795,7 @@ PrefabInstance:
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 91.41228
+      value: 91.41725
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442,
         type: 3}
@@ -18435,7 +18435,7 @@ PrefabInstance:
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: jumpPower
-      value: 3000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
@@ -18445,7 +18445,7 @@ PrefabInstance:
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: facingRight
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
@@ -18475,7 +18475,7 @@ PrefabInstance:
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
       propertyPath: shouldFlipAtStart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2160760846529054750, guid: 21c18efccfb014049bdf0988134a95ce,
         type: 3}
